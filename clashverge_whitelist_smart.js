@@ -274,7 +274,7 @@ function overwriteDns(config) {
   const cnDohList = [
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
-    // "https://doh.360.cn/dns-query", // 360DNS
+    "https://doh.360.cn/dns-query", // 360DNS
   ];
 
   const gfwDnsList = [
@@ -326,7 +326,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     "default-nameserver": cnDnsList,
-    nameserver: cnDohList,
+    nameserver: [en0Dns],
     // nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
