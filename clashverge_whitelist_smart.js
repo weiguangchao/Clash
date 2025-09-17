@@ -326,7 +326,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     "default-nameserver": cnDnsList,
-    nameserver: cnDohList,
+    nameserver: cnDnsList,
     // nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
