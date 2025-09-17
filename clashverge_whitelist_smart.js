@@ -149,7 +149,7 @@ function overwriteProxyGroups(config) {
 
   const commonProxyGroupsConfig = {
     type: "smart",
-    "policy-priority": "",
+    // "policy-priority": "",
     uselightgbm: true,
     collectdata: false,
     strategy: "sticky-sessions",
