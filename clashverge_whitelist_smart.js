@@ -262,7 +262,7 @@ function overwriteOthers(config) {
 }
 
 function overwriteDns(config) {
-  // const en0Dns = "dhcp://en0";
+  const en0Dns = "dhcp://en0";
 
   const cnDnsList = [
     "233.5.5.5", // 阿里DNS
@@ -326,7 +326,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     "default-nameserver": cnDnsList,
-    nameserver: cnDohList,
+    nameserver: [en0Dns],
     // nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
