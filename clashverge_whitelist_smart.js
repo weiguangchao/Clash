@@ -91,9 +91,9 @@ function overwriteRules(config) {
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    "DST-PORT,22,DIRECT",
-    "DST-PORT,27017,DIRECT",
-    "DST-PORT,3306,DIRECT",
+    // "DST-PORT,22,DIRECT",
+    // "DST-PORT,27017,DIRECT",
+    // "DST-PORT,3306,DIRECT",
     //////////////////////////////////////////////////////////////
     "MATCH,🚀 节点选择",
   ];
