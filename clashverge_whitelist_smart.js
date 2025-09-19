@@ -304,7 +304,7 @@ function overwriteDns(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "cache-algorithm": "arc",
-    "prefer-h3": true,
+    // "prefer-h3": true,
     // "respect-rules": true,
     // "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter": [
