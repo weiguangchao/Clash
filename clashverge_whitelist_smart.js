@@ -88,7 +88,7 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
@@ -327,7 +327,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: [en0Dns],
+    nameserver: cnDnsList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
@@ -337,7 +337,6 @@ function overwriteDns(config) {
     //   "geosite:gfw": gfwDnsList,
     //   "geosite:category-ads-all": "rcode://success",
     // },
-    // fallback: ["https://dns.nextdns.io/67769d"],
     // fallback: gfwDnsList,
     // "fallback-filter": {
     //   geoip: true,
