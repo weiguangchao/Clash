@@ -283,8 +283,6 @@ function overwriteDns(config) {
   const gfwDnsList = [
     "8.8.8.8", // Google DNS
     "1.1.1.1", // Cloudflare DNS
-    "9.9.9.9", // Quad9 DNS
-    "208.67.222.222", // OpenDNS
   ];
 
   const gfwDohList = [
@@ -329,7 +327,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: cnDnsList,
+    nameserver: [en0Dns],
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
