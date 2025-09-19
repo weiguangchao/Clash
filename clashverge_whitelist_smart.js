@@ -305,9 +305,8 @@ function overwriteDns(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "cache-algorithm": "arc",
-    // "prefer-h3": true,
-    // "respect-rules": true,
-    // "fake-ip-range": "198.18.0.1/16",
+    "prefer-h3": true,
+    "respect-rules": false,
     "fake-ip-filter": [
       "geosite:private",
       // 本地主机/设备
