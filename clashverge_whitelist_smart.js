@@ -271,6 +271,8 @@ function overwriteDns(config) {
     "114.114.114.114", // 114DNS
   ];
 
+  const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
+
   const cnDohList = [
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
@@ -325,9 +327,8 @@ function overwriteDns(config) {
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
-    // "default-nameserver": cnDnsList,
+    // "default-nameserver": cnDotList,
     nameserver: cnDnsList,
-    // nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
