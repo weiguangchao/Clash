@@ -263,7 +263,7 @@ function overwriteOthers(config) {
 }
 
 function overwriteDns(config) {
-  // const en0Dns = "dhcp://en0";
+  const en0Dns = "dhcp://en0";
 
   const cnDnsList = [
     "233.5.5.5", // 阿里DNS
