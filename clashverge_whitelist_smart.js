@@ -307,6 +307,8 @@ function overwriteDns(config) {
     "cache-algorithm": "arc",
     "prefer-h3": true,
     "respect-rules": false,
+    "use-system-hosts": true,
+    "use-hosts": true,
     "fake-ip-filter": [
       "geosite:private",
       // 本地主机/设备
