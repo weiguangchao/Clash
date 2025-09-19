@@ -221,6 +221,7 @@ function overwriteOthers(config) {
   };
 
   //////////////////////////////////////////////////////////////
+  config.ipv6 = true;
   config.sniffer = sniffer;
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
@@ -302,7 +303,7 @@ function overwriteDns(config) {
 
   const dns = {
     enable: true,
-    // ipv6: false,
+    ipv6: true,
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "cache-algorithm": "arc",
