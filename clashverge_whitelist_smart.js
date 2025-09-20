@@ -76,7 +76,6 @@ function overwriteRules(config) {
     "RULE-SET,reject_extra_domainset,REJECT",
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
-    "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
@@ -88,8 +87,10 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT",
-    "GEOIP,cn,DIRECT",
+    "RULE-SET,reject_ip,REJECT",
+    //////////////////////////////////////////////////////////////
+    "GEOIP,private",
+    "GEOIP,cn",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
