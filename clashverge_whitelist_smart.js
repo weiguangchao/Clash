@@ -77,20 +77,21 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
+    "GEOSITE,github,🚀 节点选择",
+    "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,figma,DIRECT",
     "GEOSITE,notion,DIRECT",
     "GEOSITE,apple,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
-    "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private",
-    "GEOIP,cn",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
