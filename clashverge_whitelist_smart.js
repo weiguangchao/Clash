@@ -334,10 +334,10 @@ function overwriteDns(config) {
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": [en0Dns],
-    //   "geosite:gfw": gfwDnsList,
-    // },
+    "nameserver-policy": {
+      "geosite:private,cn": [en0Dns],
+      "geosite:gfw": gfwDnsList,
+    },
     fallback: gfwDnsList,
     "fallback-filter": {
       geoip: true,
