@@ -78,7 +78,7 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,gfw,🚀 节点选择",
+    // "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,figma,DIRECT",
@@ -330,16 +330,14 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: cnDnsList,
+    nameserver: [en0Dns],
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": cnDohList,
-    //   "geosite:geolocation-!cn": gfwDohList,
-    //   "geosite:gfw": gfwDnsList,
-    //   "geosite:category-ads-all": "rcode://success",
-    // },
+    "nameserver-policy": {
+      "geosite:private,cn": [en0Dns],
+      "geosite:gfw": gfwDnsList,
+    },
     // fallback: gfwDnsList,
     // "fallback-filter": {
     //   geoip: true,
