@@ -334,6 +334,7 @@ function overwriteDns(config) {
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
+    // 尽早分流 避免并发使用fallback造成浪费
     "nameserver-policy": {
       "geosite:private,cn": [en0Dns],
       "geosite:gfw": gfwDnsList,
