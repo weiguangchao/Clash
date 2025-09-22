@@ -78,7 +78,7 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,github,🚀 节点选择",
-    // "GEOSITE,gfw,🚀 节点选择",
+    "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,figma,DIRECT",
