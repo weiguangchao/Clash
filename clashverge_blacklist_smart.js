@@ -103,6 +103,7 @@ function overwriteRules(config) {
 }
 
 function overwriteProxyGroups(config) {
+  // 倍率
   const maxMultiple = 2;
 
   const allProxyNames = config["proxies"].map((e) => e.name);
@@ -113,7 +114,7 @@ function overwriteProxyGroups(config) {
     const match = e.match(regex);
     if (match) {
       const multiple = parseInt(match[1]);
-      return multiple < maxMultiple;
+      return multiple <= maxMultiple;
     }
     return true;
   });
