@@ -292,7 +292,7 @@ function overwriteDns(config) {
   ];
 
   const ipDnsList = [
-    "233.5.5.5", // 阿里DNS
+    "114.114.114.114", // 阿里DNS
     "119.29.29.29", // 腾讯DNS
     "8.8.8.8", // Google DNS
     "1.1.1.1", // Cloudflare DNS
