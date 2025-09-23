@@ -66,14 +66,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
-    // telegram_ip: {
-    //   type: "http",
-    //   behavior: "classical",
-    //   format: "text",
-    //   interval: 43200,
-    //   url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
-    //   path: "./sukkaw_ruleset/telegram_ip.txt",
-    // },
+    telegram_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
+      path: "./sukkaw_ruleset/telegram_ip.txt",
+    },
   };
 
   const rules = [
@@ -93,8 +93,7 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    // "RULE-SET,telegram_ip,🚀 节点选择",
-    "GEOIP,telegram,🚀 节点选择",
+    "RULE-SET,telegram_ip,🚀 节点选择",
     "MATCH,DIRECT",
   ];
 
