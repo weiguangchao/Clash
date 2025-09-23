@@ -328,8 +328,8 @@ function overwriteDns(config) {
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
-    // "default-nameserver": cnDotList,
-    nameserver: cnDnsList,
+    "default-nameserver": cnDnsList,
+    nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
