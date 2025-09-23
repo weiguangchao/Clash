@@ -326,15 +326,14 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: gfwDnsList,
+    nameserver: [en0Dns],
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
-    // 尽早分流 避免并发使用fallback造成浪费
-    "nameserver-policy": {
-      "geosite:private,cn": [en0Dns],
-      // "geosite:gfw": gfwDnsList,
-    },
+    // "nameserver-policy": {
+    //   "geosite:private,cn": [en0Dns],
+    //   "geosite:gfw": gfwDnsList,
+    // },
     // fallback: gfwDnsList,
     // "fallback-filter": {
     //   geoip: true,
