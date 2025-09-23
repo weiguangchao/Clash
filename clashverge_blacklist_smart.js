@@ -66,14 +66,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
-    telegram_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
-      path: "./sukkaw_ruleset/telegram_ip.txt",
-    },
+    // telegram_ip: {
+    //   type: "http",
+    //   behavior: "classical",
+    //   format: "text",
+    //   interval: 43200,
+    //   url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
+    //   path: "./sukkaw_ruleset/telegram_ip.txt",
+    // },
   };
 
   const rules = [
@@ -90,10 +90,12 @@ function overwriteRules(config) {
     "GEOSITE,rust,🚀 节点选择",
     "GEOSITE,google,🚀 节点选择",
     "GEOSITE,twitter,🚀 节点选择",
+    "GEOSITE,telegram,🚀 节点选择",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    "RULE-SET,telegram_ip,🚀 节点选择",
+    // "RULE-SET,telegram_ip,🚀 节点选择",
+    "GEOIP,telegram,🚀 节点选择",
     "MATCH,DIRECT",
   ];
 
@@ -327,15 +329,15 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: [en0Dns],
+    nameserver: gfwDnsList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
     // 尽早分流 避免并发使用fallback造成浪费
-    // "nameserver-policy": {
-    //   "geosite:private,cn": [en0Dns],
-    //   "geosite:gfw": gfwDnsList,
-    // },
+    "nameserver-policy": {
+      "geosite:private,cn": [en0Dns],
+      // "geosite:gfw": gfwDnsList,
+    },
     // fallback: gfwDnsList,
     // "fallback-filter": {
     //   geoip: true,
