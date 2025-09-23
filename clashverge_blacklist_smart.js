@@ -291,7 +291,7 @@ function overwriteDns(config) {
     "https://doh.opendns.com/dns-query", // OpenDNS
   ];
 
-  const ipDnsList = [
+  const dnsList = [
     "114.114.114.114", // 阿里DNS
     "119.29.29.29", // 腾讯DNS
     "8.8.8.8", // Google DNS
