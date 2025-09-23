@@ -298,7 +298,7 @@ function overwriteDns(config) {
     "https://doh.opendns.com/dns-query", // OpenDNS
   ];
 
-  const ipDnsList = [
+  const dnsList = [
     "233.5.5.5", // 阿里DNS
     "119.29.29.29", // 腾讯DNS
     "8.8.8.8", // Google DNS
@@ -334,7 +334,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     // "default-nameserver": cnDotList,
-    nameserver: [en0Dns],
+    nameserver: cnDnsList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
     // "direct-nameserver-follow-policy": true,
