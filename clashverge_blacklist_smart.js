@@ -91,6 +91,7 @@ function overwriteRules(config) {
     "GEOSITE,google,🚀 节点选择",
     "GEOSITE,twitter,🚀 节点选择",
     "GEOSITE,telegram,🚀 节点选择",
+    "GEOSITE,gfw,🚀 节点选择",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
