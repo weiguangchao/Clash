@@ -89,7 +89,7 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT",
+    "GEOIP,private,🔏 private",
     "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
@@ -183,6 +183,11 @@ function overwriteProxyGroups(config) {
       name: "🌴 手动选择",
       type: "select",
       proxies: allProxyNames,
+    },
+    {
+      name: "🔏 private",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
     },
   ];
 
