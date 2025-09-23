@@ -88,7 +88,8 @@ function overwriteRules(config) {
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,cursor,🚀 节点选择",
     "GEOSITE,rust,🚀 节点选择",
-    "GEOSITE,gfw,🚀 节点选择",
+    "GEOSITE,google,🚀 节点选择",
+    "GEOSITE,twitter,🚀 节点选择",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
