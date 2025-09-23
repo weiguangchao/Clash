@@ -84,7 +84,6 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOSITE,openai,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,cursor,🚀 节点选择",
     "GEOSITE,rust,🚀 节点选择",
