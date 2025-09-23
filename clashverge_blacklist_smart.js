@@ -104,7 +104,7 @@ function overwriteRules(config) {
 
 function overwriteProxyGroups(config) {
   // 倍率
-  const maxMultiple = 2;
+  const maxMultiple = 1;
 
   const allProxyNames = config["proxies"].map((e) => e.name);
   // 所有代理 过滤掉高倍率节点
