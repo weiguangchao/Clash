@@ -79,7 +79,7 @@ function overwriteRules(config) {
   const rules = [
     // 防止 YouTube 等使用 QUIC 导致速度不佳, 禁用 443 端口 UDP 流量（不包括国内）
     // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
-    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT",
+    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
     "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
