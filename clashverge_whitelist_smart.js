@@ -85,6 +85,7 @@ function overwriteRules(config) {
   };
 
   const rules = [
+    "GEOSITE,category-ads,REJECT",
     "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
@@ -349,7 +350,7 @@ function overwriteDns(config) {
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
-    "default-nameserver": cnDnsList,
+    "default-nameserver": cnDotList,
     nameserver: cnDohList,
     // "proxy-server-nameserver": [en0Dns],
     // "direct-nameserver": cnDohList,
