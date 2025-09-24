@@ -133,7 +133,7 @@ function overwriteProxyGroups(config) {
     const match = e.match(regex);
     if (match) {
       const multiple = parseInt(match[1]);
-      return multiple < maxMultiple;
+      return multiple <= maxMultiple;
     }
     return true;
   });
