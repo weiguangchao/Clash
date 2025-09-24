@@ -80,17 +80,17 @@ function overwriteDns(config) {
     "default-nameserver": cnDotList,
     nameserver: cnDohList,
     // "direct-nameserver": cnDohList,
-    "nameserver-policy": {
-      // "geosite:private,cn": cnDohList,
-      "geosite:gfw": gfwDohList,
-    },
-    fallback: gfwDohList,
-    "fallback-filter": {
-      geoip: true,
-      "geoip-code": "cn",
-      geosite: ["gfw"],
-      ipcidr: ["240.0.0.0/4"],
-    },
+    // "nameserver-policy": {
+    //   "geosite:private,cn": cnDohList,
+    //   "geosite:gfw": gfwDohList,
+    // },
+    // fallback: gfwDohList,
+    // "fallback-filter": {
+    //   geoip: true,
+    //   "geoip-code": "cn",
+    //   geosite: ["gfw"],
+    //   ipcidr: ["240.0.0.0/4"],
+    // },
   };
 
   //////////////////////////////////////////////////////////////
@@ -153,7 +153,7 @@ function overwriteRules(config) {
   // 1.域名规则
   // 2.IP规则
   const rules = [
-    "GEOSITE,category-ads,REJECT",
+    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
     "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
@@ -172,6 +172,7 @@ function overwriteRules(config) {
     ////////强制对域名进行DNS解析, 获取到IP之后在进行匹配////////
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
+    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
