@@ -91,6 +91,7 @@ function overwriteRules(config) {
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
+    ////////强制对域名进行DNS解析, 获取到IP之后在进行匹配////////
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
