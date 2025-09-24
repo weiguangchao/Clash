@@ -298,6 +298,8 @@ function overwriteDns(config) {
     "https://doh.pub/dns-query", // 腾讯DNSPod
     "https://doh.360.cn/dns-query", // 360DNS
     "https://doh.18bit.cn/dns-query", // 18Bit DNS
+    "https://dns.yuguan.xyz/dns-query", // 易安云DNS
+    "https://doh-pure.onedns.net/dns-query", // OneDNS
   ];
 
   const gfwDnsList = [
