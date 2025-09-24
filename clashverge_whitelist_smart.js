@@ -4,9 +4,9 @@ function main(config, profileName) {
   }
 
   try {
-    overwriteProxyGroups(config);
-    overwriteRules(config);
     overwriteDns(config);
+    overwriteRules(config);
+    overwriteProxyGroups(config);
     overwriteOthers(config);
     console.log("配置文件重写完成！");
     return config;
@@ -14,6 +14,86 @@ function main(config, profileName) {
     console.log("配置文件重写失败！将使用原来配置文件！");
     return config;
   }
+}
+
+function overwriteDns(config) {
+  const en0Dns = "dhcp://en0"; // 使用运营商DNS有些域名解析不了
+
+  const cnDnsList = [
+    "233.5.5.5", // 阿里DNS
+    "119.29.29.29", // 腾讯DNS
+    "180.76.76.76", // 百度DNS
+    "114.114.114.114", // 114DNS
+  ];
+
+  const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
+
+  const cnDohList = [
+    "https://dns.alidns.com/dns-query", // 阿里云公共DNS
+    "https://doh.pub/dns-query", // 腾讯DNSPod
+    "https://doh.360.cn/dns-query", // 360DNS
+    "https://doh.18bit.cn/dns-query", // 18Bit DNS
+    "https://dns.yuguan.xyz/dns-query", // 易安云DNS
+    "https://doh-pure.onedns.net/dns-query", // OneDNS
+  ];
+
+  const gfwDnsList = [
+    "8.8.8.8", // Google DNS
+    "1.1.1.1", // Cloudflare DNS
+  ];
+
+  const gfwDohList = [
+    "https://dns.google/dns-query", // Google DNS
+    "https://cloudflare-dns.com/dns-query", // Cloudflare DNS
+    "https://dns.quad9.net/dns-query", // Quad9 DNS
+    "https://doh.opendns.com/dns-query", // OpenDNS
+  ];
+
+  const dns = {
+    enable: true,
+    ipv6: true,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-filter-mode": "blacklist",
+    "cache-algorithm": "arc",
+    "prefer-h3": true,
+    "respect-rules": false,
+    "use-system-hosts": true,
+    "use-hosts": true,
+    "fake-ip-filter": [
+      "geosite:private",
+      // 本地主机/设备
+      "+.lan",
+      "+.local",
+      // Windows网络出现小地球图标
+      "+.msftconnecttest.com",
+      "+.msftncsi.com",
+      // parsec
+      "+.parsec.app",
+      // 小米路由器
+      "+.miwifi.com",
+      // QQ快速登录检测失败
+      "localhost.ptlogin2.qq.com",
+      "localhost.sec.qq.com",
+      // 微信快速登录检测失败
+      "localhost.work.weixin.qq.com",
+    ],
+    "default-nameserver": cnDotList,
+    nameserver: cnDohList,
+    // "proxy-server-nameserver": cnDohList,
+    // "nameserver-policy": {
+    //   "geosite:private,cn": cnDohList,
+    // },
+    // fallback: gfwDohList,
+    // "fallback-filter": {
+    //   geoip: true,
+    //   "geoip-code": "cn",
+    //   geosite: ["gfw"],
+    //   ipcidr: ["240.0.0.0/4"],
+    // },
+  };
+
+  //////////////////////////////////////////////////////////////
+  config.dns = dns;
 }
 
 function overwriteRules(config) {
@@ -267,84 +347,4 @@ function overwriteOthers(config) {
   // model update url
   config["lgbm-url"] =
     "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin";
-}
-
-function overwriteDns(config) {
-  const en0Dns = "dhcp://en0"; // 使用运营商DNS有些域名解析不了
-
-  const cnDnsList = [
-    "233.5.5.5", // 阿里DNS
-    "119.29.29.29", // 腾讯DNS
-    "180.76.76.76", // 百度DNS
-    "114.114.114.114", // 114DNS
-  ];
-
-  const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
-
-  const cnDohList = [
-    "https://dns.alidns.com/dns-query", // 阿里云公共DNS
-    "https://doh.pub/dns-query", // 腾讯DNSPod
-    "https://doh.360.cn/dns-query", // 360DNS
-    "https://doh.18bit.cn/dns-query", // 18Bit DNS
-    "https://dns.yuguan.xyz/dns-query", // 易安云DNS
-    "https://doh-pure.onedns.net/dns-query", // OneDNS
-  ];
-
-  const gfwDnsList = [
-    "8.8.8.8", // Google DNS
-    "1.1.1.1", // Cloudflare DNS
-  ];
-
-  const gfwDohList = [
-    "https://dns.google/dns-query", // Google DNS
-    "https://cloudflare-dns.com/dns-query", // Cloudflare DNS
-    "https://dns.quad9.net/dns-query", // Quad9 DNS
-    "https://doh.opendns.com/dns-query", // OpenDNS
-  ];
-
-  const dns = {
-    enable: true,
-    ipv6: true,
-    "enhanced-mode": "fake-ip",
-    "fake-ip-filter-mode": "blacklist",
-    "cache-algorithm": "arc",
-    "prefer-h3": true,
-    "respect-rules": false,
-    "use-system-hosts": true,
-    "use-hosts": true,
-    "fake-ip-filter": [
-      "geosite:private",
-      // 本地主机/设备
-      "+.lan",
-      "+.local",
-      // Windows网络出现小地球图标
-      "+.msftconnecttest.com",
-      "+.msftncsi.com",
-      // parsec
-      "+.parsec.app",
-      // 小米路由器
-      "+.miwifi.com",
-      // QQ快速登录检测失败
-      "localhost.ptlogin2.qq.com",
-      "localhost.sec.qq.com",
-      // 微信快速登录检测失败
-      "localhost.work.weixin.qq.com",
-    ],
-    "default-nameserver": cnDotList,
-    nameserver: cnDohList,
-    // "proxy-server-nameserver": cnDohList,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": cnDohList,
-    // },
-    // fallback: gfwDohList,
-    // "fallback-filter": {
-    //   geoip: true,
-    //   "geoip-code": "cn",
-    //   geosite: ["gfw"],
-    //   ipcidr: ["240.0.0.0/4"],
-    // },
-  };
-
-  //////////////////////////////////////////////////////////////
-  config.dns = dns;
 }
