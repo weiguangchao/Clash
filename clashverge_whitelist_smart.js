@@ -94,8 +94,8 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT",
-    "GEOIP,cn,DIRECT",
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,cn,DIRECT,no-resolve",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
@@ -331,14 +331,11 @@ function overwriteDns(config) {
     ],
     "default-nameserver": cnDotList,
     nameserver: cnDohList,
-    // "proxy-server-nameserver": [en0Dns],
-    // "direct-nameserver": cnDohList,
-    // "direct-nameserver-follow-policy": true,
+    // "proxy-server-nameserver": cnDohList,
     // "nameserver-policy": {
-    //   "geosite:private,cn": [en0Dns],
-    //   "geosite:gfw": gfwDnsList,
+    //   "geosite:private,cn": cnDohList,
     // },
-    // fallback: gfwDnsList,
+    // fallback: gfwDohList,
     // "fallback-filter": {
     //   geoip: true,
     //   "geoip-code": "cn",
