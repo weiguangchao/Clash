@@ -80,17 +80,17 @@ function overwriteDns(config) {
     "default-nameserver": cnDotList,
     nameserver: cnDohList,
     // "direct-nameserver": cnDohList,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": cnDohList,
-    //   "geosite:gfw": gfwDohList,
-    // },
-    // fallback: gfwDohList,
-    // "fallback-filter": {
-    //   geoip: true,
-    //   "geoip-code": "cn",
-    //   geosite: ["gfw"],
-    //   ipcidr: ["240.0.0.0/4"],
-    // },
+    "nameserver-policy": {
+      "geosite:private,cn": cnDohList,
+      // "geosite:gfw": gfwDohList,
+    },
+    fallback: gfwDohList,
+    "fallback-filter": {
+      geoip: true,
+      "geoip-code": "cn",
+      geosite: ["gfw"],
+      ipcidr: ["240.0.0.0/4"],
+    },
   };
 
   //////////////////////////////////////////////////////////////
