@@ -315,13 +315,6 @@ function overwriteDns(config) {
     "https://doh.opendns.com/dns-query", // OpenDNS
   ];
 
-  const dnsList = [
-    "233.5.5.5", // 阿里DNS
-    "119.29.29.29", // 腾讯DNS
-    "8.8.8.8", // Google DNS
-    "1.1.1.1", // Cloudflare DNS
-  ];
-
   const dns = {
     enable: true,
     ipv6: true,
