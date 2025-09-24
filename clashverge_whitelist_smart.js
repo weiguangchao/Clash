@@ -66,6 +66,22 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
+    ChinaMax_Domain: {
+      type: "http",
+      behavior: "domain",
+      format: "yaml",
+      interval: 43200,
+      url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_Domain.yaml",
+      path: "./ios_rule_script/ChinaMax_Domain.yaml",
+    },
+    ChinaMax_IP: {
+      type: "http",
+      behavior: "ipcidr",
+      format: "yaml",
+      interval: 43200,
+      url: "https://fastly.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/ChinaMax/ChinaMax_IP.yaml",
+      path: "./ios_rule_script/ChinaMax_IP.yaml",
+    },
   };
 
   const rules = [
@@ -86,11 +102,13 @@ function overwriteRules(config) {
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
+    // "RULE-SET,ChinaMax_Domain,DIRECT",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
+    // "RULE-SET,ChinaMax_IP,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
