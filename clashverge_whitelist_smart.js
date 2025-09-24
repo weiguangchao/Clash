@@ -68,6 +68,9 @@ function overwriteRules(config) {
     },
   };
 
+  // 顺序
+  // 1.域名规则
+  // 2.IP规则
   const rules = [
     "GEOSITE,category-ads,REJECT",
     "GEOSITE,category-ads-all,REJECT",
