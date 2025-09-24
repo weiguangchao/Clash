@@ -79,17 +79,18 @@ function overwriteDns(config) {
     ],
     "default-nameserver": cnDotList,
     nameserver: cnDohList,
-    // "proxy-server-nameserver": cnDohList,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": cnDohList,
-    // },
-    // fallback: gfwDohList,
-    // "fallback-filter": {
-    //   geoip: true,
-    //   "geoip-code": "cn",
-    //   geosite: ["gfw"],
-    //   ipcidr: ["240.0.0.0/4"],
-    // },
+    // "direct-nameserver": cnDohList,
+    "nameserver-policy": {
+      // "geosite:private,cn": cnDohList,
+      "geosite:gfw": gfwDohList,
+    },
+    fallback: gfwDohList,
+    "fallback-filter": {
+      geoip: true,
+      "geoip-code": "cn",
+      geosite: ["gfw"],
+      ipcidr: ["240.0.0.0/4"],
+    },
   };
 
   //////////////////////////////////////////////////////////////
@@ -164,10 +165,7 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
-    "GEOSITE,figma,DIRECT",
-    "GEOSITE,notion,DIRECT",
     "GEOSITE,apple,DIRECT",
-    "GEOSITE,cursor,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
@@ -234,21 +232,17 @@ function overwriteProxyGroups(config) {
     },
   ];
 
-  const commonProxyGroupsConfig = {
-    type: "smart",
-    // "policy-priority": "",
-    uselightgbm: true,
-    collectdata: false,
-    strategy: "sticky-sessions",
-    "sample-rate": 1,
-    hidden: true,
-  };
-
   const autoProxyGroups = autoProxyGroupRegexs
     .map((item) => ({
       name: item.name,
       //////////////////////////////////////////////////////////
-      ...commonProxyGroupsConfig,
+      type: "smart",
+      // "policy-priority": "",
+      uselightgbm: true,
+      collectdata: false,
+      strategy: "sticky-sessions",
+      "sample-rate": 1,
+      hidden: true,
       //////////////////////////////////////////////////////////
       proxies: allAutoProxyNames.filter((e) => item.regex.test(e)),
     }))
