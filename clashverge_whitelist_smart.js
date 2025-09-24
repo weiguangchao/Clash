@@ -297,6 +297,7 @@ function overwriteDns(config) {
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
     "https://doh.360.cn/dns-query", // 360DNS
+    "https://doh.18bit.cn/dns-query", // 18Bit DNS
   ];
 
   const gfwDnsList = [
