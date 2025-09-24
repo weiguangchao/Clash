@@ -100,6 +100,7 @@ function overwriteRules(config) {
     "GEOSITE,figma,DIRECT",
     "GEOSITE,notion,DIRECT",
     "GEOSITE,apple,DIRECT",
+    "GEOSITE,cursor,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
