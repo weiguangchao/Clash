@@ -94,8 +94,8 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,cn,DIRECT,no-resolve",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
