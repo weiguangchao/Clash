@@ -77,7 +77,10 @@ function overwriteDns(config) {
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
-    "default-nameserver": cnDotList,
+    "default-nameserver": [
+      "tls://1.12.12.12:853",
+      "https://233.5.5.5/dns-query",
+    ],
     nameserver: cnDohList,
     "proxy-server-nameserver": cnDotList,
     // "direct-nameserver": cnDohList,
