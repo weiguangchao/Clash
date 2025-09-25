@@ -177,6 +177,8 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,telegram_ip,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
+    "GEOSITE,notion,🚀 节点选择",
+    "GEOSITE,figma,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
