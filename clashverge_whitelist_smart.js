@@ -175,7 +175,6 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
-    "RULE-SET,telegram_ip,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,notion,🚀 节点选择",
     "GEOSITE,figma,🚀 节点选择",
@@ -186,6 +185,7 @@ function overwriteRules(config) {
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
+    "RULE-SET,telegram_ip,🚀 节点选择",
     //////// 强制对域名进行DNS解析, 获取到IP之后在进行匹配 ////////
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
