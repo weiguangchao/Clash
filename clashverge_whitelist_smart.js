@@ -323,7 +323,6 @@ function overwriteOthers(config) {
   config.sniffer = sniffer;
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
-  // config.ipv6 = false;
   config["allow-lan"] = false;
   // 长链接
   // config["disable-keep-alive"] = true;
