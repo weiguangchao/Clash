@@ -84,18 +84,18 @@ function overwriteDns(config) {
     nameserver: cnDohList,
     "proxy-server-nameserver": cnDohList,
     // "direct-nameserver": cnDohList,
-    "nameserver-policy": {
-      "geosite:private,cn": cnDohList,
-      // "geosite:gfw": gfwDohList,
-    },
+    // "nameserver-policy": {
+    //   "geosite:private,cn": cnDohList,
+    //   "geosite:gfw": gfwDohList,
+    // },
     // fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
-    fallback: gfwDohList,
-    "fallback-filter": {
-      geoip: true,
-      "geoip-code": "cn",
-      geosite: ["gfw"],
-      ipcidr: ["240.0.0.0/4"],
-    },
+    // fallback: gfwDohList,
+    // "fallback-filter": {
+    //   geoip: true,
+    //   "geoip-code": "cn",
+    //   geosite: ["gfw"],
+    //   ipcidr: ["240.0.0.0/4"],
+    // },
   };
 
   //////////////////////////////////////////////////////////////
