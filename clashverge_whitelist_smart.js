@@ -79,12 +79,14 @@ function overwriteDns(config) {
     ],
     "default-nameserver": cnDotList,
     nameserver: cnDohList,
+    "proxy-server-nameserver": cnDotList,
     // "direct-nameserver": cnDohList,
     "nameserver-policy": {
       "geosite:private,cn": cnDohList,
       // "geosite:gfw": gfwDohList,
     },
-    fallback: gfwDohList,
+    fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
+    // fallback: gfwDohList,
     "fallback-filter": {
       geoip: true,
       "geoip-code": "cn",
