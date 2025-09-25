@@ -85,8 +85,8 @@ function overwriteDns(config) {
       "geosite:private,cn": cnDohList,
       // "geosite:gfw": gfwDohList,
     },
-    fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
-    // fallback: gfwDohList,
+    // fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
+    fallback: gfwDohList,
     "fallback-filter": {
       geoip: true,
       "geoip-code": "cn",
