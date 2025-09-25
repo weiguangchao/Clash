@@ -82,7 +82,7 @@ function overwriteDns(config) {
       "https://233.5.5.5/dns-query",
     ],
     nameserver: cnDohList,
-    "proxy-server-nameserver": cnDotList,
+    "proxy-server-nameserver": cnDohList,
     // "direct-nameserver": cnDohList,
     "nameserver-policy": {
       "geosite:private,cn": cnDohList,
