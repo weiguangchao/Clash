@@ -152,6 +152,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
+    telegram_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
+      path: "./sukkaw_ruleset/telegram_ip.txt",
+    },
   };
 
   // 顺序
@@ -167,6 +175,7 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
+    "RULE-SET,telegram_ip,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
