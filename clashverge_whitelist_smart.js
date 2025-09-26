@@ -167,7 +167,8 @@ function overwriteRules(config) {
   // 2.IP规则
   const rules = [
     //////// 禁用YouTube Quic ///////////////////////////////
-    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
+    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
+    "AND,(DST-PORT,443),(NETWORK,UDP)),REJECT",
     // "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
@@ -191,7 +192,7 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     //////// 禁用YouTube Quic ///////////////////////////////
-    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
+    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
