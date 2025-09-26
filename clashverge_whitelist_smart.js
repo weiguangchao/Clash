@@ -168,7 +168,7 @@ function overwriteRules(config) {
   const rules = [
     //////// 禁用YouTube Quic ///////////////////////////////
     // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
-    "AND,(DST-PORT,443),(NETWORK,UDP)),REJECT",
+    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
     // "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
