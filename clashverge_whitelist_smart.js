@@ -187,6 +187,7 @@ function overwriteRules(config) {
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
+    //////////////////////////////////////////////////////////////
     "RULE-SET,telegram_ip,🚀 节点选择",
     //////// 强制对域名进行DNS解析, 获取到IP之后在进行匹配 ////////
     //////////////////////////////////////////////////////////////
