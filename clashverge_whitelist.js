@@ -77,12 +77,18 @@ function overwriteDns(config) {
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
-    "default-nameserver": cnDotList,
+    "default-nameserver": [
+      "tls://1.12.12.12:853",
+      "https://233.5.5.5/dns-query",
+    ],
     nameserver: cnDohList,
     // "proxy-server-nameserver": cnDohList,
+    // "direct-nameserver": cnDohList,
     // "nameserver-policy": {
     //   "geosite:private,cn": cnDohList,
+    //   "geosite:gfw": gfwDohList,
     // },
+    // fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
     // fallback: gfwDohList,
     // "fallback-filter": {
     //   geoip: true,
@@ -146,37 +152,49 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
+    telegram_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
+      path: "./sukkaw_ruleset/telegram_ip.txt",
+    },
   };
 
   // 顺序
   // 1.域名规则
   // 2.IP规则
   const rules = [
-    "GEOSITE,category-ads,REJECT",
-    "GEOSITE,category-ads-all,REJECT",
-    // "RULE-SET,reject_non_ip,REJECT",
-    // "RULE-SET,reject_domainset,REJECT",
-    // "RULE-SET,reject_extra_domainset,REJECT",
-    // "RULE-SET,reject_non_ip_drop,REJECT-DROP",
-    // "RULE-SET,reject_non_ip_no_drop,REJECT",
+    //////// 禁用YouTube Quic ///////////////////////////////
+    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
+    // "GEOSITE,category-ads-all,REJECT",
+    "RULE-SET,reject_non_ip,REJECT",
+    "RULE-SET,reject_domainset,REJECT",
+    "RULE-SET,reject_extra_domainset,REJECT",
+    "RULE-SET,reject_non_ip_drop,REJECT-DROP",
+    "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,github,🚀 节点选择",
+    "GEOSITE,notion,🚀 节点选择",
+    "GEOSITE,figma,🚀 节点选择",
+    "GEOSITE,cursor,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
-    "GEOSITE,figma,DIRECT",
-    "GEOSITE,notion,DIRECT",
     "GEOSITE,apple,DIRECT",
-    "GEOSITE,cursor,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
-    ////////强制对域名进行DNS解析, 获取到IP之后在进行匹配////////
+    "RULE-SET,telegram_ip,🚀 节点选择",
+    //////// 强制对域名进行DNS解析, 获取到IP之后在进行匹配 ////////
     //////////////////////////////////////////////////////////////
-    // "RULE-SET,reject_ip,REJECT",
+    "RULE-SET,reject_ip,REJECT",
+    //////// 禁用YouTube Quic ///////////////////////////////
+    "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
     //////////////////////////////////////////////////////////////
-    // "GEOIP,private,DIRECT",
-    // "GEOIP,cn,DIRECT",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
@@ -234,22 +252,18 @@ function overwriteProxyGroups(config) {
     },
   ];
 
-  const commonProxyGroupsConfig = {
-    type: "url-test",
-    url: "http://www.gstatic.com/generate_204",
-    "expected-status": 204,
-    lazy: true,
-    interval: 300,
-    timeout: 5000,
-    "max-failed-times": 5,
-    hidden: true,
-  };
-
   const autoProxyGroups = autoProxyGroupRegexs
     .map((item) => ({
       name: item.name,
       //////////////////////////////////////////////////////////
-      ...commonProxyGroupsConfig,
+      type: "url-test",
+      url: "http://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      lazy: true,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      hidden: true,
       //////////////////////////////////////////////////////////
       proxies: allAutoProxyNames.filter((e) => item.regex.test(e)),
     }))
@@ -313,7 +327,6 @@ function overwriteOthers(config) {
   config.sniffer = sniffer;
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
-  // config.ipv6 = false;
   config["allow-lan"] = false;
   // 长链接
   // config["disable-keep-alive"] = true;
@@ -322,8 +335,6 @@ function overwriteOthers(config) {
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
-    // smart-collector-size: data collection file size, the default is 100 (MB)
-    "smart-collector-size": 100,
   };
 
   //////////////////////////////////////////////////////////////
@@ -339,13 +350,4 @@ function overwriteOthers(config) {
     asn: "https://fastly.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
   };
   //////////////////////////////////////////////////////////////
-
-  // LightGBM Model
-  // enable model auto update, the default is false
-  config["lgbm-auto-update"] = true;
-  // model auto update interval, the default is 72 (hours)
-  config["lgbm-update-interval"] = 72;
-  // model update url
-  config["lgbm-url"] =
-    "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin";
 }
