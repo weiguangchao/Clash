@@ -60,7 +60,7 @@ function overwriteDns(config) {
     "use-system-hosts": true,
     "use-hosts": true,
     "fake-ip-filter": [
-      "geosite:private",
+      // "geosite:private",
       // 本地主机/设备
       "+.lan",
       "+.local",
