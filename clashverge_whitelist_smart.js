@@ -183,6 +183,7 @@ function overwriteRules(config) {
     "GEOSITE,notion,🚀 节点选择",
     "GEOSITE,figma,🚀 节点选择",
     "GEOSITE,cursor,🚀 节点选择",
+    "GEOSITE,telegram,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,private,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
