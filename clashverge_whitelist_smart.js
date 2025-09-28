@@ -209,6 +209,7 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
+    //////////////////////////////////////////////////////////////
     "RULE-SET,Custom_Port_Direct,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
