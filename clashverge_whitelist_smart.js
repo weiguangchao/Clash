@@ -283,6 +283,16 @@ function overwriteProxyGroups(config) {
 
   const proxyGroups = [
     {
+      name: "📺 哔哩哔哩",
+      type: "select",
+      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
+    },
+    {
+      name: "🔀 非标端口",
+      type: "select",
+      proxies: ["🚀 节点选择", "DIRECT"],
+    },
+    {
       name: "🚀 节点选择",
       type: "select",
       proxies: ["🤖 自动选择", "🌴 手动选择"],
@@ -296,16 +306,6 @@ function overwriteProxyGroups(config) {
       name: "🌴 手动选择",
       type: "select",
       proxies: allProxyNames,
-    },
-    {
-      name: "📺 哔哩哔哩",
-      type: "select",
-      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
-    },
-    {
-      name: "🔀 非标端口",
-      type: "select",
-      proxies: ["🚀 节点选择", "DIRECT"],
     },
   ];
 
