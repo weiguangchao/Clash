@@ -257,19 +257,23 @@ function overwriteProxyGroups(config) {
     },
   ];
 
-  const autoProxyGroups = autoProxyGroupRegexs.map((item) => ({
-    name: item.name,
-    //////////////////////////////////////////////////////////
-    type: "smart",
-    // "policy-priority": "",
-    uselightgbm: true,
-    collectdata: false,
-    strategy: "sticky-sessions",
-    "sample-rate": 1,
-    hidden: true,
-    //////////////////////////////////////////////////////////
-    proxies: allAutoProxyNames.filter((e) => item.regex.test(e)),
-  }));
+  const autoProxyGroups = autoProxyGroupRegexs.map((item) => {
+    const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
+
+    return {
+      name: item.name,
+      //////////////////////////////////////////////////////////
+      type: "smart",
+      // "policy-priority": "",
+      uselightgbm: true,
+      collectdata: false,
+      strategy: "sticky-sessions",
+      "sample-rate": 1,
+      hidden: true,
+      //////////////////////////////////////////////////////////
+      proxies: proxies.length ? proxies : ["DIRECT"],
+    };
+  });
 
   const proxyGroups = [
     {
