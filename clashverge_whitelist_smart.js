@@ -185,7 +185,6 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,bilibili,📺 哔哩哔哩",
-    "GEOSITE,spotify,🚀 节点选择",
     "GEOSITE,openai,🚀 节点选择",
     "GEOSITE,bing,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
