@@ -294,7 +294,7 @@ function overwriteProxyGroups(config) {
     {
       name: "📺 哔哩哔哩",
       type: "select",
-      proxies: ["DIRECT", ...allProxyNames],
+      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
     },
   ];
 
