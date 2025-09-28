@@ -160,6 +160,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
       path: "./sukkaw_ruleset/telegram_ip.txt",
     },
+    Custom_Port_Direct: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 43200,
+      url: "https://fastly.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules/rule/Custom_Port_Direct.yaml",
+      path: "./Custom_OpenClash_Rules/Custom_Port_Direct.yaml",
+    },
   };
 
   // 顺序
@@ -201,6 +209,7 @@ function overwriteRules(config) {
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
+    "RULE-SET,Custom_Port_Direct,🔀 非标端口",
     //////////////////////////////////////////////////////////////
     // "DST-PORT,22,DIRECT",
     // "DST-PORT,27017,DIRECT",
@@ -296,6 +305,11 @@ function overwriteProxyGroups(config) {
       name: "📺 哔哩哔哩",
       type: "select",
       proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
+    },
+    {
+      name: "🔀 非标端口",
+      type: "select",
+      proxies: ["🚀 节点选择", "DIRECT"],
     },
   ];
 
