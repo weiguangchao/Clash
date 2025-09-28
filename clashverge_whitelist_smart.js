@@ -210,11 +210,6 @@ function overwriteRules(config) {
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
     "RULE-SET,Custom_Port_Direct,🔀 非标端口",
-    //////////////////////////////////////////////////////////////
-    // "DST-PORT,22,DIRECT",
-    // "DST-PORT,27017,DIRECT",
-    // "DST-PORT,3306,DIRECT",
-    //////////////////////////////////////////////////////////////
     "MATCH,🚀 节点选择",
   ];
 
