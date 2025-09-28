@@ -176,6 +176,7 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
+    "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,openai,🚀 节点选择",
     "GEOSITE,bing,🚀 节点选择",
     "GEOSITE,github,🚀 节点选择",
@@ -287,6 +288,11 @@ function overwriteProxyGroups(config) {
       name: "🌴 手动选择",
       type: "select",
       proxies: allProxyNames,
+    },
+    {
+      name: "📺 哔哩哔哩",
+      type: "select",
+      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
     },
   ];
 
