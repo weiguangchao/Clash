@@ -338,13 +338,10 @@ function overwriteOthers(config) {
       },
     },
     "skip-domain": [
-      // 米家设备
-      "Mijia Cloud",
-      // 向日葵
-      "+.oray.com",
-      "+.sunlogin.net",
-      // Apple
-      "+.apple.com",
+      "Mijia Cloud", // 米家设备
+      "+.oray.com", // 向日葵
+      "+.sunlogin.net", // 向日葵
+      "+.apple.com", // Apple
     ],
   };
 
