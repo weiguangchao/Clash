@@ -313,6 +313,7 @@ function overwriteOthers(config) {
       "+.sunlogin.net", // 向日葵
       "+.apple.com", // Apple
     ],
+    "force-domain": ["+.v2ex.com"],
   };
 
   //////////////////////////////////////////////////////////////
