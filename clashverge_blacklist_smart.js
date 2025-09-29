@@ -62,8 +62,8 @@ function overwriteDns(config) {
     "fake-ip-filter": [
       // "geosite:private",
       // 本地主机/设备
-      "+.lan",
-      "+.local",
+      "*.lan",
+      ".local",
       "*.arpa",
       "time.*.com",
       "ntp.*.com",
