@@ -64,6 +64,9 @@ function overwriteDns(config) {
       // 本地主机/设备
       "+.lan",
       "+.local",
+      "*.arpa",
+      "time.*.com",
+      "ntp.*.com",
       // Windows网络出现小地球图标
       "+.msftconnecttest.com",
       "+.msftncsi.com",
