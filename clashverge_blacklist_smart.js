@@ -249,7 +249,7 @@ function overwriteProxyGroups(config) {
         name: item.name,
         //////////////////////////////////////////////////////////
         type: "smart",
-        "policy-priority": "",
+        // "policy-priority": "",
         uselightgbm: true,
         collectdata: false,
         strategy: "sticky-sessions",
