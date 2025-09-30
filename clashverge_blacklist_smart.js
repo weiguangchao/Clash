@@ -316,7 +316,9 @@ function overwriteOthers(config) {
   };
 
   //////////////////////////////////////////////////////////////
+  config.mode = "rule";
   config.ipv6 = true;
+  config["log-level"] = "info";
   config.sniffer = sniffer;
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
@@ -334,6 +336,7 @@ function overwriteOthers(config) {
 
   //////////////////////////////////////////////////////////////
   config["geodata-mode"] = true;
+  config["geodata-loader"] = "standard";
   config["geodata-auto-update"] = true;
   config["geodata-update-interval"] = 24;
   config["geox-url"] = {
