@@ -105,24 +105,96 @@ function overwriteDns(config) {
 }
 
 function overwriteRules(config) {
+  const ruleProviders = {
+    reject_non_ip_no_drop: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt",
+      path: "./sukkaw_ruleset/reject_non_ip_no_drop.txt",
+    },
+    reject_non_ip_drop: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt",
+      path: "./sukkaw_ruleset/reject_non_ip_drop.txt",
+    },
+    reject_non_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt",
+      path: "./sukkaw_ruleset/reject_non_ip.txt",
+    },
+    reject_domainset: {
+      type: "http",
+      behavior: "domain",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/domainset/reject.txt",
+      path: "./sukkaw_ruleset/reject_domainset.txt",
+    },
+    reject_extra_domainset: {
+      type: "http",
+      behavior: "domain",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
+      path: "./sukkaw_ruleset/reject_domainset_extra.txt",
+    },
+    reject_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
+      path: "./sukkaw_ruleset/reject_ip.txt",
+    },
+    telegram_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
+      path: "./sukkaw_ruleset/telegram_ip.txt",
+    },
+  };
+
   // 顺序
   // 1.域名规则
   // 2.IP规则
   const rules = [
     //////// 禁用YouTube Quic ///////////////////////////////
-    "GEOSITE,category-ads-all,REJECT",
+    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
+    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
+    // "GEOSITE,category-ads-all,REJECT",
+    "RULE-SET,reject_non_ip,REJECT",
+    "RULE-SET,reject_domainset,REJECT",
+    "RULE-SET,reject_extra_domainset,REJECT",
+    "RULE-SET,reject_non_ip_drop,REJECT-DROP",
+    "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,rust,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
+    "RULE-SET,telegram_ip,🚀 节点选择",
     //////// 强制对域名进行DNS解析, 获取到IP之后在进行匹配 ////////
-    "GEOIP,telegram,🚀 节点选择",
+    //////////////////////////////////////////////////////////////
+    "RULE-SET,reject_ip,REJECT",
+    //////// 禁用YouTube Quic ///////////////////////////////
+    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
+    //////////////////////////////////////////////////////////////
     "MATCH,DIRECT",
   ];
 
   //////////////////////////////////////////////////////////////
   config.rules = rules;
+  config["rule-providers"] = ruleProviders;
 }
 
 function overwriteProxyGroups(config) {
