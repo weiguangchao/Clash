@@ -62,8 +62,11 @@ function overwriteDns(config) {
     "fake-ip-filter": [
       // "geosite:private",
       // 本地主机/设备
-      "+.lan",
-      "+.local",
+      "*.lan",
+      ".local",
+      "*.arpa",
+      "time.*.com",
+      "ntp.*.com",
       // Windows网络出现小地球图标
       "+.msftconnecttest.com",
       "+.msftncsi.com",
@@ -98,7 +101,6 @@ function overwriteDns(config) {
     // },
   };
 
-  //////////////////////////////////////////////////////////////
   config.dns = dns;
 }
 
@@ -263,34 +265,32 @@ function overwriteProxyGroups(config) {
     },
   ];
 
-  const autoProxyGroups = autoProxyGroupRegexs.map((item) => {
-    const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
+  const autoProxyGroups = autoProxyGroupRegexs
+    .map((item) => {
+      const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
 
-    return {
-      name: item.name,
-      //////////////////////////////////////////////////////////
-      type: "smart",
-      // "policy-priority": "",
-      uselightgbm: true,
-      collectdata: false,
-      strategy: "sticky-sessions",
-      "sample-rate": 1,
-      hidden: true,
-      //////////////////////////////////////////////////////////
-      proxies: proxies.length ? proxies : ["DIRECT"],
-    };
-  });
+      return {
+        name: item.name,
+        //////////////////////////////////////////////////////////
+        type: "smart",
+        "policy-priority": "",
+        uselightgbm: true,
+        collectdata: false,
+        strategy: "sticky-sessions",
+        "sample-rate": 1,
+        hidden: true,
+        //////////////////////////////////////////////////////////
+        proxies,
+      };
+    })
+    .filter((item) => item.proxies.length);
+  const autoProxyGroupNames = autoProxyGroups.map((item) => item.name);
 
   const proxyGroups = [
     {
       name: "📺 哔哩哔哩",
       type: "select",
-      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
-    },
-    {
-      name: "🔀 非标端口",
-      type: "select",
-      proxies: ["🚀 节点选择", "DIRECT"],
+      proxies: ["DIRECT", ...autoProxyGroupNames],
     },
     {
       name: "🚀 节点选择",
@@ -300,7 +300,7 @@ function overwriteProxyGroups(config) {
     {
       name: "🤖 自动选择",
       type: "select",
-      proxies: autoProxyGroups.map((item) => item.name),
+      proxies: autoProxyGroupNames,
     },
     {
       name: "🌴 手动选择",
@@ -341,9 +341,12 @@ function overwriteOthers(config) {
     ],
   };
 
-  //////////////////////////////////////////////////////////////
-  config.ipv6 = true;
   config.sniffer = sniffer;
+
+  //////////////////////////////////////////////////////////////
+  config.mode = "rule";
+  config.ipv6 = true;
+  config["log-level"] = "info";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
   config["allow-lan"] = false;
@@ -360,6 +363,7 @@ function overwriteOthers(config) {
 
   //////////////////////////////////////////////////////////////
   config["geodata-mode"] = true;
+  config["geodata-loader"] = "standard";
   config["geodata-auto-update"] = true;
   config["geodata-update-interval"] = 24;
   config["geox-url"] = {
