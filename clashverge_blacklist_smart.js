@@ -241,29 +241,32 @@ function overwriteProxyGroups(config) {
     },
   ];
 
-  const autoProxyGroups = autoProxyGroupRegexs.map((item) => {
-    const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
+  const autoProxyGroups = autoProxyGroupRegexs
+    .map((item) => {
+      const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
 
-    return {
-      name: item.name,
-      //////////////////////////////////////////////////////////
-      type: "smart",
-      "policy-priority": "",
-      uselightgbm: true,
-      collectdata: false,
-      strategy: "sticky-sessions",
-      "sample-rate": 1,
-      hidden: true,
-      //////////////////////////////////////////////////////////
-      proxies: proxies.length ? proxies : ["DIRECT"],
-    };
-  });
+      return {
+        name: item.name,
+        //////////////////////////////////////////////////////////
+        type: "smart",
+        "policy-priority": "",
+        uselightgbm: true,
+        collectdata: false,
+        strategy: "sticky-sessions",
+        "sample-rate": 1,
+        hidden: true,
+        //////////////////////////////////////////////////////////
+        proxies,
+      };
+    })
+    .filter((item) => item.proxies.length);
+  const autoProxyGroupNames = autoProxyGroups.map((item) => item.name);
 
   const proxyGroups = [
     {
       name: "📺 哔哩哔哩",
       type: "select",
-      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
+      proxies: ["DIRECT", ...autoProxyGroupNames],
     },
     {
       name: "🚀 节点选择",
@@ -273,7 +276,7 @@ function overwriteProxyGroups(config) {
     {
       name: "🤖 自动选择",
       type: "select",
-      proxies: autoProxyGroups.map((item) => item.name),
+      proxies: autoProxyGroupNames,
     },
     {
       name: "🌴 手动选择",
