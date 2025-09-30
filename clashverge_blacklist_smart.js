@@ -316,6 +316,7 @@ function overwriteOthers(config) {
   };
 
   config.sniffer = sniffer;
+
   //////////////////////////////////////////////////////////////
   config.mode = "rule";
   config.ipv6 = true;
