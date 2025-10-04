@@ -311,9 +311,9 @@ function overwriteOthers(config) {
     },
     "skip-domain": [
       "Mijia Cloud", // 米家设备
-      "+.oray.com", // 向日葵
-      "+.sunlogin.net", // 向日葵
-      "+.apple.com", // Apple
+      // "+.oray.com", // 向日葵
+      // "+.sunlogin.net", // 向日葵
+      // "+.apple.com", // Apple
     ],
   };
 
