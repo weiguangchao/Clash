@@ -74,7 +74,7 @@ function overwriteDns(config) {
       "stun.parsec.app",
       // "+.parsec.app",
       // 小米路由器
-      "+.miwifi.com",
+      // "+.miwifi.com",
       // QQ快速登录检测失败
       "localhost.ptlogin2.qq.com",
       "localhost.sec.qq.com",
