@@ -71,7 +71,8 @@ function overwriteDns(config) {
       "+.msftconnecttest.com",
       "+.msftncsi.com",
       // parsec
-      "+.parsec.app",
+      "stun.parsec.app",
+      // "+.parsec.app",
       // 小米路由器
       "+.miwifi.com",
       // QQ快速登录检测失败
