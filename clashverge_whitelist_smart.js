@@ -224,7 +224,7 @@ function overwriteRules(config) {
 function overwriteProxyGroups(config) {
   const maxMultiple = 2;
 
-  const allProxyNames = config["proxies"].map((e) => e.name);
+  const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
   // 所有代理 过滤掉高倍率节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
     // 倍率筛选
@@ -273,7 +273,7 @@ function overwriteProxyGroups(config) {
         name: item.name,
         //////////////////////////////////////////////////////////
         type: "smart",
-        "policy-priority": "",
+        // "policy-priority": "",
         uselightgbm: true,
         collectdata: false,
         strategy: "sticky-sessions",
@@ -335,9 +335,9 @@ function overwriteOthers(config) {
     },
     "skip-domain": [
       "Mijia Cloud", // 米家设备
-      "+.oray.com", // 向日葵
-      "+.sunlogin.net", // 向日葵
-      "+.apple.com", // Apple
+      // "+.oray.com", // 向日葵
+      // "+.sunlogin.net", // 向日葵
+      // "+.apple.com", // Apple
     ],
   };
 
