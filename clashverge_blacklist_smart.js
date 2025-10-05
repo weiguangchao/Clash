@@ -200,7 +200,7 @@ function overwriteRules(config) {
 function overwriteProxyGroups(config) {
   const maxMultiple = 2;
 
-  const allProxyNames = config["proxies"].map((e) => e.name);
+  const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
   // 所有代理 过滤掉高倍率节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
     // 倍率筛选
