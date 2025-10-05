@@ -185,7 +185,6 @@ function overwriteRules(config) {
     "GEOSITE,telegram,🚀 节点选择",
     "GEOSITE,gfw,🚀 节点选择",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
-    "DOMAIN-SUFFIX,services.googleapis.cn,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,category-games,DIRECT",
