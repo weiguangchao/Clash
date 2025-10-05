@@ -203,14 +203,18 @@ function overwriteProxyGroups(config) {
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
   // 所有代理 过滤掉高倍率节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
-    // 倍率筛选
-    const regex = /【(\d+x)】/;
-    const match = e.match(regex);
-    if (match) {
-      const multiple = parseInt(match[1]);
-      return multiple <= maxMultiple;
+    try {
+      // 倍率筛选
+      const regex = /【(\d+x)】/;
+      const match = e.match(regex);
+      if (match) {
+        const multiple = parseInt(match[1]);
+        return multiple <= maxMultiple;
+      }
+      return true;
+    } catch (error) {
+      return false;
     }
-    return true;
   });
 
   // 自动选择代理组
