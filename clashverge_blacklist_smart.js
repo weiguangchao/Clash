@@ -80,6 +80,7 @@ function overwriteDns(config) {
       "localhost.sec.qq.com",
       // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
+      "geosite:private", // 兜底
     ],
     "default-nameserver": [
       "tls://1.12.12.12:853",
