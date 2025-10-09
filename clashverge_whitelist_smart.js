@@ -255,7 +255,7 @@ function overwriteProxyGroups(config) {
         proxies,
       };
     })
-    .filter((item) => item.proxies.length);
+    .filter((item) => item.proxies?.length > 0);
   const autoProxyGroupNames = autoProxyGroups.map((item) => item.name);
 
   const proxyGroups = [
