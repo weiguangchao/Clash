@@ -198,7 +198,6 @@ function overwriteRules(config) {
 
 function overwriteProxyGroups(config) {
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
-  // 所有代理 过滤掉高倍率节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
     const match = e.match(/ddns/);
     return !match;
@@ -210,7 +209,6 @@ function overwriteProxyGroups(config) {
     // return true;
   });
 
-  // 自动选择代理组
   const autoProxyGroupRegexs = [
     {
       name: "🇭🇰 HK-自动选择",
@@ -284,7 +282,6 @@ function overwriteProxyGroups(config) {
 
   proxyGroups.push(...autoProxyGroups);
 
-  //////////////////////////////////////////////////////////////
   config["proxy-groups"] = proxyGroups;
 }
 
