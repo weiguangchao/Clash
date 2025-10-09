@@ -168,6 +168,8 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
@@ -183,8 +185,6 @@ function overwriteRules(config) {
     "GEOSITE,tld-!cn,🚀 节点选择",
     "GEOSITE,geolocation-!cn,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     "GEOIP,cn,DIRECT",
