@@ -196,23 +196,17 @@ function overwriteRules(config) {
 }
 
 function overwriteProxyGroups(config) {
-  const maxMultiple = 2;
-
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
   // 所有代理 过滤掉高倍率节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
-    try {
-      // 倍率筛选
-      const regex = /【(\d+x)】/;
-      const match = e.match(regex);
-      if (match) {
-        const multiple = parseInt(match[1]);
-        return multiple <= maxMultiple;
-      }
-      return true;
-    } catch (error) {
-      return false;
-    }
+    const match = e.match(/ddns/);
+    return !match;
+    // const match = e.match(/【(\d+x)】/);
+    // if (match) {
+    //   const multiple = parseInt(match[1]);
+    //   return multiple <= maxMultiple;
+    // }
+    // return true;
   });
 
   // 自动选择代理组
