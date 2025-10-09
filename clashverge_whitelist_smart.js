@@ -155,61 +155,38 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
       path: "./sukkaw_ruleset/reject_ip.txt",
     },
-    telegram_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/ip/telegram.txt",
-      path: "./sukkaw_ruleset/telegram_ip.txt",
-    },
   };
 
   // 顺序
   // 1.域名规则
   // 2.IP规则
   const rules = [
-    //////// 禁用YouTube Quic ///////////////////////////////
-    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT",
     "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
-    // "GEOSITE,category-ads-all,REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
     "RULE-SET,reject_extra_domainset,REJECT",
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
-    "GEOSITE,bilibili,📺 哔哩哔哩",
-    "GEOSITE,openai,🚀 节点选择",
-    "GEOSITE,bing,🚀 节点选择",
-    "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,telegram,🚀 节点选择",
-    "GEOSITE,gfw,🚀 节点选择",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
-    "GEOSITE,google-cn,DIRECT",
-    "GEOSITE,category-games,DIRECT",
-    "GEOSITE,category-game-platforms-download,DIRECT",
-    "GEOSITE,notion,DIRECT",
-    "GEOSITE,figma,DIRECT",
-    "GEOSITE,cursor,DIRECT",
     "GEOSITE,private,DIRECT",
-    "GEOSITE,category-public-tracker,DIRECT",
+    "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
+    "GEOSITE,steam,DIRECT",
+    "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
+    "GEOSITE,category-games,DIRECT",
+    "GEOSITE,bilibili,📺 哔哩哔哩",
+    "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
+    "GEOSITE,tld-!cn,🚀 节点选择",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
+    "GEOIP,private,DIRECT,no-resolve",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    "RULE-SET,telegram_ip,🚀 节点选择",
-    //////// 强制对域名进行DNS解析, 获取到IP之后在进行匹配 ////////
-    //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
-    //////// 禁用YouTube Quic ///////////////////////////////
-    // "AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,cn))),REJECT",
-    //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
-    //////////////////////////////////////////////////////////////
     "MATCH,🚀 节点选择",
   ];
 
