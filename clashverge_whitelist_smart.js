@@ -181,9 +181,9 @@ function overwriteRules(config) {
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,tld-!cn,🚀 节点选择",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
-    "GEOIP,private,DIRECT,no-resolve",
     "GEOSITE,cn,DIRECT",
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
     //////////////////////////////////////////////////////////////
     "RULE-SET,reject_ip,REJECT",
     "GEOIP,cn,DIRECT",
