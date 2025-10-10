@@ -169,6 +169,7 @@ function overwriteRules(config) {
     "RULE-SET,reject_non_ip_no_drop,REJECT",
     //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,twitter,🚀 节点选择,no-resolve",
     "GEOIP,cloudflare,🚀 节点选择,no-resolve",
     "GEOIP,google,🚀 节点选择,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
