@@ -82,11 +82,11 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
       "geosite:private", // 兜底
     ],
-    "default-nameserver": [
-      "tls://1.12.12.12:853",
-      "https://233.5.5.5/dns-query",
-    ],
-    nameserver: cnDohList,
+    // "default-nameserver": [
+    //   "tls://1.12.12.12:853",
+    //   "https://233.5.5.5/dns-query",
+    // ],
+    nameserver: [en0Dns],
     // "proxy-server-nameserver": cnDohList,
     // "direct-nameserver": cnDohList,
     // "nameserver-policy": {
