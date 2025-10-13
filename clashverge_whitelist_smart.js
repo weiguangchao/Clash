@@ -325,9 +325,9 @@ function overwriteOthers(config) {
   config["unified-delay"] = true;
   config["allow-lan"] = false;
   // 长链接
-  config["disable-keep-alive"] = true;
-  // config["keep-alive-interval"] = 15;
-  // config["keep-alive-idle"] = 300;
+  // config["disable-keep-alive"] = true;
+  config["keep-alive-interval"] = 15;
+  config["keep-alive-idle"] = 300;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
