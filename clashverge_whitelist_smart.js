@@ -162,7 +162,7 @@ function overwriteRules(config) {
   // 1.域名规则
   // 2.IP规则
   const rules = [
-    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
+    // "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT", // quic
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
     "RULE-SET,reject_extra_domainset,REJECT",
