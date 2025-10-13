@@ -335,8 +335,7 @@ function overwriteOthers(config) {
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
   config["allow-lan"] = false;
-  // 长链接
-  // config["disable-keep-alive"] = true;
+  config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 15;
   config.profile = {
