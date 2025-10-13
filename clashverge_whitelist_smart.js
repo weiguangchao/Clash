@@ -202,15 +202,26 @@ function overwriteRules(config) {
 
 function overwriteProxyGroups(config) {
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
+  // 筛选节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
-    const match = e.match(/ddns/);
-    return !match;
-    // const match = e.match(/【(\d+x)】/);
-    // if (match) {
-    //   const multiple = parseInt(match[1]);
-    //   return multiple <= maxMultiple;
-    // }
-    // return true;
+    let match = e.match(/ddns/);
+    if (match) {
+      return false;
+    }
+
+    //////////////////////////////////////////////////////////
+    match = e.match(/【(\d+x)】/);
+    if (!match) {
+      return true;
+    }
+
+    try {
+      const multiple = parseInt(match[1]);
+      return multiple <= 2;
+    } catch (error) {
+      console.log(error);
+    }
+    return false;
   });
 
   const autoProxyGroupRegexs = [
