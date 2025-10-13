@@ -63,7 +63,7 @@ function overwriteDns(config) {
       // "geosite:private",
       // 本地主机/设备
       "*.lan",
-      ".local",
+      "*.local",
       "*.arpa",
       "time.*.com",
       "ntp.*.com",
