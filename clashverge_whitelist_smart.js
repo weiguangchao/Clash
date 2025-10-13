@@ -338,7 +338,7 @@ function overwriteOthers(config) {
   // 长链接
   // config["disable-keep-alive"] = true;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 300;
+  config["keep-alive-idle"] = 15;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
