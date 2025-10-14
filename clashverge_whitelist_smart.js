@@ -178,7 +178,6 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,geolocation-!cn,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
-    //////////////////////////////////////////////////////////////
     "GEOIP,cn,DIRECT",
     "MATCH,🚀 节点选择",
   ];
