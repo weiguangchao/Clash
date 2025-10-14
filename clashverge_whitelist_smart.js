@@ -191,7 +191,7 @@ function overwriteRules(config) {
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
     // "RULE-SET,reject_ip,REJECT",
-    "GEOIP,cn,DIRECT,no-resolve",
+    "GEOIP,cn,DIRECT",
     "MATCH,🚀 节点选择",
   ];
 
