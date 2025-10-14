@@ -60,26 +60,25 @@ function overwriteDns(config) {
     "use-system-hosts": true,
     "use-hosts": true,
     "fake-ip-filter": [
-      // "geosite:private",
       // 本地主机/设备
-      "*.lan",
-      "*.local",
-      "*.arpa",
-      "time.*.com",
-      "ntp.*.com",
+      // "*.lan",
+      // "*.local",
+      // "*.arpa",
+      // "time.*.com",
+      // "ntp.*.com",
       // Windows网络出现小地球图标
-      "+.msftconnecttest.com",
-      "+.msftncsi.com",
+      // "+.msftconnecttest.com",
+      // "+.msftncsi.com",
       // parsec
       "stun.parsec.app",
       // "+.parsec.app",
       // 小米路由器
-      "+.miwifi.com",
+      // "+.miwifi.com",
       // QQ快速登录检测失败
-      "localhost.ptlogin2.qq.com",
-      "localhost.sec.qq.com",
+      // "localhost.ptlogin2.qq.com",
+      // "localhost.sec.qq.com",
       // 微信快速登录检测失败
-      "localhost.work.weixin.qq.com",
+      // "localhost.work.weixin.qq.com",
       "geosite:connectivity-check",
       "geosite:private",
     ],
