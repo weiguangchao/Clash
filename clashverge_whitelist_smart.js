@@ -162,17 +162,7 @@ function overwriteRules(config) {
   // 1.域名规则
   // 2.IP规则
   const rules = [
-    // "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT", // quic
-    // "RULE-SET,reject_non_ip,REJECT",
-    // "RULE-SET,reject_domainset,REJECT",
-    // "RULE-SET,reject_extra_domainset,REJECT",
-    // "RULE-SET,reject_non_ip_drop,REJECT-DROP",
-    // "RULE-SET,reject_non_ip_no_drop,REJECT",
-    //////////////////////////////////////////////////////////////
     "GEOIP,private,DIRECT,no-resolve",
-    // "GEOIP,twitter,🚀 节点选择,no-resolve",
-    // "GEOIP,cloudflare,🚀 节点选择,no-resolve",
-    // "GEOIP,google,🚀 节点选择,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
@@ -190,7 +180,6 @@ function overwriteRules(config) {
     "GEOSITE,geolocation-!cn,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    // "RULE-SET,reject_ip,REJECT",
     "GEOIP,cn,DIRECT",
     "MATCH,🚀 节点选择",
   ];
