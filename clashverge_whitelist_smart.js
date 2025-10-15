@@ -69,8 +69,6 @@ function overwriteDns(config) {
       // Windows网络出现小地球图标
       // "+.msftconnecttest.com",
       // "+.msftncsi.com",
-      // parsec
-      "stun.parsec.app",
       // "+.parsec.app",
       // 小米路由器
       // "+.miwifi.com",
