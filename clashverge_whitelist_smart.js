@@ -79,6 +79,9 @@ function overwriteDns(config) {
       // "localhost.sec.qq.com",
       // 微信快速登录检测失败
       // "localhost.work.weixin.qq.com",
+      // Google
+      "lens.l.google.com",
+      "stun.l.google.com",
       // STUN
       "stun.*.*",
       "stun.*.*.*",
