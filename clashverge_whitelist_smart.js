@@ -79,6 +79,14 @@ function overwriteDns(config) {
       // "localhost.sec.qq.com",
       // 微信快速登录检测失败
       // "localhost.work.weixin.qq.com",
+      // STUN
+      "stun.*.*",
+      "stun.*.*.*",
+      "+.stun.*.*",
+      "+.stun.*.*.*",
+      "+.stun.*.*.*.*",
+      "+.stun.*.*.*.*.*",
+      "+.stun.*.*.*.*.*.*",
       "geosite:connectivity-check",
       "geosite:private",
     ],
