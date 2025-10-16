@@ -176,7 +176,6 @@ function overwriteRules(config) {
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
-    "GEOSITE,geolocation-!cn,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOIP,private,DIRECT,no-resolve",
