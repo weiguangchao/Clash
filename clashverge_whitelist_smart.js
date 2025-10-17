@@ -54,7 +54,7 @@ function overwriteDns(config) {
     ipv6: true,
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
-    "cache-algorithm": "lru",
+    "cache-algorithm": "arc",
     "prefer-h3": true,
     "respect-rules": false,
     "use-system-hosts": true,
