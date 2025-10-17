@@ -177,7 +177,6 @@ function overwriteRules(config) {
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,cn,DIRECT",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,cn,DIRECT,no-resolve",
     "MATCH,🚀 节点选择",
@@ -192,24 +191,24 @@ function overwriteProxyGroups(config) {
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
   // 筛选节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
-    let match = e.match(/ddns/);
-    if (match) {
-      return false;
-    }
-
-    //////////////////////////////////////////////////////////
-    match = e.match(/【(\d+x)】/);
-    if (!match) {
-      return true;
-    }
-
     try {
+      let match = e.match(/ddns/);
+      if (match) {
+        return false;
+      }
+
+      //////////////////////////////////////////////////////////
+      match = e.match(/【(\d+x)】/);
+      if (!match) {
+        return true;
+      }
+
       const multiple = parseInt(match[1]);
       return multiple <= 2;
     } catch (error) {
       console.log(error);
+      return false;
     }
-    return false;
   });
 
   const autoProxyGroupRegexs = [
