@@ -77,54 +77,18 @@ function overwriteDns(config) {
 
 function overwriteRules(config) {
   const ruleProviders = {
-    reject_non_ip_no_drop: {
+    "AWAvenue-Ads-Rule-Clash-Classical": {
       type: "http",
       behavior: "classical",
       format: "text",
       interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt",
-      path: "./sukkaw_ruleset/reject_non_ip_no_drop.txt",
-    },
-    reject_non_ip_drop: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt",
-      path: "./sukkaw_ruleset/reject_non_ip_drop.txt",
-    },
-    reject_non_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt",
-      path: "./sukkaw_ruleset/reject_non_ip.txt",
-    },
-    reject_domainset: {
-      type: "http",
-      behavior: "domain",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/domainset/reject.txt",
-      path: "./sukkaw_ruleset/reject_domainset.txt",
-    },
-    reject_extra_domainset: {
-      type: "http",
-      behavior: "domain",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
-      path: "./sukkaw_ruleset/reject_domainset_extra.txt",
+      url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
+      path: "./Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
     },
   };
 
   const rules = [
-    "RULE-SET,reject_non_ip,REJECT",
-    "RULE-SET,reject_domainset,REJECT",
-    "RULE-SET,reject_extra_domainset,REJECT",
-    "RULE-SET,reject_non_ip_drop,REJECT-DROP",
-    "RULE-SET,reject_non_ip_no_drop,REJECT",
+    "RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,REJECT",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
