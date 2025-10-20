@@ -79,7 +79,7 @@ function overwriteRules(config) {
   const ruleProviders = {
     "AWAvenue-Ads-Rule-Clash-Classical": {
       type: "http",
-      behavior: "domain",
+      behavior: "classical",
       format: "yaml",
       interval: 43200,
       url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
