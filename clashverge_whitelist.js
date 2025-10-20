@@ -17,7 +17,7 @@ function main(config, profileName) {
 }
 
 function overwriteDns(config) {
-  const en0Dns = "dhcp://en0"; // 使用运营商DNS有些域名解析不了
+  const en0Dns = "dhcp://en0";
 
   const cnDnsList = [
     "233.5.5.5", // 阿里DNS
@@ -32,9 +32,9 @@ function overwriteDns(config) {
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
     "https://doh.360.cn/dns-query", // 360DNS
-    // "https://doh.18bit.cn/dns-query", // 18Bit DNS
-    // "https://dns.yuguan.xyz/dns-query", // 易安云DNS
-    // "https://doh-pure.onedns.net/dns-query", // OneDNS
+    "https://doh.18bit.cn/dns-query", // 18Bit DNS
+    "https://dns.yuguan.xyz/dns-query", // 易安云DNS
+    "https://doh-pure.onedns.net/dns-query", // OneDNS
   ];
 
   const gfwDnsList = [
@@ -54,53 +54,22 @@ function overwriteDns(config) {
     ipv6: true,
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
-    "cache-algorithm": "arc",
-    "prefer-h3": true,
-    "respect-rules": false,
-    "use-system-hosts": true,
-    "use-hosts": true,
     "fake-ip-filter": [
-      // "geosite:private",
-      // 本地主机/设备
-      "*.lan",
-      ".local",
-      "*.arpa",
-      "time.*.com",
-      "ntp.*.com",
-      // Windows网络出现小地球图标
-      "+.msftconnecttest.com",
-      "+.msftncsi.com",
-      // parsec
-      "stun.parsec.app",
-      // "+.parsec.app",
-      // 小米路由器
-      "+.miwifi.com",
-      // QQ快速登录检测失败
-      "localhost.ptlogin2.qq.com",
-      "localhost.sec.qq.com",
-      // 微信快速登录检测失败
-      "localhost.work.weixin.qq.com",
-      "geosite:private", // 兜底
+      // Google
+      "lens.l.google.com",
+      "stun.l.google.com",
+      // STUN
+      "stun.*.*",
+      "stun.*.*.*",
+      "+.stun.*.*",
+      "+.stun.*.*.*",
+      "+.stun.*.*.*.*",
+      "+.stun.*.*.*.*.*",
+      "+.stun.*.*.*.*.*.*",
+      "geosite:connectivity-check",
+      "geosite:private",
     ],
-    // "default-nameserver": [
-    //   "tls://1.12.12.12:853",
-    //   "https://233.5.5.5/dns-query",
-    // ],
     nameserver: [en0Dns],
-    // "proxy-server-nameserver": cnDohList,
-    // "direct-nameserver": cnDohList,
-    // "nameserver-policy": {
-    //   "geosite:private,cn": cnDohList,
-    //   "geosite:gfw": gfwDohList,
-    // },
-    // fallback: gfwDohList.map((u) => `${u}#🚀 节点选择`),
-    // fallback: gfwDohList,
-    // "fallback-filter": {
-    //   geoip: true,
-    //   "geoip-code": "cn",
-    //   geosite: ["gfw"],
-    //   ipcidr: ["240.0.0.0/4"],
-    // },
   };
 
   config.dns = dns;
@@ -148,50 +117,28 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
       path: "./sukkaw_ruleset/reject_domainset_extra.txt",
     },
-    reject_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
-      path: "./sukkaw_ruleset/reject_ip.txt",
-    },
   };
 
-  // 顺序
-  // 1.域名规则
-  // 2.IP规则
   const rules = [
-    "AND,((DST-PORT,443),(NETWORK,UDP)),REJECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
     "RULE-SET,reject_extra_domainset,REJECT",
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
-    //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,twitter,🚀 节点选择,no-resolve",
-    "GEOIP,cloudflare,🚀 节点选择,no-resolve",
-    "GEOIP,google,🚀 节点选择,no-resolve",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
-    "GEOSITE,steam,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,category-games,DIRECT",
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
-    "GEOSITE,tld-!cn,🚀 节点选择",
-    "GEOSITE,geolocation-!cn,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
-    //////////////////////////////////////////////////////////////
-    "RULE-SET,reject_ip,REJECT",
-    "GEOIP,cn,DIRECT",
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,cn,DIRECT,no-resolve",
     "MATCH,🚀 节点选择",
   ];
 
@@ -202,15 +149,26 @@ function overwriteRules(config) {
 
 function overwriteProxyGroups(config) {
   const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
+  // 筛选节点
   const allAutoProxyNames = allProxyNames.filter((e) => {
-    const match = e.match(/ddns/);
-    return !match;
-    // const match = e.match(/【(\d+x)】/);
-    // if (match) {
-    //   const multiple = parseInt(match[1]);
-    //   return multiple <= maxMultiple;
-    // }
-    // return true;
+    try {
+      let match = e.match(/ddns/);
+      if (match) {
+        return false;
+      }
+
+      //////////////////////////////////////////////////////////
+      match = e.match(/【(\d+x)】/);
+      if (!match) {
+        return true;
+      }
+
+      const multiple = parseInt(match[1]);
+      return multiple <= 2;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
   });
 
   const autoProxyGroupRegexs = [
@@ -310,9 +268,8 @@ function overwriteOthers(config) {
     },
     "skip-domain": [
       "Mijia Cloud", // 米家设备
-      // "+.oray.com", // 向日葵
-      // "+.sunlogin.net", // 向日葵
-      // "+.apple.com", // Apple
+      "+.oray.com", // 向日葵
+      "+.sunlogin.net", // 向日葵
     ],
   };
 
@@ -325,8 +282,7 @@ function overwriteOthers(config) {
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
   config["allow-lan"] = false;
-  // 长链接
-  // config["disable-keep-alive"] = true;
+  config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
   config.profile = {
