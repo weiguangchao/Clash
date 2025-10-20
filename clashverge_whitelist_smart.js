@@ -5,8 +5,8 @@ function main(config, profileName) {
 
   try {
     overwriteDns(config);
-    overwriteRules(config);
     overwriteProxyGroups(config);
+    overwriteRules(config);
     overwriteOthers(config);
     console.log("配置文件重写完成！");
     return config;
