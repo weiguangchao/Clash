@@ -76,19 +76,7 @@ function overwriteDns(config) {
 }
 
 function overwriteRules(config) {
-  const ruleProviders = {
-    "AWAvenue-Ads-Rule-Clash-Classical": {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 43200,
-      url: "https://fastly.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
-      path: "./Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
-    },
-  };
-
   const rules = [
-    "RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,REJECT",
     "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
@@ -108,7 +96,6 @@ function overwriteRules(config) {
 
   //////////////////////////////////////////////////////////////
   config.rules = rules;
-  config["rule-providers"] = ruleProviders;
 }
 
 function overwriteProxyGroups(config) {
