@@ -31,10 +31,10 @@ function overwriteDns(config) {
   const cnDohList = [
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
-    "https://doh.360.cn/dns-query", // 360DNS
-    "https://doh.18bit.cn/dns-query", // 18Bit DNS
-    "https://dns.yuguan.xyz/dns-query", // 易安云DNS
-    "https://doh-pure.onedns.net/dns-query", // OneDNS
+    // "https://doh.360.cn/dns-query", // 360DNS
+    // "https://doh.18bit.cn/dns-query", // 18Bit DNS
+    // "https://dns.yuguan.xyz/dns-query", // 易安云DNS
+    // "https://doh-pure.onedns.net/dns-query", // OneDNS
   ];
 
   const gfwDnsList = [
@@ -69,7 +69,8 @@ function overwriteDns(config) {
       "geosite:connectivity-check",
       "geosite:private",
     ],
-    nameserver: [en0Dns],
+    "default-nameserver": cnDotList,
+    nameserver: cnDohList,
   };
 
   config.dns = dns;
