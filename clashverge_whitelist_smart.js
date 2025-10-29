@@ -160,10 +160,11 @@ function overwriteProxyGroups(config) {
         type: "smart",
         // "policy-priority": "",
         uselightgbm: true,
-        collectdata: false,
+        collectdata: true,
         strategy: "sticky-sessions",
         "sample-rate": 1,
         hidden: true,
+        "prefer-asn": true,
         //////////////////////////////////////////////////////////
         proxies,
       };
