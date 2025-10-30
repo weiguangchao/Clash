@@ -263,7 +263,7 @@ function overwriteOthers(config) {
   // enable model auto update, the default is false
   config["lgbm-auto-update"] = true;
   // model auto update interval, the default is 72 (hours)
-  config["lgbm-update-interval"] = 72;
+  config["lgbm-update-interval"] = 24;
   // model update url
   config["lgbm-url"] =
     "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin";
