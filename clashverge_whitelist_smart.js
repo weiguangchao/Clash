@@ -165,7 +165,7 @@ function overwriteProxyGroups(config) {
         strategy: "sticky-sessions",
         "sample-rate": 1,
         hidden: true,
-        "prefer-asn": true,
+        "prefer-asn": false,
         //////////////////////////////////////////////////////////
         proxies,
       };
