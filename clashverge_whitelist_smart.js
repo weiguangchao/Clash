@@ -119,6 +119,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
       path: "./sukkaw_ruleset/reject_domainset_extra.txt",
     },
+    CustomPort: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 43200,
+      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/CustomPort.yaml",
+      path: "./Clash/CustomPort.yaml",
+    },
   };
 
   const rules = [
@@ -141,6 +149,7 @@ function overwriteRules(config) {
     "GEOSITE,cn,DIRECT",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,cn,DIRECT,no-resolve",
+    "RULE-SET,CustomPort,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
 
@@ -242,6 +251,11 @@ function overwriteProxyGroups(config) {
       name: "🌴 手动选择",
       type: "select",
       proxies: allProxyNames,
+    },
+    {
+      name: "🔀 非标端口",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
     },
   ];
 
