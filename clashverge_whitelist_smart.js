@@ -149,9 +149,9 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,DIRECT",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,cn,DIRECT,no-resolve",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
+    "GEOIP,telegram,🚀 节点选择",
     "RULE-SET,CustomPort,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
