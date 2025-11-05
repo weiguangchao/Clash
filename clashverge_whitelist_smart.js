@@ -236,11 +236,6 @@ function overwriteProxyGroups(config) {
 
   const proxyGroups = [
     {
-      name: "📺 哔哩哔哩",
-      type: "select",
-      proxies: ["DIRECT", ...autoProxyGroupNames],
-    },
-    {
       name: "🚀 节点选择",
       type: "select",
       proxies: ["🤖 自动选择", "🌴 手动选择"],
@@ -249,6 +244,11 @@ function overwriteProxyGroups(config) {
       name: "🤖 自动选择",
       type: "select",
       proxies: autoProxyGroupNames,
+    },
+    {
+      name: "📺 哔哩哔哩",
+      type: "select",
+      proxies: ["DIRECT", ...autoProxyGroupNames],
     },
     {
       name: "🔀 非标端口",
