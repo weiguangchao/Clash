@@ -221,12 +221,12 @@ function overwriteProxyGroups(config) {
         name: item.name,
         //////////////////////////////////////////////////////////
         type: "url-test",
-        url: "http://www.gstatic.com/generate_204",
-        "expected-status": 204,
-        lazy: true,
-        interval: 300,
-        timeout: 5000,
-        "max-failed-times": 5,
+        // url: "http://www.gstatic.com/generate_204",
+        // "expected-status": 204,
+        // lazy: true,
+        // interval: 300,
+        // timeout: 5000,
+        // "max-failed-times": 5,
         hidden: true,
         //////////////////////////////////////////////////////////
         proxies,
