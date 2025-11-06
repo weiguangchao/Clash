@@ -22,8 +22,8 @@ function overwriteDns(config) {
   const cnDnsList = [
     "233.5.5.5", // 阿里DNS
     "119.29.29.29", // 腾讯DNS
-    "180.76.76.76", // 百度DNS
-    "114.114.114.114", // 114DNS
+    // "180.76.76.76", // 百度DNS
+    // "114.114.114.114", // 114DNS
   ];
 
   const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
@@ -69,8 +69,9 @@ function overwriteDns(config) {
       "geosite:connectivity-check",
       "geosite:private",
     ],
-    "default-nameserver": cnDotList,
-    nameserver: cnDohList,
+    // "default-nameserver": cnDotList,
+    // nameserver: [en0Dns],
+    nameserver: cnDnsList,
   };
 
   config.dns = dns;
@@ -118,9 +119,18 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
       path: "./sukkaw_ruleset/reject_domainset_extra.txt",
     },
+    CustomPort: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 43200,
+      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/CustomPort.yaml",
+      path: "./Clash/CustomPort.yaml",
+    },
   };
 
   const rules = [
+    "DOMAIN-SUFFIX,juejin.cn,DIRECT",
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
     "RULE-SET,reject_extra_domainset,REJECT",
@@ -130,6 +140,7 @@ function overwriteRules(config) {
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
+    "GEOSITE,jsdelivr,DIRECT",
     "GEOSITE,apple,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
@@ -137,9 +148,12 @@ function overwriteRules(config) {
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,DIRECT",
+    "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,cn,DIRECT,no-resolve",
+    "GEOIP,private,DIRECT",
+    "GEOIP,cn,DIRECT",
+    "GEOIP,telegram,🚀 节点选择",
+    "RULE-SET,CustomPort,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
 
@@ -223,11 +237,6 @@ function overwriteProxyGroups(config) {
 
   const proxyGroups = [
     {
-      name: "📺 哔哩哔哩",
-      type: "select",
-      proxies: ["DIRECT", ...autoProxyGroupNames],
-    },
-    {
       name: "🚀 节点选择",
       type: "select",
       proxies: ["🤖 自动选择", "🌴 手动选择"],
@@ -236,6 +245,16 @@ function overwriteProxyGroups(config) {
       name: "🤖 自动选择",
       type: "select",
       proxies: autoProxyGroupNames,
+    },
+    {
+      name: "📺 哔哩哔哩",
+      type: "select",
+      proxies: ["DIRECT", ...autoProxyGroupNames],
+    },
+    {
+      name: "🔀 非标端口",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
     },
     {
       name: "🌴 手动选择",
@@ -299,12 +318,12 @@ function overwriteOthers(config) {
   config["geodata-auto-update"] = true;
   config["geodata-update-interval"] = 24;
   config["geox-url"] = {
-    mmdb: "https://fastly.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/lite/Country.mmdb",
+    mmdb: "https://testingcf.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/lite/Country.mmdb",
     geoip:
-      "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat",
+      "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat",
     geosite:
-      "https://fastly.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
-    asn: "https://fastly.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
+      "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
+    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
   };
   //////////////////////////////////////////////////////////////
 
@@ -312,8 +331,8 @@ function overwriteOthers(config) {
   // enable model auto update, the default is false
   config["lgbm-auto-update"] = true;
   // model auto update interval, the default is 72 (hours)
-  config["lgbm-update-interval"] = 72;
+  config["lgbm-update-interval"] = 24;
   // model update url
   config["lgbm-url"] =
-    "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model.bin";
+    "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model-large.bin";
 }
