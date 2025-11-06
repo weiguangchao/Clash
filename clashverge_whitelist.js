@@ -308,8 +308,6 @@ function overwriteOthers(config) {
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
-    // smart-collector-size: data collection file size, the default is 100 (MB)
-    "smart-collector-size": 100,
   };
 
   //////////////////////////////////////////////////////////////
@@ -325,14 +323,4 @@ function overwriteOthers(config) {
       "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
     asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
   };
-  //////////////////////////////////////////////////////////////
-
-  // LightGBM Model
-  // enable model auto update, the default is false
-  config["lgbm-auto-update"] = true;
-  // model auto update interval, the default is 72 (hours)
-  config["lgbm-update-interval"] = 24;
-  // model update url
-  config["lgbm-url"] =
-    "https://github.com/vernesong/mihomo/releases/download/LightGBM-Model/Model-large.bin";
 }
