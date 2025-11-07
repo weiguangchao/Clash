@@ -224,7 +224,7 @@ function overwriteProxyGroups(config) {
         type: "smart",
         // "policy-priority": "",
         uselightgbm: true,
-        collectdata: true,
+        collectdata: false,
         strategy: "sticky-sessions",
         "sample-rate": 1,
         hidden: true,
@@ -310,7 +310,7 @@ function overwriteOthers(config) {
     "store-selected": true,
     "store-fake-ip": true,
     // smart-collector-size: data collection file size, the default is 100 (MB)
-    // "smart-collector-size": 100,
+    "smart-collector-size": 100,
   };
 
   //////////////////////////////////////////////////////////////
