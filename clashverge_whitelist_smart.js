@@ -305,12 +305,12 @@ function overwriteOthers(config) {
   config["allow-lan"] = false;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 600;
+  config["keep-alive-idle"] = 300;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
     // smart-collector-size: data collection file size, the default is 100 (MB)
-    "smart-collector-size": 100,
+    // "smart-collector-size": 100,
   };
 
   //////////////////////////////////////////////////////////////
