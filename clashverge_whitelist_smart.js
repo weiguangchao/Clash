@@ -69,9 +69,10 @@ function overwriteDns(config) {
       "geosite:connectivity-check",
       "geosite:private",
     ],
-    // "default-nameserver": cnDotList,
+    "default-nameserver": cnDotList,
     // nameserver: [en0Dns],
-    nameserver: cnDnsList,
+    // nameserver: cnDnsList,
+    nameserver: cnDohList,
   };
 
   config.dns = dns;
