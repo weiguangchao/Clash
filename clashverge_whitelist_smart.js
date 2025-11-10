@@ -148,7 +148,7 @@ function overwriteRules(config) {
     "GEOSITE,category-games,DIRECT",
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,microsoft,DIRECT",
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     "GEOIP,private,DIRECT",
@@ -251,6 +251,11 @@ function overwriteProxyGroups(config) {
       name: "📺 哔哩哔哩",
       type: "select",
       proxies: ["DIRECT", ...autoProxyGroupNames],
+    },
+    {
+      name: "Ⓜ️ 微软服务",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
     },
     {
       name: "🔀 非标端口",
