@@ -1,4 +1,4 @@
-function main(config, profileName) {
+function main(config) {
   if (!config) {
     return config;
   }
@@ -148,7 +148,7 @@ function overwriteRules(config) {
     "GEOSITE,category-games,DIRECT",
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,microsoft,DIRECT",
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     "GEOIP,private,DIRECT",
@@ -253,6 +253,11 @@ function overwriteProxyGroups(config) {
       proxies: ["DIRECT", ...autoProxyGroupNames],
     },
     {
+      name: "Ⓜ️ 微软服务",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
+    },
+    {
       name: "🔀 非标端口",
       type: "select",
       proxies: ["DIRECT", "🚀 节点选择"],
@@ -305,7 +310,7 @@ function overwriteOthers(config) {
   config["allow-lan"] = false;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 600;
+  config["keep-alive-idle"] = 300;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
