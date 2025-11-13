@@ -132,14 +132,14 @@ function overwriteRules(config) {
 
   const rules = [
     "DOMAIN-SUFFIX,juejin.cn,DIRECT",
+    "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
+    "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     //////////////////////////////////////////////////////////
     "RULE-SET,reject_non_ip,REJECT",
     "RULE-SET,reject_domainset,REJECT",
     "RULE-SET,reject_extra_domainset,REJECT",
     "RULE-SET,reject_non_ip_drop,REJECT-DROP",
     "RULE-SET,reject_non_ip_no_drop,REJECT",
-    "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
-    "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
