@@ -142,7 +142,6 @@ function overwriteRules(config) {
     "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
-    "GEOSITE,jsdelivr,DIRECT",
     "GEOSITE,apple,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
