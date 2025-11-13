@@ -144,7 +144,6 @@ function overwriteRules(config) {
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,jsdelivr,DIRECT",
     "GEOSITE,apple,DIRECT",
-    "GEOSITE,cursor,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
     "GEOSITE,category-speedtest,DIRECT",
     "GEOSITE,category-games,DIRECT",
