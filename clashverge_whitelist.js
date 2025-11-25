@@ -75,8 +75,8 @@ function overwriteDns(config) {
     "use-system-hosts": false,
     "default-nameserver": cnDotList,
     nameserver: gfwDohList,
-    "proxy-server-nameserver": cnDotList,
-    "direct-nameserver": cnDotList,
+    "proxy-server-nameserver": cnDohList,
+    "direct-nameserver": cnDohList,
   };
 
   config.dns = dns;
