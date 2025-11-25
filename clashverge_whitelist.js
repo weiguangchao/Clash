@@ -68,6 +68,7 @@ function overwriteDns(config) {
       "+.stun.*.*.*.*.*.*",
       "geosite:connectivity-check",
       "geosite:private",
+      "geosite:category-ntp",
     ],
     "respect-rules": true,
     "use-hosts": false,
