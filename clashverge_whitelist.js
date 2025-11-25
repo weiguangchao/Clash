@@ -120,6 +120,14 @@ function overwriteRules(config) {
       url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
       path: "./sukkaw_ruleset/reject_domainset_extra.txt",
     },
+    reject_ip: {
+      type: "http",
+      behavior: "classical",
+      format: "text",
+      interval: 43200,
+      url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
+      path: "./sukkaw_ruleset/reject_ip.txt",
+    },
     CustomPort: {
       type: "http",
       behavior: "classical",
@@ -151,6 +159,8 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
+    //////////////////////////////////////////////////////////////
+    "RULE-SET,reject_ip,REJECT",
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
     "GEOIP,telegram,🚀 节点选择",
