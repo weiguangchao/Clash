@@ -164,10 +164,10 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     //////////////////////////////////////////////////////////////
-    "RULE-SET,reject_ip,REJECT",
     "GEOIP,private,DIRECT",
     "GEOIP,cn,DIRECT",
     "GEOIP,telegram,🚀 节点选择",
+    "RULE-SET,reject_ip,REJECT",
     "RULE-SET,CustomPort,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
