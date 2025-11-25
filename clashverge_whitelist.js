@@ -45,8 +45,8 @@ function overwriteDns(config) {
   const gfwDohList = [
     "https://dns.google/dns-query", // Google DNS
     "https://cloudflare-dns.com/dns-query", // Cloudflare DNS
-    "https://dns.quad9.net/dns-query", // Quad9 DNS
-    "https://doh.opendns.com/dns-query", // OpenDNS
+    // "https://dns.quad9.net/dns-query", // Quad9 DNS
+    // "https://doh.opendns.com/dns-query", // OpenDNS
   ];
 
   const dns = {
@@ -69,10 +69,13 @@ function overwriteDns(config) {
       "geosite:connectivity-check",
       "geosite:private",
     ],
+    "respect-rules": true,
+    "use-hosts": false,
+    "use-system-hosts": false,
     "default-nameserver": cnDotList,
-    // nameserver: [en0Dns],
-    // nameserver: cnDnsList,
-    nameserver: cnDohList,
+    nameserver: gfwDohList,
+    "proxy-server-nameserver": cnDotList,
+    "direct-nameserver": cnDotList,
   };
 
   config.dns = dns;
