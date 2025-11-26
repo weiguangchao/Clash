@@ -28,6 +28,11 @@ function overwriteDns(config) {
 
   const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
 
+  const cnDohIpList = [
+    "https://223.5.5.5/dns-query",
+    "https://223.6.6.6/dns-query",
+  ];
+
   const cnDohList = [
     "https://dns.alidns.com/dns-query", // 阿里云公共DNS
     "https://doh.pub/dns-query", // 腾讯DNSPod
@@ -73,7 +78,7 @@ function overwriteDns(config) {
     "respect-rules": true,
     "use-hosts": false,
     "use-system-hosts": false,
-    "default-nameserver": cnDotList,
+    "default-nameserver": cnDohIpList,
     nameserver: gfwDohList,
     "proxy-server-nameserver": cnDohList,
     "direct-nameserver": cnDohList,
