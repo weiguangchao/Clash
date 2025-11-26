@@ -78,6 +78,7 @@ function overwriteDns(config) {
     "respect-rules": true,
     "use-hosts": false,
     "use-system-hosts": false,
+    "prefer-h3": true,
     "default-nameserver": cnDohIpList,
     nameserver: gfwDohList,
     "proxy-server-nameserver": cnDohList,
