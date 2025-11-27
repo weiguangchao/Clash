@@ -75,13 +75,10 @@ function overwriteDns(config) {
       "geosite:private",
       "geosite:category-ntp",
     ],
-    "respect-rules": true,
     "use-hosts": false,
     "use-system-hosts": false,
     "default-nameserver": cnDohIpList,
-    nameserver: gfwDohList,
-    "proxy-server-nameserver": cnDohList,
-    "direct-nameserver": cnDohList,
+    nameserver: cnDohList,
   };
 
   config.dns = dns;
