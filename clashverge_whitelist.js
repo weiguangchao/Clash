@@ -77,7 +77,6 @@ function overwriteDns(config) {
     ],
     "use-hosts": false,
     "use-system-hosts": false,
-    "default-nameserver": cnDohIpList,
     nameserver: cnDnsList,
   };
 
