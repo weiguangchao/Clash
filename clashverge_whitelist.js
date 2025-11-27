@@ -23,7 +23,7 @@ function overwriteDns(config) {
     "233.5.5.5", // 阿里DNS
     "119.29.29.29", // 腾讯DNS
     // "180.76.76.76", // 百度DNS
-    // "114.114.114.114", // 114DNS
+    "114.114.114.114", // 114DNS
   ];
 
   const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
@@ -78,7 +78,7 @@ function overwriteDns(config) {
     "use-hosts": false,
     "use-system-hosts": false,
     "default-nameserver": cnDohIpList,
-    nameserver: cnDohList,
+    nameserver: cnDnsList,
   };
 
   config.dns = dns;
