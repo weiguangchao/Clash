@@ -56,7 +56,7 @@ function overwriteDns(config) {
 
   const dns = {
     enable: true,
-    ipv6: true,
+    ipv6: false,
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
@@ -319,7 +319,7 @@ function overwriteOthers(config) {
 
   //////////////////////////////////////////////////////////////
   config.mode = "rule";
-  config.ipv6 = true;
+  config.ipv6 = false;
   config["log-level"] = "info";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
