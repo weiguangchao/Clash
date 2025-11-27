@@ -1,4 +1,6 @@
 payload:
+  - AND,((DST-PORT,443),(NETWORK,UDP)),REJECT
+  - AND,((DST-PORT,80),(NETWORK,UDP)),REJECT
   - DOMAIN-SUFFIX,edge.mountaintoys.cn
   - DOMAIN-SUFFIX,mcdn.bilivideo.com
   - DOMAIN-SUFFIX,mcdn.bilivideo.cn
