@@ -1,3 +1,2 @@
 payload:
   - AND,((DST-PORT,443),(NETWORK,UDP))
-  - AND,((DST-PORT,80),(NETWORK,UDP))
