@@ -227,7 +227,7 @@ function overwriteOthers(config) {
   };
 
   //////////////////////////////////////////////////////////////
-  // config["geodata-mode"] = true;
+  config["geodata-mode"] = true;
   // config["geodata-loader"] = "memconservative";
   config["geodata-auto-update"] = true;
   config["geodata-update-interval"] = 24;
