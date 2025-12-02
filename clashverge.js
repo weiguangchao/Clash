@@ -227,17 +227,17 @@ function overwriteOthers(config) {
   };
 
   //////////////////////////////////////////////////////////////
-  config["geodata-mode"] = true;
-  config["geodata-loader"] = "memconservative";
+  // config["geodata-mode"] = true;
+  // config["geodata-loader"] = "memconservative";
   config["geodata-auto-update"] = true;
   config["geodata-update-interval"] = 24;
   config["geox-url"] = {
-    mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb",
-    asn: "https://cdn.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
+    mmdb: "https://testingcf.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/lite/Country.mmdb",
     geoip:
-      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat",
+      "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat",
     geosite:
-      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
+      "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
+    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
   };
   //////////////////////////////////////////////////////////////
 }
