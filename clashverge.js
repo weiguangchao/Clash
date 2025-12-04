@@ -81,8 +81,8 @@ function overwriteSniffer(config) {
 function overwriteGeodata(config) {
   config["geodata-mode"] = true;
   config["geodata-loader"] = "memconservative";
-  config["geodata-auto-update"] = true;
-  config["geodata-update-interval"] = 24;
+  config["geo-auto-update"] = true;
+  config["geo-update-interval"] = 24;
   config["geox-url"] = {
     mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb",
     geoip:
