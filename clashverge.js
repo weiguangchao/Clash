@@ -7,7 +7,7 @@ function main(config) {
     overwriteDns(config); // dns
     overwriteSniffer(config); // sniffer
     overwriteGeodata(config); // geodata
-    overwriteOthers(config);
+    overwriteOthers(config); // others
     console.log("配置文件重写完成！");
     return config;
   } catch (error) {
