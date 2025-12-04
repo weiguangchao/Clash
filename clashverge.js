@@ -82,7 +82,7 @@ function overwriteGeodata(config) {
   config["geodata-mode"] = true;
   config["geodata-loader"] = "memconservative";
   config["geo-auto-update"] = true;
-  config["geo-update-interval"] = 24;
+  config["geo-update-interval"] = 24 * 7; // 7 days
   config["geox-url"] = {
     mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb",
     geoip:
