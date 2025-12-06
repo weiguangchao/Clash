@@ -4,10 +4,12 @@ function main(config) {
   }
 
   try {
-    overwriteDns(config);
-    overwriteProxyGroups(config);
-    overwriteRules(config);
-    overwriteOthers(config);
+    overwriteProxyGroups(config); // proxy groups
+    overwriteRules(config); // rules
+    overwriteDns(config); // dns
+    overwriteSniffer(config); // sniffer
+    overwriteGeodata(config); // geodata
+    overwriteOthers(config); // others
     console.log("配置文件重写完成！");
     return config;
   } catch (error) {
@@ -16,256 +18,29 @@ function main(config) {
   }
 }
 
-function overwriteDns(config) {
-  const en0Dns = "dhcp://en0";
-
-  const cnDnsList = [
-    "233.5.5.5", // 阿里DNS
-    "119.29.29.29", // 腾讯DNS
-    // "180.76.76.76", // 百度DNS
-    "114.114.114.114", // 114DNS
-  ];
-
-  const cnDotList = ["tls://1.12.12.12:853", "tls://223.5.5.5:853"];
-
-  const cnDohIpList = [
-    "https://223.5.5.5/dns-query",
-    "https://223.6.6.6/dns-query",
-  ];
-
-  const cnDohList = [
-    "https://dns.alidns.com/dns-query", // 阿里云公共DNS
-    "https://doh.pub/dns-query", // 腾讯DNSPod
-    // "https://doh.360.cn/dns-query", // 360DNS
-    // "https://doh.18bit.cn/dns-query", // 18Bit DNS
-    // "https://dns.yuguan.xyz/dns-query", // 易安云DNS
-    // "https://doh-pure.onedns.net/dns-query", // OneDNS
-  ];
-
-  const gfwDnsList = [
-    "8.8.8.8", // Google DNS
-    "1.1.1.1", // Cloudflare DNS
-  ];
-
-  const gfwDohList = [
-    "https://dns.google/dns-query", // Google DNS
-    "https://cloudflare-dns.com/dns-query", // Cloudflare DNS
-    // "https://dns.quad9.net/dns-query", // Quad9 DNS
-    // "https://doh.opendns.com/dns-query", // OpenDNS
-  ];
-
-  const dns = {
-    enable: true,
-    ipv6: false,
-    "enhanced-mode": "fake-ip",
-    "fake-ip-filter-mode": "blacklist",
-    "fake-ip-filter": [
-      // Google
-      "lens.l.google.com",
-      "stun.l.google.com",
-      // STUN
-      "stun.*.*",
-      "stun.*.*.*",
-      "+.stun.*.*",
-      "+.stun.*.*.*",
-      "+.stun.*.*.*.*",
-      "+.stun.*.*.*.*.*",
-      "+.stun.*.*.*.*.*.*",
-      "geosite:connectivity-check",
-      "geosite:private",
-      "geosite:category-ntp",
-    ],
-    "use-hosts": false,
-    "use-system-hosts": false,
-    nameserver: cnDnsList,
-  };
-
-  config.dns = dns;
-}
-
-function overwriteRules(config) {
-  const ruleProviders = {
-    reject_non_ip_no_drop: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject-no-drop.txt",
-      path: "./sukkaw_ruleset/reject_non_ip_no_drop.txt",
-    },
-    reject_non_ip_drop: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject-drop.txt",
-      path: "./sukkaw_ruleset/reject_non_ip_drop.txt",
-    },
-    reject_non_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/non_ip/reject.txt",
-      path: "./sukkaw_ruleset/reject_non_ip.txt",
-    },
-    reject_domainset: {
-      type: "http",
-      behavior: "domain",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/domainset/reject.txt",
-      path: "./sukkaw_ruleset/reject_domainset.txt",
-    },
-    reject_extra_domainset: {
-      type: "http",
-      behavior: "domain",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/domainset/reject_extra.txt",
-      path: "./sukkaw_ruleset/reject_domainset_extra.txt",
-    },
-    reject_ip: {
-      type: "http",
-      behavior: "classical",
-      format: "text",
-      interval: 43200,
-      url: "https://ruleset.skk.moe/Clash/ip/reject.txt",
-      path: "./sukkaw_ruleset/reject_ip.txt",
-    },
-    CustomPort: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 43200,
-      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/CustomPort.yaml",
-      path: "./Clash/CustomPort.yaml",
-    },
-  };
-
-  const rules = [
-    "DOMAIN-SUFFIX,juejin.cn,DIRECT",
-    "DOMAIN-SUFFIX,xn--ngstr-lra8j.com,DIRECT",
-    "DOMAIN-SUFFIX,googleapis.cn,DIRECT",
-    //////////////////////////////////////////////////////////
-    "RULE-SET,reject_non_ip,REJECT",
-    "RULE-SET,reject_domainset,REJECT",
-    "RULE-SET,reject_extra_domainset,REJECT",
-    "RULE-SET,reject_non_ip_drop,REJECT-DROP",
-    "RULE-SET,reject_non_ip_no_drop,REJECT",
-    "GEOSITE,private,DIRECT",
-    "GEOSITE,google-cn,DIRECT",
-    "GEOSITE,apple,DIRECT",
-    "GEOSITE,category-public-tracker,DIRECT",
-    "GEOSITE,category-speedtest,DIRECT",
-    "GEOSITE,category-games,DIRECT",
-    "GEOSITE,bilibili,📺 哔哩哔哩",
-    "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,microsoft,Ⓜ️ 微软服务",
-    "GEOSITE,gfw,🚀 节点选择",
-    "GEOSITE,cn,DIRECT",
-    //////////////////////////////////////////////////////////////
-    "GEOIP,private,DIRECT",
-    "GEOIP,cn,DIRECT",
-    "GEOIP,telegram,🚀 节点选择",
-    "RULE-SET,reject_ip,REJECT",
-    "RULE-SET,CustomPort,🔀 非标端口",
-    "MATCH,🚀 节点选择",
-  ];
-
-  //////////////////////////////////////////////////////////////
-  config.rules = rules;
-  config["rule-providers"] = ruleProviders;
-}
-
 function overwriteProxyGroups(config) {
-  const allProxyNames = config["proxies"].map((e) => e.name).filter((e) => e);
-  // 筛选节点
-  const allAutoProxyNames = allProxyNames.filter((e) => {
-    try {
-      let match = e.match(/ddns/);
-      if (match) {
-        return false;
-      }
-
-      //////////////////////////////////////////////////////////
-      match = e.match(/【(\d+x)】/);
-      if (!match) {
-        return true;
-      }
-
-      const multiple = parseInt(match[1]);
-      return multiple <= 2;
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
-  });
-
-  const autoProxyGroupRegexs = [
-    {
-      name: "🇭🇰 HK-自动选择",
-      regex: /港|hk|hongkong|hong kong|🇭🇰/i,
-    },
-    {
-      name: "🇹🇼 TW-自动选择",
-      regex: /台|tw|taiwan|🇨🇳|🇹🇼/i,
-    },
-    {
-      name: "🇸🇬 SG-自动选择",
-      regex: /新加坡|狮城|sg|singapore|🇸🇬/i,
-    },
-    {
-      name: "🇰🇷 KR-自动选择",
-      regex: /韩|kr|korea|🇰🇷/i,
-    },
-    {
-      name: "🇯🇵 JP-自动选择",
-      regex: /日本|jp|japan|🇯🇵/i,
-    },
-    {
-      name: "🇺🇸 US-自动选择",
-      regex: /美|us|unitedstates|united states|america|🇺🇸/i,
-    },
-  ];
-
-  const autoProxyGroups = autoProxyGroupRegexs
-    .map((item) => {
-      const proxies = allAutoProxyNames.filter((e) => item.regex.test(e));
-
-      return {
-        name: item.name,
-        //////////////////////////////////////////////////////////
-        type: "url-test",
-        url: "http://www.gstatic.com/generate_204",
-        "expected-status": 204,
-        lazy: true,
-        interval: 300,
-        timeout: 3000,
-        "max-failed-times": 5,
-        hidden: true,
-        //////////////////////////////////////////////////////////
-        proxies,
-      };
-    })
-    .filter((item) => item.proxies?.length > 0);
-  const autoProxyGroupNames = autoProxyGroups.map((item) => item.name);
-
   const proxyGroups = [
     {
       name: "🚀 节点选择",
       type: "select",
-      proxies: ["🤖 自动选择", "🌴 手动选择"],
+      proxies: ["🤖 自动选择", "🌴 手动选择", "DIRECT"],
     },
     {
       name: "🤖 自动选择",
       type: "select",
-      proxies: autoProxyGroupNames,
+      proxies: [
+        "🇭🇰 HK-自动选择",
+        "🇹🇼 TW-自动选择",
+        "🇯🇵 JP-自动选择",
+        "🇺🇸 US-自动选择",
+        "🇸🇬 SG-自动选择",
+        "🌐 其他地区",
+      ],
     },
     {
       name: "📺 哔哩哔哩",
       type: "select",
-      proxies: ["DIRECT", ...autoProxyGroupNames],
+      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
     },
     {
       name: "Ⓜ️ 微软服务",
@@ -280,16 +55,311 @@ function overwriteProxyGroups(config) {
     {
       name: "🌴 手动选择",
       type: "select",
-      proxies: allProxyNames,
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "🇭🇰 HK-自动选择",
+      filter: "(?i)🇭🇰|港|hk|hongkong|hong kong",
+      "include-all": true,
+      "exclude-type": "direct",
+      type: "url-test",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
+    },
+    {
+      name: "🇹🇼 TW-自动选择",
+      filter: "(?i)🇹🇼|🇨🇳|台|tw|taiwan",
+      "include-all": true,
+      "exclude-type": "direct",
+      type: "url-test",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
+    },
+    {
+      name: "🇯🇵 JP-自动选择",
+      filter: "(?i)🇯🇵|日|jp|japan",
+      "include-all": true,
+      "exclude-type": "direct",
+      type: "url-test",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
+    },
+    {
+      name: "🇺🇸 US-自动选择",
+      filter: "(?i)🇺🇸|美|us|unitedstates|united states",
+      "include-all": true,
+      "exclude-type": "direct",
+      type: "url-test",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
+    },
+    {
+      name: "🇸🇬 SG-自动选择",
+      filter: "(?i)(🇸🇬|新|sg|singapore)",
+      "include-all": true,
+      "exclude-type": "direct",
+      type: "url-test",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
+    },
+    {
+      name: "🌐 其他地区",
+      type: "url-test",
+      "include-all": true,
+      "exclude-type": "direct",
+      filter:
+        "(?i)^(?!.*(?:🇭🇰|港|hk|hongkong|hong kong|🇹🇼|🇨🇳|台|tw|taiwan|🇯🇵|日|jp|japan|🇺🇸|美|us|unitedstates|united states|🇸🇬|新|sg|singapore)).*",
+      url: "https://www.gstatic.com/generate_204",
+      "expected-status": 204,
+      interval: 300,
+      timeout: 5000,
+      "max-failed-times": 5,
+      lazy: true,
+      hidden: true,
     },
   ];
-
-  proxyGroups.push(...autoProxyGroups);
 
   config["proxy-groups"] = proxyGroups;
 }
 
-function overwriteOthers(config) {
+function overwriteRules(config) {
+  const ruleProviders = {
+    "AWAvenue-Ads-Rule-Clash-Classical": {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://cdn.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
+      path: "./AWAvenue-Ads-Rule/AWAvenue-Ads-Rule-Clash-Classical.yaml",
+    },
+    Privacy_Classical_No_Resolve: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Privacy/Privacy_Classical_No_Resolve.yaml",
+      path: "./ios_rule_script/Privacy_Classical_No_Resolve.yaml",
+    },
+    port_0: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/port_0.yaml",
+      path: "./Clash/port_0.yaml",
+    },
+    reject_0: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/reject_0.yaml",
+      path: "./Clash/reject_0.yaml",
+    },
+    direct_0: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml",
+      path: "./Clash/direct_0.yaml",
+    },
+  };
+
+  //////////////////////////////////////////////////////////////
+  const rules = [
+    "RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,REJECT",
+    "RULE-SET,Privacy_Classical_No_Resolve,REJECT",
+    "RULE-SET,reject_0,REJECT",
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
+    "RULE-SET,direct_0,DIRECT",
+    "GEOSITE,private,DIRECT",
+    "GEOSITE,google-cn,DIRECT",
+    "GEOSITE,apple,DIRECT",
+    "GEOSITE,category-public-tracker,DIRECT",
+    "GEOSITE,category-speedtest,DIRECT",
+    "GEOSITE,category-games,DIRECT",
+    "GEOSITE,bilibili,📺 哔哩哔哩",
+    "GEOSITE,github,🚀 节点选择",
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",
+    "GEOSITE,gfw,🚀 节点选择",
+    "GEOSITE,cn,DIRECT",
+    "GEOIP,cn,DIRECT",
+    "RULE-SET,port_0,🔀 非标端口",
+    "MATCH,🚀 节点选择",
+  ];
+
+  config["rule-providers"] = ruleProviders;
+  config.rules = rules;
+}
+
+function overwriteDns(config) {
+  const dns = {
+    enable: true,
+    ipv6: false,
+    "use-hosts": false,
+    "use-system-hosts": false,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-filter-mode": "blacklist",
+    "fake-ip-filter": [
+      "*",
+      "*.lan",
+      "*.localdomain",
+      "*.example",
+      "*.invalid",
+      "*.localhost",
+      "*.test",
+      "*.local",
+      "*.home.arpa",
+      "*.direct",
+      "time.*.com",
+      "time.*.gov",
+      "time.*.edu.cn",
+      "time.*.apple.com",
+      "time-ios.apple.com",
+      "time1.*.com",
+      "time2.*.com",
+      "time3.*.com",
+      "time4.*.com",
+      "time5.*.com",
+      "time6.*.com",
+      "time7.*.com",
+      "ntp.*.com",
+      "ntp1.*.com",
+      "ntp2.*.com",
+      "ntp3.*.com",
+      "ntp4.*.com",
+      "ntp5.*.com",
+      "ntp6.*.com",
+      "ntp7.*.com",
+      "*.time.edu.cn",
+      "*.ntp.org.cn",
+      "+.pool.ntp.org",
+      "time1.cloud.tencent.com",
+      "music.163.com",
+      "*.music.163.com",
+      "*.126.net",
+      "musicapi.taihe.com",
+      "music.taihe.com",
+      "songsearch.kugou.com",
+      "trackercdn.kugou.com",
+      "*.kuwo.cn",
+      "api-jooxtt.sanook.com",
+      "api.joox.com",
+      "joox.com",
+      "y.qq.com",
+      "*.y.qq.com",
+      "streamoc.music.tc.qq.com",
+      "mobileoc.music.tc.qq.com",
+      "isure.stream.qqmusic.qq.com",
+      "dl.stream.qqmusic.qq.com",
+      "aqqmusic.tc.qq.com",
+      "amobile.music.tc.qq.com",
+      "*.xiami.com",
+      "*.music.migu.cn",
+      "music.migu.cn",
+      "localhost.ptlogin2.qq.com",
+      "localhost.sec.qq.com",
+      "localhost.*.weixin.qq.com",
+      "+.steamcontent.com",
+      "+.srv.nintendo.net",
+      "*.n.n.srv.nintendo.net",
+      "+.cdn.nintendo.net",
+      "xbox.*.*.microsoft.com",
+      "*.*.xboxlive.com",
+      "xbox.*.microsoft.com",
+      "xnotify.xboxlive.com",
+      "+.battle.net",
+      "+.battlenet.com.cn",
+      "+.wotgame.cn",
+      "+.wggames.cn",
+      "+.wowsgame.cn",
+      "+.wargaming.net",
+      "proxy.golang.org",
+      "+.stun.*.*",
+      "+.stun.*.*.*",
+      "+.stun.*.*.*.*",
+      "+.stun.*.*.*.*.*",
+      "heartbeat.belkin.com",
+      "*.linksys.com",
+      "*.linksyssmartwifi.com",
+      "*.router.asus.com",
+      "mesu.apple.com",
+      "swscan.apple.com",
+      "swquery.apple.com",
+      "swdownload.apple.com",
+      "swcdn.apple.com",
+      "swdist.apple.com",
+      "lens.l.google.com",
+      "na.b.g-tun.com",
+      "+.nflxvideo.net",
+      "*.square-enix.com",
+      "*.finalfantasyxiv.com",
+      "*.ffxiv.com",
+      "*.ff14.sdo.com",
+      "ff.dorado.sdo.com",
+      "*.mcdn.bilivideo.cn",
+      "+.media.dssott.com",
+      "shark007.net",
+      "Mijia Cloud",
+      "+.market.xiaomi.com",
+      "+.cmbchina.com",
+      "+.cmbimg.com",
+      "adguardteam.github.io",
+      "adrules.top",
+      "anti-ad.net",
+      "local.adguard.org",
+      "static.adtidy.org",
+      "+.sandai.net",
+      "+.n0808.com",
+      "+.3gppnetwork.org",
+      "+.uu.163.com",
+      "ps.res.netease.com",
+      "+.pub.3gppnetwork.org",
+      "+.oray.com",
+      "+.orayimg.com",
+      "+.gcloudcs.com",
+      "+.gcloudsdk.com",
+    ],
+    nameserver: [
+      "233.5.5.5", // 阿里DNS
+      "119.29.29.29", // 腾讯DNS
+      "180.76.76.76", // 百度DNS
+      "114.114.114.114", // 114DNS
+    ],
+  };
+
+  config.dns = dns;
+}
+
+function overwriteSniffer(config) {
   const sniffer = {
     enable: true,
     "parse-pure-ip": true,
@@ -315,9 +385,24 @@ function overwriteOthers(config) {
   };
 
   config.sniffer = sniffer;
+}
 
-  //////////////////////////////////////////////////////////////
-  config.mode = "rule";
+function overwriteGeodata(config) {
+  config["geodata-mode"] = true;
+  config["geodata-loader"] = "memconservative";
+  config["geo-auto-update"] = true;
+  config["geo-update-interval"] = 24;
+  config["geox-url"] = {
+    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country-lite.mmdb",
+    geoip:
+      "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat",
+    geosite:
+      "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
+    asn: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb",
+  };
+}
+
+function overwriteOthers(config) {
   config.ipv6 = false;
   config["log-level"] = "info";
   config["tcp-concurrent"] = true;
@@ -329,19 +414,5 @@ function overwriteOthers(config) {
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
-  };
-
-  //////////////////////////////////////////////////////////////
-  config["geodata-mode"] = true;
-  config["geodata-loader"] = "standard";
-  config["geodata-auto-update"] = true;
-  config["geodata-update-interval"] = 24;
-  config["geox-url"] = {
-    mmdb: "https://testingcf.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/lite/Country.mmdb",
-    geoip:
-      "https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/geoip.dat",
-    geosite:
-      "https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat",
-    asn: "https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb",
   };
 }
