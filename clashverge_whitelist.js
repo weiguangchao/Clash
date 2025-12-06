@@ -228,7 +228,6 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: false,
     "use-hosts": false,
     "use-system-hosts": false,
     "enhanced-mode": "fake-ip",
@@ -408,11 +407,8 @@ function overwriteGeodata(config) {
 }
 
 function overwriteOthers(config) {
-  config.ipv6 = false;
-  config["log-level"] = "info";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
-  config["allow-lan"] = false;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
