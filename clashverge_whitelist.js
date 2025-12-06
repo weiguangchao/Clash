@@ -48,6 +48,11 @@ function overwriteProxyGroups(config) {
       proxies: ["DIRECT", "🚀 节点选择"],
     },
     {
+      name: "⏱️ 测速工具",
+      type: "select",
+      proxies: ["DIRECT", "🚀 节点选择"],
+    },
+    {
       name: "🔀 非标端口",
       type: "select",
       proxies: ["DIRECT", "🚀 节点选择"],
@@ -204,7 +209,7 @@ function overwriteRules(config) {
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
     "GEOSITE,category-public-tracker,DIRECT",
-    "GEOSITE,category-speedtest,DIRECT",
+    "GEOSITE,category-speedtest,⏱️ 测速工具",
     "GEOSITE,category-games,DIRECT",
     "GEOSITE,bilibili,📺 哔哩哔哩",
     "GEOSITE,github,🚀 节点选择",
