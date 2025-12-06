@@ -31,4 +31,8 @@ rule-providers:
     interval: 86400
     url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml
     path: ./Clash/direct_0.yaml
+rules:
+  - RULE-SET,reject_0,REJECT
+  - RULE-SET,direct_0,DIRECT
+  - RULE-SET,port_0,🔀 非标端口
 ```
