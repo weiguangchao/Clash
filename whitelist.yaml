@@ -233,6 +233,14 @@ proxy-groups:
     type: select
     include-all: true
     exclude-type: direct
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🛑 全球拦截
+    type: select
+    proxies:
+      - REJECT
   - name: 🇭🇰 HK-自动选择
     filter: "(?i)🇭🇰|港|hk|hongkong|hong kong"
     include-all: true
@@ -348,26 +356,26 @@ rule-providers:
 
 ###############################################################
 rules:
-  - RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,REJECT
-  - RULE-SET,Privacy_Classical_No_Resolve,REJECT
-  - RULE-SET,reject_0,REJECT
+  - RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,🛑 全球拦截
+  - RULE-SET,Privacy_Classical_No_Resolve,🛑 全球拦截
+  - RULE-SET,reject_0,🛑 全球拦截
   ###############################################################
-  - GEOIP,private,DIRECT,no-resolve
+  - GEOIP,private,🎯 全球直连,no-resolve
   - GEOIP,telegram,🚀 节点选择,no-resolve
-  - RULE-SET,direct_0,DIRECT
-  - GEOSITE,private,DIRECT
-  - GEOSITE,google-cn,DIRECT
-  - GEOSITE,apple,DIRECT
-  - GEOSITE,category-public-tracker,DIRECT
+  - RULE-SET,direct_0,🎯 全球直连
+  - GEOSITE,private,🎯 全球直连
+  - GEOSITE,google-cn,🎯 全球直连
+  - GEOSITE,apple,🎯 全球直连
+  - GEOSITE,category-public-tracker,🎯 全球直连
   - GEOSITE,category-speedtest,⏱️ 测速工具
-  - GEOSITE,category-games,DIRECT
+  - GEOSITE,category-games,🎯 全球直连
   - GEOSITE,bilibili,📺 哔哩哔哩
   - GEOSITE,github,🚀 节点选择
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,gfw,🚀 节点选择
-  - GEOSITE,cn,DIRECT
+  - GEOSITE,cn,🎯 全球直连
   ###############################################################
-  - GEOIP,cn,DIRECT
+  - GEOIP,cn,🎯 全球直连
   - RULE-SET,port_0,🔀 非标端口
   - MATCH,🚀 节点选择
 ###############################################################
