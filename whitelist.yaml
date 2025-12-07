@@ -324,13 +324,13 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
-  AWAvenue-Ads-Rule-Clash-Classical:
+  Advertising_Classical_No_Resolve:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml
-    path: ./TG-Twilight/AWAvenue-Ads-Rule-Clash-Classical.yaml
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical_No_Resolve.yaml
+    path: ./ios_rule_script/Advertising_Classical_No_Resolve.yaml
   Privacy_Classical_No_Resolve:
     type: http
     behavior: classical
@@ -363,7 +363,7 @@ rule-providers:
 
 ###############################################################
 rules:
-  - RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,🛑 广告拦截
+  - RULE-SET,Advertising_Classical_No_Resolve,🛑 广告拦截
   - RULE-SET,Privacy_Classical_No_Resolve,🍃 隐私净化
   - RULE-SET,reject_0,🛑 广告拦截
   ###############################################################
