@@ -329,8 +329,8 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Privacy/Privacy_Classical_No_Resolve.yaml
-    path: ./ios_rule_script/Privacy_Classical_No_Resolve.yaml
+    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/EasyPrivacy/EasyPrivacy_Classical_No_Resolve.yaml
+    path: ./ios_rule_script/EasyPrivacy_Classical_No_Resolve.yaml
   port_0:
     type: http
     behavior: classical
@@ -357,7 +357,7 @@ rule-providers:
 ###############################################################
 rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
-  - RULE-SET,Privacy_Classical_No_Resolve,🍃 隐私净化
+  - RULE-SET,EasyPrivacy_Classical_No_Resolve,🍃 隐私净化
   - RULE-SET,reject_0,🛑 广告拦截
   ###############################################################
   - GEOIP,private,🎯 全球直连,no-resolve
