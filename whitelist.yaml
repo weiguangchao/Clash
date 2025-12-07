@@ -237,10 +237,12 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
+    hidden: true
   - name: 🛑 全球拦截
     type: select
     proxies:
       - REJECT
+    hidden: true
   - name: 🇭🇰 HK-自动选择
     filter: "(?i)🇭🇰|港|hk|hongkong|hong kong"
     include-all: true
