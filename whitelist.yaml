@@ -238,7 +238,12 @@ proxy-groups:
     proxies:
       - DIRECT
     hidden: true
-  - name: 🛑 全球拦截
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+    hidden: true
+  - name: 🍃 隐私净化
     type: select
     proxies:
       - REJECT
@@ -351,9 +356,9 @@ rule-providers:
 
 ###############################################################
 rules:
-  - GEOSITE,category-ads-all,🛑 全球拦截
-  - RULE-SET,Privacy_Classical_No_Resolve,🛑 全球拦截
-  - RULE-SET,reject_0,🛑 全球拦截
+  - GEOSITE,category-ads-all,🛑 广告拦截
+  - RULE-SET,Privacy_Classical_No_Resolve,🍃 隐私净化
+  - RULE-SET,reject_0,🛑 广告拦截
   ###############################################################
   - GEOIP,private,🎯 全球直连,no-resolve
   - GEOIP,telegram,🚀 节点选择,no-resolve
