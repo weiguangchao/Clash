@@ -324,12 +324,12 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
-  Privacy_Classical_No_Resolve:
+  EasyPrivacy_Classical_No_Resolve:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/EasyPrivacy/EasyPrivacy_Classical_No_Resolve.yaml
+    url: https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/EasyPrivacy/EasyPrivacy_Classical_No_Resolve.yaml
     path: ./ios_rule_script/EasyPrivacy_Classical_No_Resolve.yaml
   port_0:
     type: http
