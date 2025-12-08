@@ -6,6 +6,13 @@
 https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/shadowrocket_whitelist.conf
 ```
 
+## 远程配置模版
+
+```
+https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/clash.ini
+
+```
+
 ## rule
 
 ```
