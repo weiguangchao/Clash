@@ -64,6 +64,24 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
+      name: "🎯 全球直连",
+      type: "select",
+      proxies: ["DIRECT"],
+      hidden: true,
+    },
+    {
+      name: "🛑 广告拦截",
+      type: "select",
+      proxies: ["REJECT"],
+      hidden: true,
+    },
+    {
+      name: "🍃 隐私净化",
+      type: "select",
+      proxies: ["REJECT"],
+      hidden: true,
+    },
+    {
       name: "🇭🇰 HK-自动选择",
       filter: "(?i)🇭🇰|港|hk|hongkong|hong kong",
       "include-all": true,
