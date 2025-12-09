@@ -173,6 +173,14 @@ function overwriteProxyGroups(config) {
 
 function overwriteRules(config) {
   const ruleProviders = {
+    "AWAvenue-Ads-Rule-Clash-Classical": {
+      "type": "http",
+      "behavior": "classical",
+      "format": "yaml",
+      "interval": 86400,
+      "url": "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
+      "path": "./TG-Twilight/AWAvenue-Ads-Rule-Clash-Classical.yaml"
+    },
     Privacy_Classical_No_Resolve: {
       type: "http",
       behavior: "classical",
@@ -209,7 +217,7 @@ function overwriteRules(config) {
 
   //////////////////////////////////////////////////////////////
   const rules = [
-    "GEOSITE,category-ads-all,🛑 广告拦截",
+    "RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,🛑 广告拦截",
     "RULE-SET,Privacy_Classical_No_Resolve,🍃 隐私净化",
     "RULE-SET,reject_0,🛑 广告拦截",
     "GEOIP,private,DIRECT,no-resolve",
