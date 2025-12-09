@@ -173,21 +173,13 @@ function overwriteProxyGroups(config) {
 
 function overwriteRules(config) {
   const ruleProviders = {
-    "AWAvenue-Ads-Rule-Clash-Classical": {
+    Advertising_Classical_No_Resolve: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
-      path: "./TG-Twilight/AWAvenue-Ads-Rule-Clash-Classical.yaml",
-    },
-    Privacy_Classical_No_Resolve: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Privacy/Privacy_Classical_No_Resolve.yaml",
-      path: "./ios_rule_script/Privacy_Classical_No_Resolve.yaml",
+      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical_No_Resolve.yaml",
+      path: "./ios_rule_script/Advertising_Classical_No_Resolve.yaml",
     },
     port_0: {
       type: "http",
@@ -217,8 +209,7 @@ function overwriteRules(config) {
 
   //////////////////////////////////////////////////////////////
   const rules = [
-    "RULE-SET,AWAvenue-Ads-Rule-Clash-Classical,🛑 广告拦截",
-    "RULE-SET,Privacy_Classical_No_Resolve,🍃 隐私净化",
+    "RULE-SET,Advertising_Classical_No_Resolve,🛑 广告拦截",
     "RULE-SET,reject_0,🛑 广告拦截",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
