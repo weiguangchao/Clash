@@ -178,7 +178,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://testingcf.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical_No_Resolve.yaml",
+      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/Advertising/Advertising_Classical_No_Resolve.yaml",
       path: "./ios_rule_script/Advertising_Classical_No_Resolve.yaml",
     },
     port_0: {
@@ -186,7 +186,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/port_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_0.yaml",
       path: "./Clash/port_0.yaml",
     },
     reject_0: {
@@ -194,7 +194,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/reject_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_0.yaml",
       path: "./Clash/reject_0.yaml",
     },
     direct_0: {
@@ -202,7 +202,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml",
       path: "./Clash/direct_0.yaml",
     },
   };
@@ -406,12 +406,12 @@ function overwriteGeodata(config) {
   config["geo-auto-update"] = true;
   config["geo-update-interval"] = 24;
   config["geox-url"] = {
-    mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country-lite.mmdb",
+    mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country-lite.mmdb",
     geoip:
-      "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat",
+      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat",
     geosite:
-      "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
-    asn: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb",
+      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
+    asn: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb",
   };
 }
 
