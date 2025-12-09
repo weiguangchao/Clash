@@ -13,6 +13,8 @@ proxy-providers:
 ###############################################################
 
 ###############################################################
+find-process-mode: strict
+global-client-fingerprint: chrome
 tcp-concurrent: true
 unified-delay: true
 disable-keep-alive: false
@@ -56,9 +58,10 @@ sniffer:
         - 8080-8880
       override-destination: true
   skip-domain:
-    - Mijia Cloud # 米家设备
-    - +.oray.com # 向日葵
-    - +.sunlogin.net # 向日葵
+    - Mijia Cloud
+    - +.push.apple.com
+    - +.oray.com
+    - +.sunlogin.net
 ###############################################################
 
 ###############################################################
