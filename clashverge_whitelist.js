@@ -174,12 +174,12 @@ function overwriteProxyGroups(config) {
 function overwriteRules(config) {
   const ruleProviders = {
     "AWAvenue-Ads-Rule-Clash-Classical": {
-      "type": "http",
-      "behavior": "classical",
-      "format": "yaml",
-      "interval": 86400,
-      "url": "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
-      "path": "./TG-Twilight/AWAvenue-Ads-Rule-Clash-Classical.yaml"
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://testingcf.jsdelivr.net/gh/TG-Twilight/AWAvenue-Ads-Rule@main/Filters/AWAvenue-Ads-Rule-Clash-Classical.yaml",
+      path: "./TG-Twilight/AWAvenue-Ads-Rule-Clash-Classical.yaml",
     },
     Privacy_Classical_No_Resolve: {
       type: "http",
@@ -400,9 +400,10 @@ function overwriteSniffer(config) {
       },
     },
     "skip-domain": [
-      "Mijia Cloud", // 米家设备
-      "+.oray.com", // 向日葵
-      "+.sunlogin.net", // 向日葵
+      "Mijia Cloud",
+      "+.push.apple.com",
+      "+.oray.com",
+      "+.sunlogin.net",
     ],
   };
 
@@ -425,6 +426,8 @@ function overwriteGeodata(config) {
 }
 
 function overwriteOthers(config) {
+  config["find-process-mode"] = "off";
+  config["global-client-fingerprint"] = "chrome";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
