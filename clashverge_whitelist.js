@@ -179,13 +179,13 @@ function overwriteProxyGroups(config) {
 
 function overwriteRules(config) {
   const ruleProviders = {
-    AdvertisingLite_Classical_No_Resolve: {
+    adblockmihomo: {
       type: "http",
-      behavior: "classical",
+      behavior: "domain",
       format: "yaml",
       interval: 86400,
-      url: "https://cdn.jsdelivr.net/gh/blackmatrix7/ios_rule_script/rule/Clash/AdvertisingLite/AdvertisingLite_Classical_No_Resolve.yaml",
-      path: "./ios_rule_script/AdvertisingLite_Classical_No_Resolve.yaml",
+      url: "https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml",
+      path: "./217heidai/adblockmihomo.yaml",
     },
     port_0: {
       type: "http",
@@ -215,7 +215,7 @@ function overwriteRules(config) {
 
   //////////////////////////////////////////////////////////////
   const rules = [
-    "RULE-SET,AdvertisingLite_Classical_No_Resolve,🛑 广告拦截",
+    "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_0,🛑 广告拦截",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
