@@ -259,7 +259,6 @@ function overwriteDns(config) {
       "+.stun.*.*.*.*.*.*",
       "geosite:connectivity-check",
       "geosite:private",
-      "geosite:category-ntp",
     ],
     nameserver: [
       "233.5.5.5",
