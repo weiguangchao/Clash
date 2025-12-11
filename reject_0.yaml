@@ -1,2 +1,0 @@
-payload:
-  - AND,((geosite,gfw),(DST-PORT,443),(NETWORK,UDP))
