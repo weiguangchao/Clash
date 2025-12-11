@@ -187,39 +187,39 @@ function overwriteRules(config) {
       url: "https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml",
       path: "./217heidai/adblockmihomo.yaml",
     },
-    port_0: {
+    port_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_0.yaml",
-      path: "./Clash/port_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml",
+      path: "./Clash/port_classical.yaml",
     },
-    reject_0: {
+    reject_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_0.yaml",
-      path: "./Clash/reject_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml",
+      path: "./Clash/reject_classical.yaml",
     },
-    direct_0: {
+    direct_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml",
-      path: "./Clash/direct_0.yaml",
+      url: "https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml",
+      path: "./Clash/direct_classical.yaml",
     },
   };
 
   //////////////////////////////////////////////////////////////
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
-    "RULE-SET,reject_0,🛑 广告拦截",
+    "RULE-SET,reject_classical,🛑 广告拦截",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
-    "RULE-SET,direct_0,DIRECT",
+    "RULE-SET,direct_classical,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
@@ -232,7 +232,7 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     "GEOIP,cn,DIRECT",
-    "RULE-SET,port_0,🔀 非标端口",
+    "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
 
