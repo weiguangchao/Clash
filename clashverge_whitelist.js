@@ -24,12 +24,13 @@ function overwriteProxys(config) {
   if (!proxies) {
     return;
   }
-  proxies.map((proxy) => {
+  proxies = proxies.map((proxy) => {
     return {
       ...proxy,
       "ip-version": "ipv4",
     };
   });
+  config.proxies = proxies;
 }
 
 function overwriteProxyGroups(config) {
