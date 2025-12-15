@@ -27,7 +27,7 @@ function overwriteProxys(config) {
   proxies = proxies.map((proxy) => {
     return {
       ...proxy,
-      "ip-version": "ipv4",
+      "ip-version": "dual",
     };
   });
   config.proxies = proxies;
@@ -258,7 +258,7 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: false,
+    ipv6: true,
     "use-hosts": false,
     "use-system-hosts": false,
     "enhanced-mode": "fake-ip",
@@ -441,7 +441,7 @@ function overwriteGeodata(config) {
 }
 
 function overwriteOthers(config) {
-  config.ipv6 = false;
+  config.ipv6 = true;
   config["find-process-mode"] = "off";
   config["global-client-fingerprint"] = "chrome";
   config["tcp-concurrent"] = true;
