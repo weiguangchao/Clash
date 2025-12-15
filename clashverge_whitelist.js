@@ -426,7 +426,7 @@ function overwriteGeodata(config) {
 }
 
 function overwriteOthers(config) {
-  config["ipv6"] = false;
+  config.ipv6 = false;
   config["find-process-mode"] = "off";
   config["global-client-fingerprint"] = "chrome";
   config["tcp-concurrent"] = true;
