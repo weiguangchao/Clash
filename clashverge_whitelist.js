@@ -243,7 +243,6 @@ function overwriteRules(config) {
     },
   };
 
-  //////////////////////////////////////////////////////////////
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_classical,🛑 广告拦截",
