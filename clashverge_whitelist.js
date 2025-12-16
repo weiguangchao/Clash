@@ -4,13 +4,13 @@ function main(config) {
   }
 
   try {
-    overwriteProxys(config); // proxys
-    overwriteProxyGroups(config); // proxy groups
-    overwriteRules(config); // rules
+    overwriteProxys(config); // proxy
+    overwriteProxyGroups(config); // proxy group
+    overwriteRules(config); // rule
     overwriteDns(config); // dns
     overwriteSniffer(config); // sniffer
     overwriteGeodata(config); // geodata
-    overwriteOthers(config); // others
+    overwriteOthers(config); // other
     console.log("配置文件重写完成！");
     return config;
   } catch (error) {
