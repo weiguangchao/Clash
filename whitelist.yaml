@@ -252,6 +252,17 @@ proxy-groups:
     proxies:
       - REJECT
     hidden: true
+  - name: ♻️ All-自动选择
+    type: url-test
+    include-all: true
+    exclude-type: direct
+    url: https://www.gstatic.com/generate_204
+    expected-status: 204
+    interval: 300
+    timeout: 5000
+    max-failed-times: 5
+    lazy: true
+    hidden: true
   - name: 🇭🇰 HK-自动选择
     filter: "(?i)🇭🇰|港|hk|hongkong|hong kong"
     include-all: true
@@ -305,17 +316,6 @@ proxy-groups:
     include-all: true
     exclude-type: direct
     type: url-test
-    url: https://www.gstatic.com/generate_204
-    expected-status: 204
-    interval: 300
-    timeout: 5000
-    max-failed-times: 5
-    lazy: true
-    hidden: true
-  - name: ♻️ All-自动选择
-    type: url-test
-    include-all: true
-    exclude-type: direct
     url: https://www.gstatic.com/generate_204
     expected-status: 204
     interval: 300
