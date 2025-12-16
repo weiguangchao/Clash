@@ -312,11 +312,10 @@ proxy-groups:
     max-failed-times: 5
     lazy: true
     hidden: true
-  - name: 🌐 Other-自动选择
+  - name: ♻️ All-自动选择
     type: url-test
     include-all: true
     exclude-type: direct
-    filter: "(?i)^(?!.*(?:🇭🇰|港|hk|hongkong|hong kong|🇹🇼|🇨🇳|台|tw|taiwan|🇯🇵|日|jp|japan|🇺🇸|美|us|unitedstates|united states|🇸🇬|新|sg|singapore)).*"
     url: https://www.gstatic.com/generate_204
     expected-status: 204
     interval: 300
@@ -324,10 +323,11 @@ proxy-groups:
     max-failed-times: 5
     lazy: true
     hidden: true
-  - name: ♻️ All-自动选择
+  - name: 🌐 Other-自动选择
     type: url-test
     include-all: true
     exclude-type: direct
+    filter: "(?i)^(?!.*(?:🇭🇰|港|hk|hongkong|hong kong|🇹🇼|🇨🇳|台|tw|taiwan|🇯🇵|日|jp|japan|🇺🇸|美|us|unitedstates|united states|🇸🇬|新|sg|singapore)).*"
     url: https://www.gstatic.com/generate_204
     expected-status: 204
     interval: 300
