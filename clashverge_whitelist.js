@@ -27,7 +27,7 @@ function overwriteProxys(config) {
   proxies = proxies.map((proxy) => {
     return {
       ...proxy,
-      "ip-version": "dual",
+      "ip-version": "ipv4",
     };
   });
   config.proxies = proxies;
