@@ -11,7 +11,7 @@ https://cdn.jsdelivr.net/gh/weiguangchao/Clash/shadowrocket_whitelist.conf
 Github
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
+https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
 ```
 
 jsdelivr
