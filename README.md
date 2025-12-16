@@ -8,6 +8,14 @@ https://cdn.jsdelivr.net/gh/weiguangchao/Clash/shadowrocket_whitelist.conf
 
 ## 远程配置模版
 
+Github
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
+```
+
+jsdelivr
+
 ```
 https://cdn.jsdelivr.net/gh/weiguangchao/Clash/clash.ini
 
