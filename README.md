@@ -3,13 +3,13 @@
 ## shadowrocket
 
 ```
-https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/shadowrocket_whitelist.conf
+https://cdn.jsdelivr.net/gh/weiguangchao/Clash/shadowrocket_whitelist.conf
 ```
 
 ## 远程配置模版
 
 ```
-https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/clash.ini
+https://cdn.jsdelivr.net/gh/weiguangchao/Clash/clash.ini
 
 ```
 
@@ -22,21 +22,21 @@ rule-providers:
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml
+    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml
     path: ./Clash/port_classical.yaml
   reject_classical:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml
+    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml
     path: ./Clash/reject_classical.yaml
   direct_classical:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml
+    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml
     path: ./Clash/direct_classical.yaml
 rules:
   - RULE-SET,reject_classical,REJECT
