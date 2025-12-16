@@ -17,29 +17,29 @@ https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/clash.ini
 
 ```
 rule-providers:
-  port_0:
+  port_classical:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/port_0.yaml
-    path: ./Clash/port_0.yaml
-  reject_0:
+    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml
+    path: ./Clash/port_classical.yaml
+  reject_classical:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/reject_0.yaml
-    path: ./Clash/reject_0.yaml
-  direct_0:
+    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml
+    path: ./Clash/reject_classical.yaml
+  direct_classical:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_0.yaml
-    path: ./Clash/direct_0.yaml
+    url: https://testingcf.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml
+    path: ./Clash/direct_classical.yaml
 rules:
-  - RULE-SET,reject_0,REJECT
-  - RULE-SET,direct_0,DIRECT
-  - RULE-SET,port_0,🔀 非标端口
+  - RULE-SET,reject_classical,REJECT
+  - RULE-SET,direct_classical,DIRECT
+  - RULE-SET,port_classical,🔀 非标端口
 ```
