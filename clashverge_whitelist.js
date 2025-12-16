@@ -260,6 +260,7 @@ function overwriteRules(config) {
     "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
+    "GEOIP,google,🚀 节点选择",
     "GEOIP,cn,DIRECT",
     "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
