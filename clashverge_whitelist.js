@@ -8,6 +8,7 @@ function main(config, profileName) {
     overwriteRules(config); // rule
     overwriteDns(config); // dns
     overwriteSniffer(config); // sniffer
+    overwriteGeodata(config); // geodata
     overwriteOthers(config); // other
     console.log("配置文件重写完成！");
     return config;
@@ -192,126 +193,32 @@ function overwriteRules(config) {
       behavior: "domain",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
+      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockmihomo.yaml",
+      path: "./217heidai/adblockmihomo.yaml",
     },
     port_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/port_classical.yaml",
+      path: "./Clash/port_classical.yaml",
     },
     reject_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical.yaml",
+      path: "./Clash/reject_classical.yaml",
     },
     direct_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml",
-    },
-    private_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs",
-    },
-    google_cn_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-cn.mrs",
-    },
-    apple_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs",
-    },
-    category_public_tracker_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs",
-    },
-    category_speedtest_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs",
-    },
-    category_games_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs",
-    },
-    bilibili_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs",
-    },
-    github_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs",
-    },
-    microsoft_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs",
-    },
-    gfw_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs",
-    },
-    cn_domain: {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs",
-    },
-    private_ip: {
-      type: "http",
-      behavior: "ipcidr",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs",
-    },
-    telegram_ip: {
-      type: "http",
-      behavior: "ipcidr",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs",
-    },
-    cn_ip: {
-      type: "http",
-      behavior: "ipcidr",
-      format: "mrs",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical.yaml",
+      path: "./Clash/direct_classical.yaml",
     },
   };
 
@@ -319,20 +226,21 @@ function overwriteRules(config) {
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_classical,🛑 广告拦截",
     "RULE-SET,direct_classical,DIRECT",
-    "RULE-SET,private_domain,DIRECT",
-    "RULE-SET,google_cn_domain,DIRECT",
-    "RULE-SET,apple_domain,DIRECT",
-    "RULE-SET,category_public_tracker_domain,DIRECT",
-    "RULE-SET,category_speedtest_domain,⏱️ 测速工具",
-    "RULE-SET,category_games_domain,DIRECT",
-    "RULE-SET,bilibili_domain,📺 哔哩哔哩",
-    "RULE-SET,github_domain,🚀 节点选择",
-    "RULE-SET,microsoft_domain,Ⓜ️ 微软服务",
-    "RULE-SET,gfw_domain,🚀 节点选择",
-    "RULE-SET,cn_domain,DIRECT",
-    "RULE-SET,private_ip,DIRECT",
-    "RULE-SET,telegram_ip,🚀 节点选择",
-    "RULE-SET,cn_ip,DIRECT",
+    "GEOSITE,private,DIRECT",
+    "GEOSITE,google-cn,DIRECT",
+    "GEOSITE,apple,DIRECT",
+    "GEOSITE,category-public-tracker,DIRECT",
+    "GEOSITE,category-speedtest,⏱️ 测速工具",
+    "GEOSITE,category-games,DIRECT",
+    "GEOSITE,bilibili,📺 哔哩哔哩",
+    "GEOSITE,github,🚀 节点选择",
+    "GEOSITE,microsoft,Ⓜ️ 微软服务",
+    "GEOSITE,gfw,🚀 节点选择",
+    "GEOSITE,cn,DIRECT",
+    ////////////////////////////////////////////////////////////////
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
+    "GEOIP,cn,DIRECT",
     "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
@@ -402,6 +310,21 @@ function overwriteSniffer(config) {
   };
 
   config.sniffer = sniffer;
+}
+
+function overwriteGeodata(config) {
+  config["geodata-mode"] = true;
+  config["geodata-loader"] = "memconservative";
+  config["geo-auto-update"] = true;
+  config["geo-update-interval"] = 24;
+  config["geox-url"] = {
+    mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country-lite.mmdb",
+    geoip:
+      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip-lite.dat",
+    geosite:
+      "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat",
+    asn: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/GeoLite2-ASN.mmdb",
+  };
 }
 
 function overwriteOthers(config) {
