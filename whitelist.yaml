@@ -13,7 +13,7 @@ proxy-providers:
 ###############################################################
 
 ###############################################################
-find-process-mode: strict
+find-process-mode: off
 global-client-fingerprint: chrome
 tcp-concurrent: true
 unified-delay: true
