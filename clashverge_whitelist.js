@@ -226,8 +226,6 @@ function overwriteRules(config) {
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_classical,🛑 广告拦截",
     "RULE-SET,direct_classical,DIRECT",
-    "GEOIP,private,DIRECT,no-resolve",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
@@ -240,6 +238,8 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,DIRECT",
     ////////////////////////////////////////////////////////////////
+    "GEOIP,private,DIRECT,no-resolve",
+    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOIP,cn,DIRECT",
     "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
