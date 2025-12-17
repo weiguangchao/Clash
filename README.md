@@ -53,6 +53,7 @@ rule-providers:
     interval: 86400
     url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical.yaml
     path: ./Clash/direct_classical.yaml
+
 rules:
   - RULE-SET,reject_classical,REJECT
   - RULE-SET,direct_classical,DIRECT
