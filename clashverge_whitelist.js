@@ -246,9 +246,9 @@ function overwriteRules(config) {
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_classical,🛑 广告拦截",
+    "RULE-SET,direct_classical,DIRECT",
     "GEOIP,private,DIRECT,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
-    "RULE-SET,direct_classical,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
     "GEOSITE,apple,DIRECT",
