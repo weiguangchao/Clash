@@ -14,13 +14,6 @@ Github
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 ```
 
-jsdelivr
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
-
-```
-
 ## rule
 
 ```
