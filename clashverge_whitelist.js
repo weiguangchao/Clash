@@ -457,7 +457,7 @@ function overwriteGeodata(config) {
 
 function overwriteOthers(config) {
   config.ipv6 = true;
-  config["find-process-mode"] = "off";
+  config["find-process-mode"] = "strict";
   config["global-client-fingerprint"] = "chrome";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
