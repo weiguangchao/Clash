@@ -1,12 +1,19 @@
 proxy-providers:
-  sub0: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
-  sub1: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
-  sub2: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
-  sub3: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
-  sub4: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
+  sub0:
+    type: http
+    url: https://xxxxx
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      expected-status: 204
+      timeout: 5000
+      interval: 300
+      lazy: true
 ###############################################################
 
 ###############################################################
+ipv6: true
 find-process-mode: strict
 global-client-fingerprint: chrome
 tcp-concurrent: true
@@ -61,131 +68,26 @@ sniffer:
 ###############################################################
 dns:
   enable: true
-  enhanced-mode: fake-ip
-  fake-ip-filter-mode: blacklist
-  fake-ip-filter:
-    - "*"
-    - "*.lan"
-    - "*.localdomain"
-    - "*.example"
-    - "*.invalid"
-    - "*.localhost"
-    - "*.test"
-    - "*.local"
-    - "*.home.arpa"
-    - "*.direct"
-    - "time.*.com"
-    - "time.*.gov"
-    - "time.*.edu.cn"
-    - "time.*.apple.com"
-    - "time-ios.apple.com"
-    - "time1.*.com"
-    - "time2.*.com"
-    - "time3.*.com"
-    - "time4.*.com"
-    - "time5.*.com"
-    - "time6.*.com"
-    - "time7.*.com"
-    - "ntp.*.com"
-    - "ntp1.*.com"
-    - "ntp2.*.com"
-    - "ntp3.*.com"
-    - "ntp4.*.com"
-    - "ntp5.*.com"
-    - "ntp6.*.com"
-    - "ntp7.*.com"
-    - "*.time.edu.cn"
-    - "*.ntp.org.cn"
-    - "+.pool.ntp.org"
-    - "time1.cloud.tencent.com"
-    - "music.163.com"
-    - "*.music.163.com"
-    - "*.126.net"
-    - "musicapi.taihe.com"
-    - "music.taihe.com"
-    - "songsearch.kugou.com"
-    - "trackercdn.kugou.com"
-    - "*.kuwo.cn"
-    - "api-jooxtt.sanook.com"
-    - "api.joox.com"
-    - "joox.com"
-    - "y.qq.com"
-    - "*.y.qq.com"
-    - "streamoc.music.tc.qq.com"
-    - "mobileoc.music.tc.qq.com"
-    - "isure.stream.qqmusic.qq.com"
-    - "dl.stream.qqmusic.qq.com"
-    - "aqqmusic.tc.qq.com"
-    - "amobile.music.tc.qq.com"
-    - "*.xiami.com"
-    - "*.music.migu.cn"
-    - "music.migu.cn"
-    - "+.msftconnecttest.com"
-    - "+.msftncsi.com"
-    - "localhost.ptlogin2.qq.com"
-    - "localhost.sec.qq.com"
-    - "localhost.*.weixin.qq.com"
-    - "+.steamcontent.com"
-    - "+.srv.nintendo.net"
-    - "*.n.n.srv.nintendo.net"
-    - "+.cdn.nintendo.net"
-    - "xbox.*.*.microsoft.com"
-    - "*.*.xboxlive.com"
-    - "xbox.*.microsoft.com"
-    - "xnotify.xboxlive.com"
-    - "+.battle.net"
-    - "+.battlenet.com.cn"
-    - "+.wotgame.cn"
-    - "+.wggames.cn"
-    - "+.wowsgame.cn"
-    - "+.wargaming.net"
-    - "proxy.golang.org"
-    - "+.stun.*.*"
-    - "+.stun.*.*.*"
-    - "+.stun.*.*.*.*"
-    - "+.stun.*.*.*.*.*"
-    - "heartbeat.belkin.com"
-    - "*.linksys.com"
-    - "*.linksyssmartwifi.com"
-    - "*.router.asus.com"
-    - "mesu.apple.com"
-    - "swscan.apple.com"
-    - "swquery.apple.com"
-    - "swdownload.apple.com"
-    - "swcdn.apple.com"
-    - "swdist.apple.com"
-    - "lens.l.google.com"
-    - "na.b.g-tun.com"
-    - "+.nflxvideo.net"
-    - "*.square-enix.com"
-    - "*.finalfantasyxiv.com"
-    - "*.ffxiv.com"
-    - "*.ff14.sdo.com"
-    - "ff.dorado.sdo.com"
-    - "*.mcdn.bilivideo.cn"
-    - "+.media.dssott.com"
-    - "shark007.net"
-    - "Mijia Cloud"
-    - "+.market.xiaomi.com"
-    - "+.cmbchina.com"
-    - "+.cmbimg.com"
-    - "adguardteam.github.io"
-    - "adrules.top"
-    - "anti-ad.net"
-    - "local.adguard.org"
-    - "static.adtidy.org"
-    - "+.sandai.net"
-    - "+.n0808.com"
-    - "+.3gppnetwork.org"
-    - "+.uu.163.com"
-    - "ps.res.netease.com"
-    - "+.pub.3gppnetwork.org"
-    - "+.oray.com"
-    - "+.orayimg.com"
-    - "+.gcloudcs.com"
-    - "+.gcloudsdk.com"
+  ipv6: true
+  cache-algorithm: arc
   use-hosts: false
   use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+  - +.lan
+  - +.local
+  - +.msftconnecttest.com
+  - +.msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - localhost.work.weixin.qq.com
+  nameserver:
+  - 233.5.5.5
+  - 119.29.29.29
+  - 180.76.76.76
+  - 114.114.114.114
 ###############################################################
 
 ###############################################################
@@ -335,10 +237,30 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
-  adblockmihomo: { type: http, behavior: domain, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml, path: ./217heidai/adblockmihomo.yaml }
-  port_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml, path: ./Clash/port_classical.yaml }
-  reject_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml, path: ./Clash/reject_classical.yaml }
-  direct_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml, path: ./Clash/direct_classical.yaml }
+  adblockmihomo:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml
+  port_classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml
+  reject_classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical.yaml
+  direct_classical:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml
 ###############################################################
 
 ###############################################################
