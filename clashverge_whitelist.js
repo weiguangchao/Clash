@@ -1,4 +1,4 @@
-function main(config) {
+function main(config, profileName) {
   if (!config) {
     return config;
   }
