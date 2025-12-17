@@ -351,9 +351,9 @@ rules:
   - RULE-SET,adblockmihomo,🛑 广告拦截
   - RULE-SET,reject_classical,🛑 广告拦截
   ###############################################################
+  - RULE-SET,direct_classical,🎯 全球直连
   - GEOIP,private,🎯 全球直连,no-resolve
   - GEOIP,telegram,🚀 节点选择,no-resolve
-  - RULE-SET,direct_classical,🎯 全球直连
   - GEOSITE,private,🎯 全球直连
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,apple,🎯 全球直连
