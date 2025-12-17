@@ -194,7 +194,6 @@ function overwriteRules(config) {
       format: "yaml",
       interval: 86400,
       url: "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockmihomo.yaml",
-      path: "./217heidai/adblockmihomo.yaml",
     },
     port_classical: {
       type: "http",
@@ -202,7 +201,6 @@ function overwriteRules(config) {
       format: "yaml",
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/port_classical.yaml",
-      path: "./Clash/port_classical.yaml",
     },
     reject_classical: {
       type: "http",
@@ -210,7 +208,6 @@ function overwriteRules(config) {
       format: "yaml",
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical.yaml",
-      path: "./Clash/reject_classical.yaml",
     },
     direct_classical: {
       type: "http",
@@ -218,7 +215,6 @@ function overwriteRules(config) {
       format: "yaml",
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical.yaml",
-      path: "./Clash/direct_classical.yaml",
     },
   };
 
