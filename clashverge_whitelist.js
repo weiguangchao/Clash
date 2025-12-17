@@ -92,12 +92,6 @@ function overwriteProxyGroups(config) {
       hidden: true,
     },
     {
-      name: "🍃 隐私净化",
-      type: "select",
-      proxies: ["REJECT"],
-      hidden: true,
-    },
-    {
       name: "♻️ All-自动选择",
       type: "url-test",
       "include-all": true,
