@@ -244,6 +244,7 @@ function overwriteRules(config) {
   };
 
   const rules = [
+    "GEOSITE,category-ads-all,🛑 广告拦截",
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     "RULE-SET,reject_classical,🛑 广告拦截",
     "GEOIP,private,DIRECT,no-resolve",
