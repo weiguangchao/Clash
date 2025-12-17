@@ -1,15 +1,9 @@
 proxy-providers:
-  sub0:
-    type: http
-    url: https://xxxxx
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      expected-status: 204
-      timeout: 5000
-      interval: 300
-      lazy: true
+  sub0: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
+  sub1: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
+  sub2: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
+  sub3: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
+  sub4: { type: http, url: https://xxxxx, interval: 86400, health-check: { enable: true, url: https://www.gstatic.com/generate_204, expected-status: 204, timeout: 5000, interval: 300, lazy: true } }
 ###############################################################
 
 ###############################################################
