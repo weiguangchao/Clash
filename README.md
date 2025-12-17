@@ -25,11 +25,12 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 
 ```
 proxy-groups:
-- name: 🔀 非标端口
-  type: select
-  proxies:
-  - DIRECT
-  - 🚀 节点选择
+  - name: 🔀 非标端口
+    type: select
+    proxies:
+    - DIRECT
+    - 🚀 节点选择
+
 rule-providers:
   port_classical:
     type: http
