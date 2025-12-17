@@ -340,34 +340,10 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
-  adblockmihomo:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    url: https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml
-    path: ./217heidai/adblockmihomo.yaml
-  port_classical:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml
-    path: ./Clash/port_classical.yaml
-  reject_classical:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml
-    path: ./Clash/reject_classical.yaml
-  direct_classical:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml
-    path: ./Clash/direct_classical.yaml
+  adblockmihomo: { type: http, behavior: domain, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml, path: ./217heidai/adblockmihomo.yaml }
+  port_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/port_classical.yaml, path: ./Clash/port_classical.yaml }
+  reject_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/reject_classical.yaml, path: ./Clash/reject_classical.yaml }
+  direct_classical: { type: http, behavior: classical, format: yaml, interval: 86400, url: https://cdn.jsdelivr.net/gh/weiguangchao/Clash/direct_classical.yaml, path: ./Clash/direct_classical.yaml }
 ###############################################################
 
 ###############################################################
