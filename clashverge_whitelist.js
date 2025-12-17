@@ -4,7 +4,6 @@ function main(config) {
   }
 
   try {
-    overwriteProxys(config); // proxy
     overwriteProxyGroups(config); // proxy group
     overwriteRules(config); // rule
     overwriteDns(config); // dns
@@ -17,20 +16,6 @@ function main(config) {
     console.log("配置文件重写失败！将使用原来配置文件！");
     return config;
   }
-}
-
-function overwriteProxys(config) {
-  let proxies = config.proxies;
-  if (!proxies) {
-    return;
-  }
-  proxies = proxies.map((proxy) => {
-    return {
-      ...proxy,
-      "ip-version": "ipv4",
-    };
-  });
-  config.proxies = proxies;
 }
 
 function overwriteProxyGroups(config) {
