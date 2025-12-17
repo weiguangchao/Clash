@@ -346,6 +346,13 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
+  adblockmihomo:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    url: https://cdn.jsdelivr.net/gh/217heidai/adblockfilters@main/rules/adblockmihomo.yaml
+    path: ./217heidai/adblockmihomo.yaml
   port_classical:
     type: http
     behavior: classical
@@ -372,6 +379,7 @@ rule-providers:
 ###############################################################
 rules:
   - GEOSITE,category-ads-all,🛑 广告拦截
+  - RULE-SET,adblockmihomo,🛑 广告拦截
   - RULE-SET,reject_classical,🛑 广告拦截
   ###############################################################
   - GEOIP,private,🎯 全球直连,no-resolve
