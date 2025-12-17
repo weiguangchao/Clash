@@ -193,7 +193,7 @@ function overwriteRules(config) {
       behavior: "domain",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
+      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockmihomo.yaml",
       path: "./217heidai/adblockmihomo.yaml",
     },
     port_classical: {
@@ -201,7 +201,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/port_classical.yaml",
       path: "./Clash/port_classical.yaml",
     },
     reject_classical: {
@@ -209,7 +209,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical.yaml",
       path: "./Clash/reject_classical.yaml",
     },
     direct_classical: {
@@ -217,7 +217,7 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical.yaml",
       path: "./Clash/direct_classical.yaml",
     },
   };
