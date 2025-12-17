@@ -21,8 +21,8 @@ proxy-groups:
   - name: 🔀 非标端口
     type: select
     proxies:
-    - DIRECT
-    - 🚀 节点选择
+      - DIRECT
+      - 🚀 节点选择
 
 rule-providers:
   port_classical:
