@@ -193,21 +193,21 @@ function overwriteRules(config) {
       behavior: "domain",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/refs/heads/main/rules/adblockmihomo.yaml",
+      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
     },
     port_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/port_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
     },
     direct_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml",
     },
   };
 
