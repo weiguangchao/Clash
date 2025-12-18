@@ -202,13 +202,6 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/port_classical.yaml",
     },
-    reject_classical: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical.yaml",
-    },
     direct_classical: {
       type: "http",
       behavior: "classical",
@@ -220,7 +213,6 @@ function overwriteRules(config) {
 
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
-    "RULE-SET,reject_classical,🛑 广告拦截",
     "RULE-SET,direct_classical,DIRECT",
     "GEOSITE,private,DIRECT",
     "GEOSITE,google-cn,DIRECT",
