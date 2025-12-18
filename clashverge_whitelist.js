@@ -248,16 +248,16 @@ function overwriteDns(config) {
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
-      // 本地主机/设备
       "+.lan",
       "+.local",
-      // Windows网络出现小地球图标
+      "+.arpa",
+      "time.*.com",
+      "ntp.*.com",
+      "+.market.xiaomi.com",
       "+.msftconnecttest.com",
       "+.msftncsi.com",
-      // QQ快速登录检测失败
       "localhost.ptlogin2.qq.com",
       "localhost.sec.qq.com",
-      // 微信快速登录检测失败
       "localhost.work.weixin.qq.com",
     ],
     nameserver: [
