@@ -251,8 +251,6 @@ function overwriteDns(config) {
       "+.lan",
       "+.local",
       "+.arpa",
-      "time.*.com",
-      "ntp.*.com",
       "+.market.xiaomi.com",
       "+.msftconnecttest.com",
       "+.msftncsi.com",
