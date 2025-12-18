@@ -299,6 +299,7 @@ function overwriteSniffer(config) {
     },
     "skip-domain": [
       "Mijia Cloud",
+      "dlg.io.mi.com",
       "+.push.apple.com",
       "+.oray.com",
       "+.sunlogin.net",
