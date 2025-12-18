@@ -79,6 +79,8 @@ dns:
   fake-ip-filter:
     - +.lan
     - +.local
+    - +.arpa
+    - +.market.xiaomi.com
     - +.msftconnecttest.com
     - +.msftncsi.com
     - localhost.ptlogin2.qq.com
