@@ -195,26 +195,19 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
     },
-    // port_classical: {
-    //   type: "http",
-    //   behavior: "classical",
-    //   format: "yaml",
-    //   interval: 86400,
-    //   url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
-    // },
+    port_classical: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
+    },
     direct_classical: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml",
-    },
-    AmazonCloud_Classical_No_Resolve: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloud/AmazonCloud/AmazonCloud_Classical_No_Resolve.yaml",
     },
   };
 
@@ -233,11 +226,10 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,🎯 全球直连",
     ////////////////////////////////////////////////////////////////
-    "RULE-SET,AmazonCloud_Classical_No_Resolve,🎯 全球直连",
     "GEOIP,private,🎯 全球直连,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOIP,cn,🎯 全球直连",
-    // "RULE-SET,port_classical,🔀 非标端口",
+    "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
 
