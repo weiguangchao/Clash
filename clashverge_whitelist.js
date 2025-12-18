@@ -261,6 +261,7 @@ function overwriteDns(config) {
       "localhost.work.weixin.qq.com",
     ],
     nameserver: [
+      "dhcp://en0",
       "233.5.5.5",
       "119.29.29.29",
       "180.76.76.76",
