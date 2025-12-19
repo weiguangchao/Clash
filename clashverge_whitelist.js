@@ -53,11 +53,11 @@ function overwriteProxyGroups(config) {
       type: "select",
       proxies: ["DIRECT", "🚀 节点选择"],
     },
-    {
-      name: "🔀 非标端口",
-      type: "select",
-      proxies: ["DIRECT", "🚀 节点选择"],
-    },
+    // {
+    //   name: "🔀 非标端口",
+    //   type: "select",
+    //   proxies: ["DIRECT", "🚀 节点选择"],
+    // },
     {
       name: "🌴 手动选择",
       type: "select",
