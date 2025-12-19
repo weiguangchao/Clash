@@ -53,11 +53,6 @@ function overwriteProxyGroups(config) {
       type: "select",
       proxies: ["DIRECT", "🚀 节点选择"],
     },
-    // {
-    //   name: "🔀 非标端口",
-    //   type: "select",
-    //   proxies: ["DIRECT", "🚀 节点选择"],
-    // },
     {
       name: "🌴 手动选择",
       type: "select",
@@ -195,13 +190,6 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
     },
-    // port_classical: {
-    //   type: "http",
-    //   behavior: "classical",
-    //   format: "yaml",
-    //   interval: 86400,
-    //   url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/port_classical.yaml",
-    // },
     direct_classical: {
       type: "http",
       behavior: "classical",
@@ -239,7 +227,6 @@ function overwriteRules(config) {
     "GEOIP,telegram,🚀 节点选择,no-resolve",
     ///////////////////////////解析IP/////////////////////////////////
     "GEOIP,cn,🎯 全球直连",
-    // "RULE-SET,port_classical,🔀 非标端口",
     "MATCH,🚀 节点选择",
   ];
 
