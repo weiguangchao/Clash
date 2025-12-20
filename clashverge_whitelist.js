@@ -320,7 +320,7 @@ function overwriteOthers(config) {
   config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 300;
+  config["keep-alive-idle"] = 600;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
