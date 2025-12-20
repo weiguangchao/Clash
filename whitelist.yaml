@@ -20,7 +20,7 @@ tcp-concurrent: true
 unified-delay: true
 disable-keep-alive: false
 keep-alive-interval: 15
-keep-alive-idle: 600
+keep-alive-idle: 300
 profile:
   store-selected: true
   store-fake-ip: true
