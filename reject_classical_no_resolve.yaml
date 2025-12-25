@@ -1,2 +1,1 @@
 payload:
-  - AND,((GEOSITE,gfw),(DST-PORT,443),(NETWORK,UDP))
