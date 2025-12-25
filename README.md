@@ -3,7 +3,7 @@
 ## shadowrocket
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowrocket_whitelist.conf
+https://raw.githubusercontent.com/weiguangchao/Clash/master/shadowrocket_whitelist.conf
 ```
 
 ## 远程配置模版
@@ -11,7 +11,7 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowroc
 Github
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
+https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
 ```
 
 ## rule
