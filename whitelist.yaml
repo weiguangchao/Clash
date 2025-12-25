@@ -111,6 +111,10 @@ proxy-groups:
       - 🇺🇸 US-自动选择
       - 🇸🇬 SG-自动选择
       - 🌐 Other-自动选择
+  - name: 🌴 手动选择
+    type: select
+    include-all: true
+    exclude-type: direct
   - name: 📺 哔哩哔哩
     type: select
     proxies:
@@ -127,10 +131,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - 🚀 节点选择
-  - name: 🌴 手动选择
-    type: select
-    include-all: true
-    exclude-type: direct
   - name: 🎯 全球直连
     type: select
     proxies:
