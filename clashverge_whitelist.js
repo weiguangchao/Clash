@@ -222,9 +222,9 @@ function overwriteRules(config) {
     "GEOSITE,gfw,🚀 节点选择",
     "GEOSITE,cn,🎯 全球直连",
     ///////////////////////////不解析IP///////////////////////////////
-    "RULE-SET,AmazonCloud_Classical_No_Resolve,🎯 全球直连",
     "GEOIP,private,🎯 全球直连,no-resolve",
     "GEOIP,telegram,🚀 节点选择,no-resolve",
+    "RULE-SET,AmazonCloud_Classical_No_Resolve,🎯 全球直连",
     ///////////////////////////解析IP/////////////////////////////////
     "GEOIP,cn,🎯 全球直连",
     "MATCH,🚀 节点选择",
