@@ -39,6 +39,12 @@ function overwriteProxyGroups(config) {
       ],
     },
     {
+      name: "🌴 手动选择",
+      type: "select",
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
       name: "📺 哔哩哔哩",
       type: "select",
       proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
@@ -52,12 +58,6 @@ function overwriteProxyGroups(config) {
       name: "⏱️ 测速工具",
       type: "select",
       proxies: ["DIRECT", "🚀 节点选择"],
-    },
-    {
-      name: "🌴 手动选择",
-      type: "select",
-      "include-all": true,
-      "exclude-type": "direct",
     },
     {
       name: "🎯 全球直连",
