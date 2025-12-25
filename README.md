@@ -37,15 +37,15 @@ rule-providers:
     format: yaml
     interval: 86400
     url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical.yaml
-  direct_classical:
+  direct_classical_no_resolve:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
 
 rules:
   - RULE-SET,reject_classical,REJECT
-  - RULE-SET,direct_classical,DIRECT
+  - RULE-SET,direct_classical_no_resolve,DIRECT
   - RULE-SET,port_classical,🔀 非标端口
 ```
