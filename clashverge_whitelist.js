@@ -190,12 +190,12 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
     },
-    direct_classical: {
+    direct_classical_no_resolve: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml",
     },
     AmazonCloud_Classical_No_Resolve: {
       type: "http",
@@ -209,7 +209,7 @@ function overwriteRules(config) {
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
     /////////////////////////////////////////////////////////////////////
-    "RULE-SET,direct_classical,🎯 全球直连",
+    "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
     "GEOSITE,private,🎯 全球直连",
     "GEOSITE,google-cn,🎯 全球直连",
     "GEOSITE,apple,🎯 全球直连",
