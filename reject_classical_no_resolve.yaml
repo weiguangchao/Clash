@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN-SUFFIX,stun*.chat.bilibili.com
+  - DOMAIN-WILDCARD,stun*.chat.bilibili.com
