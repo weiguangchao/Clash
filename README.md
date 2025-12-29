@@ -31,7 +31,14 @@ rule-providers:
     format: yaml
     interval: 86400
     url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
+  reject_classical_no_resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml
 
 rules:
+  - RULE-SET,reject_classical_no_resolve,🛑 广告拦截
   - RULE-SET,direct_classical_no_resolve,DIRECT
 ```
