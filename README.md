@@ -17,13 +17,6 @@ https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
 ## rule
 
 ```
-proxy-groups:
-  - name: 🔀 非标端口
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
 rule-providers:
   direct_classical_no_resolve:
     type: http
