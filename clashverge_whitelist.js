@@ -197,6 +197,13 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml",
     },
+    reject_classical_no_resolve: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml",
+    },
     AmazonCloud_Classical_No_Resolve: {
       type: "http",
       behavior: "classical",
@@ -208,6 +215,7 @@ function overwriteRules(config) {
 
   const rules = [
     "RULE-SET,adblockmihomo,🛑 广告拦截",
+    "RULE-SET,reject_classical_no_resolve,🛑 广告拦截",
     /////////////////////////////////////////////////////////////////////
     "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
     "GEOSITE,private,🎯 全球直连",
