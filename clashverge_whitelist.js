@@ -183,13 +183,6 @@ function overwriteProxyGroups(config) {
 
 function overwriteRules(config) {
   const ruleProviders = {
-    adblockmihomo: {
-      type: "http",
-      behavior: "domain",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml",
-    },
     direct_classical_no_resolve: {
       type: "http",
       behavior: "classical",
@@ -214,7 +207,7 @@ function overwriteRules(config) {
   };
 
   const rules = [
-    "RULE-SET,adblockmihomo,🛑 广告拦截",
+    "GEOSITE,category-ads-all,🛑 广告拦截",
     "RULE-SET,reject_classical_no_resolve,🛑 广告拦截",
     /////////////////////////////////////////////////////////////////////
     "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
