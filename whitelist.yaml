@@ -236,6 +236,36 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
+  BanAD:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+  BanProgramAD:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+  BanEasyList:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml
   direct_classical_no_resolve:
     type: http
     behavior: classical
@@ -258,7 +288,11 @@ rule-providers:
 
 ###############################################################
 rules:
-  - GEOSITE,category-ads-all,🛑 广告拦截
+  - RULE-SET,BanAD,🛑 广告拦截
+  - RULE-SET,BanProgramAD,🛑 广告拦截
+  - RULE-SET,BanEasyList,🛑 广告拦截
+  - RULE-SET,BanEasyListChina,🛑 广告拦截
+  - RULE-SET,BanEasyPrivacy,🛑 广告拦截
   - RULE-SET,reject_classical_no_resolve,🛑 广告拦截
   ###############################################################
   - RULE-SET,direct_classical_no_resolve,🎯 全球直连
