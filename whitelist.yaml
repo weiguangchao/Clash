@@ -236,12 +236,6 @@ proxy-groups:
 
 ###############################################################
 rule-providers:
-  adblockmihomo:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockmihomo.yaml
   direct_classical_no_resolve:
     type: http
     behavior: classical
@@ -264,7 +258,6 @@ rule-providers:
 
 ###############################################################
 rules:
-  - RULE-SET,adblockmihomo,🛑 广告拦截
   - RULE-SET,reject_classical_no_resolve,🛑 广告拦截
   ###############################################################
   - RULE-SET,direct_classical_no_resolve,🎯 全球直连
