@@ -1,5 +1,6 @@
 payload:
-  - DOMAIN-WILDCARD,stun*.chat.bilibili.com
+  # B站直播stun
+  # - DOMAIN-WILDCARD,stun*.chat.bilibili.com
   # B站CDN
   # - DOMAIN-SUFFIX,edge.mountaintoys.cn
   # - DOMAIN-SUFFIX,mcdn.bilivideo.cn
