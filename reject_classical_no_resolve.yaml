@@ -1,3 +1,4 @@
 payload:
   - DOMAIN-WILDCARD,stun*.chat.bilibili.com
   - DOMAIN-SUFFIX,edge.mountaintoys.cn
+  - DOMAIN-SUFFIX,mcdn.bilivideo.cn
