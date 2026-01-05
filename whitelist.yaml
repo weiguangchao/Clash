@@ -117,6 +117,12 @@ proxy-groups:
     type: select
     include-all: true
     exclude-type: direct
+  - name: 🤖 AI服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+    include-all: true
+    exclude-type: direct
   - name: 📺 哔哩哔哩
     type: select
     proxies:
@@ -283,6 +289,7 @@ rules:
   - GEOSITE,category-speedtest,⏱️ 测速工具
   - GEOSITE,category-games,🎯 全球直连
   - GEOSITE,bilibili,📺 哔哩哔哩
+  - GEOSITE,category-ai-!cn,🤖 AI服务
   - GEOSITE,github,🚀 节点选择
   - GEOSITE,microsoft,Ⓜ️ 微软服务
   - GEOSITE,gfw,🚀 节点选择
