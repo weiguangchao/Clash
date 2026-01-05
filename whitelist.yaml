@@ -100,8 +100,8 @@ proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
-      - 🤖 自动选择
       - 🌴 手动选择
+      - 🤖 自动选择
       - DIRECT
   - name: 🌴 手动选择
     type: select
