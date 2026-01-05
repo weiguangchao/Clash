@@ -103,6 +103,10 @@ proxy-groups:
       - 🤖 自动选择
       - 🌴 手动选择
       - DIRECT
+  - name: 🌴 手动选择
+    type: select
+    include-all: true
+    exclude-type: direct
   - name: 🤖 自动选择
     type: select
     proxies:
@@ -113,10 +117,6 @@ proxy-groups:
       - 🇺🇸 US-自动选择
       - 🇸🇬 SG-自动选择
       - 🌐 Other-自动选择
-  - name: 🌴 手动选择
-    type: select
-    include-all: true
-    exclude-type: direct
   - name: 🤖 AI服务
     type: select
     proxies:
