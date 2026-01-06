@@ -23,7 +23,13 @@ function overwriteProxyGroups(config) {
     {
       name: "🚀 节点选择",
       type: "select",
-      proxies: ["🤖 自动选择", "🌴 手动选择", "DIRECT"],
+      proxies: ["🌴 手动选择", "🤖 自动选择", "DIRECT"],
+    },
+    {
+      name: "🌴 手动选择",
+      type: "select",
+      "include-all": true,
+      "exclude-type": "direct",
     },
     {
       name: "🤖 自动选择",
@@ -39,8 +45,9 @@ function overwriteProxyGroups(config) {
       ],
     },
     {
-      name: "🌴 手动选择",
+      name: "🤖 AI服务",
       type: "select",
+      proxies: ["🚀 节点选择"],
       "include-all": true,
       "exclude-type": "direct",
     },
@@ -197,6 +204,20 @@ function overwriteRules(config) {
       interval: 86400,
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml",
     },
+    AdvertisingLite_Classical_No_Resolve: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical_No_Resolve.yaml",
+    },
+    Privacy_Classical_No_Resolve: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical_No_Resolve.yaml",
+    },
     AmazonCloud_Classical_No_Resolve: {
       type: "http",
       behavior: "classical",
@@ -207,7 +228,8 @@ function overwriteRules(config) {
   };
 
   const rules = [
-    "GEOSITE,category-ads-all,🛑 广告拦截",
+    "RULE-SET,AdvertisingLite_Classical_No_Resolve,🛑 广告拦截",
+    "RULE-SET,Privacy_Classical_No_Resolve,🛑 广告拦截",
     "RULE-SET,reject_classical_no_resolve,🛑 广告拦截",
     /////////////////////////////////////////////////////////////////////
     "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
@@ -218,6 +240,7 @@ function overwriteRules(config) {
     "GEOSITE,category-speedtest,⏱️ 测速工具",
     "GEOSITE,category-games,🎯 全球直连",
     "GEOSITE,bilibili,📺 哔哩哔哩",
+    "GEOSITE,category-ai-!cn,🤖 AI服务",
     "GEOSITE,github,🚀 节点选择",
     "GEOSITE,microsoft,Ⓜ️ 微软服务",
     "GEOSITE,gfw,🚀 节点选择",
