@@ -1,0 +1,82 @@
+###############################################################
+ipv6: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+tcp-concurrent: true
+unified-delay: true
+disable-keep-alive: false
+keep-alive-interval: 15
+keep-alive-idle: 300
+profile:
+  store-selected: true
+  store-fake-ip: true
+###############################################################
+
+###############################################################
+geodata-mode: true
+geodata-loader: memconservative
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
+###############################################################
+
+###############################################################
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  force-dns-mapping: true
+  override-destination: false
+  sniff:
+    QUIC:
+      ports:
+        - 443
+        - 8443
+    TLS:
+      ports:
+        - 443
+        - 8443
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+      override-destination: true
+  skip-domain:
+    - Mijia Cloud
+    - dlg.io.mi.com
+    - +.push.apple.com
+    - +.oray.com
+    - +.sunlogin.net
+###############################################################
+
+###############################################################
+dns:
+  enable: true
+  ipv6: true
+  cache-algorithm: arc
+  use-hosts: false
+  use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - +.lan
+    - +.local
+    - +.arpa
+    - +.market.xiaomi.com
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - localhost.ptlogin2.qq.com
+    - localhost.sec.qq.com
+    - localhost.work.weixin.qq.com
+    - +.parsec.app
+  nameserver:
+    - dhcp://en0
+    - 233.5.5.5
+    - 119.29.29.29
+    # - 180.76.76.76
+    # - 114.114.114.114
+###############################################################
