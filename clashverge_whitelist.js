@@ -277,6 +277,7 @@ function overwriteDns(config) {
       "localhost.ptlogin2.qq.com",
       "localhost.sec.qq.com",
       "localhost.work.weixin.qq.com",
+      "+.parsec.app",
     ],
     nameserver: [
       "dhcp://en0",
