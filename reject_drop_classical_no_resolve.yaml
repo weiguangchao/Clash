@@ -1,3 +1,0 @@
-payload:
-  # B站直播stun
-  - DOMAIN-WILDCARD,stun*.chat.bilibili.com
