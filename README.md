@@ -8,8 +8,6 @@ https://raw.githubusercontent.com/weiguangchao/Clash/master/shadowrocket_whiteli
 
 ## 远程配置模版
 
-Github
-
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
 ```
@@ -30,8 +28,15 @@ rule-providers:
     format: yaml
     interval: 86400
     url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml
+  proxy_classical_no_resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/proxy_classical_no_resolve.yaml
 
 rules:
   - RULE-SET,reject_classical_no_resolve,🛑 广告拦截
-  - RULE-SET,direct_classical_no_resolve,DIRECT
+  - RULE-SET,direct_classical_no_resolve,🎯 全球直连
+  - RULE-SET,proxy_classical_no_resolve,🚀 节点选择
 ```
