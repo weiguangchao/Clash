@@ -1,4 +1,6 @@
 ###############################################################
+mode: rule
+log-level: info
 ipv6: true
 find-process-mode: strict
 global-client-fingerprint: chrome
