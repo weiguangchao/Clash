@@ -1,5 +1,6 @@
 ###############################################################
 mode: rule
+allow-lan: false
 log-level: info
 ipv6: true
 find-process-mode: strict
