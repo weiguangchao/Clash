@@ -2,6 +2,7 @@ payload:
   # B站直播stun
   - DOMAIN-WILDCARD,stun*.chat.bilibili.com
   - GEOIP,bilibili,no-resolve
+  - DST-PORT,3478
   # B站CDN
   # - DOMAIN-SUFFIX,edge.mountaintoys.cn
   # - DOMAIN-SUFFIX,mcdn.bilivideo.cn
