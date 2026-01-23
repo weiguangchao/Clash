@@ -66,12 +66,8 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - +.lan
-    - +.local
-    - +.arpa
-    - +.market.xiaomi.com
-    - +.msftconnecttest.com
-    - +.msftncsi.com
+    - geosite:private
+    - geosite:connectivity-check
     - localhost.ptlogin2.qq.com
     - localhost.sec.qq.com
     - localhost.work.weixin.qq.com
