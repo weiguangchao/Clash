@@ -14,24 +14,20 @@ https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
 
 ## rule
 
+### 直连
+
 ```
-rule-providers:
-  direct_classical_no_resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
-  reject_classical_no_resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml
-  proxy_classical_no_resolve:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/proxy_classical_no_resolve.yaml
+https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
+```
+
+### 代理
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/master/proxy_classical_no_resolve.yaml
+```
+
+### 拒绝
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml
 ```
