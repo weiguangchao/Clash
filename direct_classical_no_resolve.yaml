@@ -6,3 +6,5 @@ payload:
   - DOMAIN-SUFFIX,lightsoft.tech
   - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN-SUFFIX,parsec.app
+  - DOMAIN,ec2-54-183-201-205.us-west-1.compute.amazonaws.com
+  - DOMAIN,ec2-18-143-183-242.ap-southeast-1.compute.amazonaws.com
