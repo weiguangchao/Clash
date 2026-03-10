@@ -4,7 +4,6 @@ allow-lan: false
 log-level: info
 ipv6: true
 find-process-mode: strict
-global-client-fingerprint: chrome
 tcp-concurrent: true
 unified-delay: true
 disable-keep-alive: false
