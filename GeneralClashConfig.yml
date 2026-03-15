@@ -46,10 +46,10 @@ sniffer:
         - 8080-8880
       override-destination: true
   force-domain:
-    - +.netflix.com
-    - +.nflxvideo.net
-    - +.amazonaws.com
-    - +.media.dssott.com
+    - "+.netflix.com"
+    - "+.nflxvideo.net"
+    - "+.amazonaws.com"
+    - "+.media.dssott.com"
   skip-domain:
     - Mijia Cloud
     - dlg.io.mi.com
