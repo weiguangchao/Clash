@@ -31,12 +31,11 @@ sniffer:
   enable: true
   parse-pure-ip: true
   force-dns-mapping: true
-  override-destination: false
+  override-destination: true
   sniff:
     QUIC:
       ports:
         - 443
-        - 8443
     TLS:
       ports:
         - 443
