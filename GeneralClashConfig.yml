@@ -72,12 +72,17 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: rule
   fake-ip-filter:
-    - geosite,private,real-ip
-    - geosite,connectivity-check,real-ip
     - DOMAIN-SUFFIX,localhost.ptlogin2.qq.com,real-ip
     - DOMAIN-SUFFIX,localhost.sec.qq.com,real-ip
     - DOMAIN-SUFFIX,localhost.work.weixin.qq.com,real-ip
     - DOMAIN-SUFFIX,parsec.app,real-ip
+    - geosite,private,real-ip
+    - geosite,connectivity-check,real-ip
+    - geosite,google-cn,real-ip
+    - geosite,apple,real-ip
+    - geosite,category-public-tracker,real-ip
+    - geosite,category-games,real-ip
+    - geosite,category-speedtest,real-ip
     - geosite,cn,real-ip
     - MATCH,fake-ip
   nameserver:
