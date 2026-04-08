@@ -70,14 +70,16 @@ dns:
   use-system-hosts: false
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  fake-ip-filter-mode: blacklist
+  fake-ip-filter-mode: rule
   fake-ip-filter:
-    - geosite:private
-    - geosite:connectivity-check
-    - localhost.ptlogin2.qq.com
-    - localhost.sec.qq.com
-    - localhost.work.weixin.qq.com
-    - +.parsec.app
+    - geosite,private,real-ip
+    - geosite,connectivity-check,real-ip
+    - DOMAIN-SUFFIX,localhost.ptlogin2.qq.com,real-ip
+    - DOMAIN-SUFFIX,localhost.sec.qq.com,real-ip
+    - DOMAIN-SUFFIX,localhost.work.weixin.qq.com,real-ip
+    - DOMAIN-SUFFIX,parsec.app,real-ip
+    - geosite,cn,real-ip
+    - MATCH,fake-ip
   nameserver:
     - 233.5.5.5
     - 119.29.29.29
