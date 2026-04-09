@@ -81,6 +81,7 @@ dns:
     - geosite,category-public-tracker,real-ip
     - geosite,category-games,real-ip
     - geosite,category-speedtest,real-ip
+    - geosite,microsoft,real-ip
     - geosite,cn,real-ip
     - MATCH,fake-ip
   nameserver:
