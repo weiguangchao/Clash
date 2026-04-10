@@ -38,12 +38,10 @@ sniffer:
         - 80
         - 8080-8880
       override-destination: true
-
     TLS:
       ports:
         - 443
         - 8443
-
     QUIC:
       ports:
         - 443
@@ -54,11 +52,6 @@ sniffer:
     - "+.amazonaws.com"
     - "+.media.dssott.com"
   skip-domain:
-    - "+.lan"
-    - "+.local"
-    - "+.stun.*.*"
-    - "+.stun.*.*.*"
-    - "+.stun.playstation.net"
     - Mijia Cloud
     - dlg.io.mi.com
     - +.oray.com
