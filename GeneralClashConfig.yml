@@ -2,7 +2,7 @@ mode: rule
 allow-lan: false
 log-level: info
 ipv6: true
-find-process-mode: strict
+find-process-mode: off
 tcp-concurrent: true
 unified-delay: true
 disable-keep-alive: false
