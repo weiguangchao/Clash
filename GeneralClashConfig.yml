@@ -51,6 +51,7 @@ sniffer:
     - "+.nflxvideo.net"
     - "+.amazonaws.com"
     - "+.media.dssott.com"
+    - "+.v2ex.com"
   skip-domain:
     - Mijia Cloud
     - dlg.io.mi.com
