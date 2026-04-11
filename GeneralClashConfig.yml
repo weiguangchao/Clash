@@ -53,6 +53,8 @@ sniffer:
     - "+.media.dssott.com"
     - "+.v2ex.com"
   skip-domain:
+    - "+.local"
+    - "+.lan"
     - Mijia Cloud
     - dlg.io.mi.com
     - +.oray.com
