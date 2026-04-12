@@ -71,18 +71,27 @@ dns:
   fake-ip-filter:
     - DOMAIN-SUFFIX,localhost.work.weixin.qq.com,real-ip
     - DOMAIN-SUFFIX,parsec.app,real-ip
-    - geosite,private,real-ip
-    - geosite,connectivity-check,real-ip
-    - geosite,google-cn,real-ip
-    - geosite,apple,real-ip
-    - geosite,category-public-tracker,real-ip
-    - geosite,category-games,real-ip
-    - geosite,category-speedtest,real-ip
-    - geosite,microsoft,real-ip
-    - geosite,cn,real-ip
+    - RULE-SET,direct_classical_no_resolve,real-ip
+    - GEOSITE,private,real-ip
+    - GEOSITE,connectivity-check,real-ip
+    - GEOSITE,google-cn,real-ip
+    - GEOSITE,apple,real-ip
+    - GEOSITE,category-public-tracker,real-ip
+    - GEOSITE,category-games,real-ip
+    - GEOSITE,category-speedtest,real-ip
+    - GEOSITE,microsoft,real-ip
+    - GEOSITE,cn,real-ip
     - MATCH,fake-ip
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
     - 114.114.114.114
 ###############################################################
+
+rule-providers:
+  direct_classical_no_resolve:
+    type: http
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
+    interval: 86400
+    behavior: classical
+    format: yaml
