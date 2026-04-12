@@ -26,7 +26,7 @@ geox-url:
 ###############################################################
 sniffer:
   enable: true
-  # 已有 DNS 映射关系时，强制把连接和域名对应起来
+  # 对 redir-host 类型识别的流量进行强制嗅探
   force-dns-mapping: true
   # 对纯 IP 连接也尝试嗅探
   parse-pure-ip: true
