@@ -1,7 +1,7 @@
 mode: rule
 allow-lan: false
 log-level: info
-ipv6: true
+ipv6: false
 find-process-mode: off
 tcp-concurrent: true
 unified-delay: true
@@ -60,7 +60,7 @@ sniffer:
 ###############################################################
 dns:
   enable: true
-  ipv6: true
+  ipv6: false
   respect-rules: false
   cache-algorithm: arc
   use-hosts: false
@@ -69,18 +69,10 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: rule
   fake-ip-filter:
-    - DOMAIN-SUFFIX,localhost.work.weixin.qq.com,real-ip
-    - DOMAIN-SUFFIX,parsec.app,real-ip
-    - RULE-SET,direct_classical_no_resolve,real-ip
     - GEOSITE,private,real-ip
     - GEOSITE,connectivity-check,real-ip
-    - GEOSITE,google-cn,real-ip
-    - GEOSITE,apple,real-ip
-    - GEOSITE,category-public-tracker,real-ip
-    - GEOSITE,category-games,real-ip
-    - GEOSITE,category-speedtest,real-ip
-    - GEOSITE,microsoft,real-ip
-    - GEOSITE,cn,real-ip
+    - DOMAIN-SUFFIX,localhost.work.weixin.qq.com,real-ip
+    - DOMAIN-SUFFIX,parsec.app,real-ip
     - MATCH,fake-ip
   nameserver:
     - 223.5.5.5
