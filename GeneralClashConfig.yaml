@@ -69,8 +69,8 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - geosite:private
-    - geosite:connectivity-check
+    - GEOSITE:private
+    - GEOSITE:connectivity-check
     - +.localhost.work.weixin.qq.com
     - "stun.*.*"
     - "stun.*.*.*"
