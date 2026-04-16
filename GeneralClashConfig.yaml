@@ -13,6 +13,9 @@ profile:
   store-fake-ip: true
 
 ###############################################################
+secret: NeWnCcFKBQ
+
+###############################################################
 geodata-mode: true
 geodata-loader: memconservative
 geo-auto-update: true
