@@ -71,6 +71,7 @@ dns:
   fake-ip-filter:
     - GEOSITE:private
     - GEOSITE:connectivity-check
+    - GEOSITE:category-ntp
     - +.localhost.work.weixin.qq.com
     - "stun.*.*"
     - "stun.*.*.*"
