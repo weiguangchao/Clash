@@ -72,8 +72,8 @@ dns:
     - GEOSITE:private
     - GEOSITE:connectivity-check
     - +.localhost.work.weixin.qq.com
-    - "stun.*.*"
-    - "stun.*.*.*"
+    - stun.*.*
+    - stun.*.*.*
     - "+.stun.*.*"
     - "+.stun.*.*.*"
     - "+.stun.*.*.*.*"
