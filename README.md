@@ -9,7 +9,7 @@ https://raw.githubusercontent.com/weiguangchao/Clash/master/shadowrocket_whiteli
 ## 远程配置模版
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/master/clash.ini
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 ```
 
 ## rule
