@@ -3,7 +3,7 @@
 ## shadowrocket
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/master/shadowrocket_whitelist.conf
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowrocket_whitelist.conf
 ```
 
 ## 远程配置模版
