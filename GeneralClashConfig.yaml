@@ -105,7 +105,6 @@ rules:
   - GEOSITE,category-speedtest,⏱️ Speedtest
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
-  - DOMAIN-SUFFIX,warp.dev,🤖 AI
   - GEOSITE,github,🚀 节点选择
   - GEOSITE,microsoft,Ⓜ️ Microsoft
   - GEOSITE,youtube,📹 YouTube
@@ -114,5 +113,4 @@ rules:
   - GEOIP,telegram,🚀 节点选择,no-resolve
   - GEOIP,private,🎯 全球直连,no-resolve
   - GEOIP,cn,🎯 全球直连,no-resolve
-  - AND,((NETWORK,UDP),(NOT,((GEOSITE,cn)))),🛑 全球拦截
   - MATCH,🐟 漏网之鱼
