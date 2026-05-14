@@ -107,8 +107,8 @@ rules:
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
   #### 谷歌服务 ####
-  - GEOSITE,google,🇬 谷歌服务
   - GEOSITE,youtube,📹 YouTube
+  - GEOSITE,google,🇬 谷歌服务
   #### GitHub ####
   - GEOSITE,github,🚀 节点选择
   - GEOSITE,microsoft,Ⓜ️ Microsoft
