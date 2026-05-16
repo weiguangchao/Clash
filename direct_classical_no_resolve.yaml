@@ -11,3 +11,4 @@ payload:
   - DOMAIN-SUFFIX,iwzwh.com
   # Amazon AWS
   - DOMAIN-SUFFIX,compute.amazonaws.com
+  - DOMAIN-SUFFIX,istatmenus.app
