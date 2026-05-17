@@ -88,7 +88,7 @@ rule-providers:
     type: http
     behavior: classical
     format: yaml
-    url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml"
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
     interval: 86400
 
 rules:
