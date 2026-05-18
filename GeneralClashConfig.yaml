@@ -108,7 +108,7 @@ rules:
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
   #### Google ####
-  - AND,((GEOSITE,youtube),(NETWORK,UDP)),🛑 拦截 2
+  - AND,((GEOSITE,google),(NETWORK,UDP)),🛑 拦截 2
   - GEOSITE,youtube,📹 YouTube
   - GEOSITE,google,🇬 谷歌服务
   #### GitHub ####
