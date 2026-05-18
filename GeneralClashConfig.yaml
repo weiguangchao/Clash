@@ -103,6 +103,8 @@ rules:
   - GEOSITE,bilibili,📺 Bilibili
   - GEOSITE,category-speedtest,⏱️ Speedtest
   #### AI ####
+  - AND,((GEOSITE,cursor),(NETWORK,UDP)),🛑 拦截 2
+  - AND,((GEOSITE,category-ai-!cn),(NETWORK,UDP)),🛑 拦截 2
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
   #### Google ####
