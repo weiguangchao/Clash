@@ -10,6 +10,8 @@ payload:
   - DOMAIN-SUFFIX,istatmenus.app
   #### Parsec ####
   - DOMAIN-SUFFIX,parsec.app
+  #### EasyRouter ####
+  - DOMAIN-SUFFIX,easyrouter.io
   #### Others ####
   - DOMAIN-SUFFIX,theluyuan.com
   - DOMAIN-SUFFIX,lightsoft.tech
