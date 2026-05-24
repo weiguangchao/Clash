@@ -118,7 +118,8 @@ rules:
   - GEOSITE,bilibili,📺 Bilibili
   - GEOSITE,category-speedtest,⏱️ Speedtest
   #### AI ####
-  - RULE-SET,ai_classical_no_resolve,🤖 AI
+  - GEOSITE,category-ai-!cn,🤖 AI
+  - GEOSITE,cursor,🤖 AI
   #### Google ####
   - GEOSITE,youtube,📹 YouTube
   - GEOSITE,google,🇬 谷歌服务
