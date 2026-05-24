@@ -1,0 +1,6 @@
+payload:
+  #### AI ####
+  - AND,((GEOSITE,cursor),(NETWORK,UDP))
+  - AND,((GEOSITE,category-ai-!cn),(NETWORK,UDP))
+  #### Google ####
+  - AND,((GEOSITE,google),(NETWORK,UDP))
