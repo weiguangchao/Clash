@@ -90,8 +90,15 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
     interval: 86400
+  reject_drop_classical_no_resolve:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_drop_classical_no_resolve.yaml
+    interval: 86400
 
 rules:
+  - RULE-SET,reject_drop_classical_no_resolve,🛑 REJECT-DROP
   - RULE-SET,direct_classical_no_resolve,🎯 全球直连
   - GEOSITE,private,🎯 全球直连
   - GEOSITE,connectivity-check,🎯 全球直连
@@ -105,12 +112,9 @@ rules:
   - GEOSITE,bilibili,📺 Bilibili
   - GEOSITE,category-speedtest,⏱️ Speedtest
   #### AI ####
-  - AND,((GEOSITE,cursor),(NETWORK,UDP)),🛑 拦截 2
-  - AND,((GEOSITE,category-ai-!cn),(NETWORK,UDP)),🛑 拦截 2
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
   #### Google ####
-  - AND,((GEOSITE,google),(NETWORK,UDP)),🛑 拦截 2
   - GEOSITE,youtube,📹 YouTube
   - GEOSITE,google,🇬 谷歌服务
   #### GitHub ####
