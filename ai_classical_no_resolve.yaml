@@ -1,7 +1,5 @@
 payload:
   #### Main ####
   - GEOSITE,category-ai-!cn
-  #### OpenRouter ####
-  - DOMAIN-SUFFIX,openrouter.ai
   #### Cursor ####
   - GEOSITE,cursor
