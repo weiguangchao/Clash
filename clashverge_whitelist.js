@@ -4,12 +4,12 @@ function main(config, profileName) {
   }
 
   try {
-    overwriteProxyGroups(config); // proxy group
-    overwriteRules(config); // rule
-    overwriteDns(config); // dns
-    overwriteSniffer(config); // sniffer
-    overwriteGeodata(config); // geodata
-    overwriteOthers(config); // other
+    overwriteProxyGroups(config);
+    overwriteRules(config);
+    overwriteDns(config);
+    overwriteSniffer(config);
+    overwriteGeodata(config);
+    overwriteOthers(config);
     console.log("配置文件重写完成！");
     return config;
   } catch (error) {
@@ -23,48 +23,70 @@ function overwriteProxyGroups(config) {
     {
       name: "🚀 节点选择",
       type: "select",
-      proxies: ["🌴 手动选择", "🤖 自动选择", "DIRECT"],
-    },
-    {
-      name: "🌴 手动选择",
-      type: "select",
+      proxies: ["🎯 全球直连"],
       "include-all": true,
       "exclude-type": "direct",
     },
     {
-      name: "🤖 自动选择",
-      type: "select",
-      proxies: [
-        "♻️ All-自动选择",
-        "🇭🇰 HK-自动选择",
-        "🇹🇼 TW-自动选择",
-        "🇯🇵 JP-自动选择",
-        "🇺🇸 US-自动选择",
-        "🇸🇬 SG-自动选择",
-        "🌐 Other-自动选择",
-      ],
-    },
-    {
-      name: "🤖 AI服务",
+      name: "🤖 AI",
       type: "select",
       proxies: ["🚀 节点选择"],
       "include-all": true,
       "exclude-type": "direct",
     },
     {
-      name: "📺 哔哩哔哩",
+      name: "📹 YouTube",
       type: "select",
-      proxies: ["DIRECT", "🇭🇰 HK-自动选择", "🇹🇼 TW-自动选择"],
+      proxies: ["🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
     },
     {
-      name: "Ⓜ️ 微软服务",
+      name: "🇬 谷歌服务",
       type: "select",
-      proxies: ["DIRECT", "🚀 节点选择"],
+      proxies: ["🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
     },
     {
-      name: "⏱️ 测速工具",
+      name: "📺 Bilibili",
       type: "select",
-      proxies: ["DIRECT", "🚀 节点选择"],
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "Ⓜ️ Microsoft",
+      type: "select",
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "⏱️ Speedtest",
+      type: "select",
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "🎮 游戏平台",
+      type: "select",
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "🍎 苹果服务",
+      type: "select",
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
+      name: "🐟 漏网之鱼",
+      type: "select",
+      proxies: ["🚀 节点选择"],
     },
     {
       name: "🎯 全球直连",
@@ -73,114 +95,15 @@ function overwriteProxyGroups(config) {
       hidden: true,
     },
     {
-      name: "🛑 广告拦截",
+      name: "🛑 REJECT-DROP",
+      type: "select",
+      proxies: ["REJECT-DROP"],
+      hidden: true,
+    },
+    {
+      name: "🛑 REJECT",
       type: "select",
       proxies: ["REJECT"],
-      hidden: true,
-    },
-    {
-      name: "♻️ All-自动选择",
-      type: "url-test",
-      "include-all": true,
-      "exclude-type": "direct",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🇭🇰 HK-自动选择",
-      filter: "(?i)🇭🇰|港|hk|hongkong|hong kong",
-      "include-all": true,
-      "exclude-type": "direct",
-      type: "url-test",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🇹🇼 TW-自动选择",
-      filter: "(?i)🇹🇼|🇨🇳|台|tw|taiwan",
-      "include-all": true,
-      "exclude-type": "direct",
-      type: "url-test",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🇯🇵 JP-自动选择",
-      filter: "(?i)🇯🇵|日|jp|japan",
-      "include-all": true,
-      "exclude-type": "direct",
-      type: "url-test",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🇺🇸 US-自动选择",
-      filter: "(?i)🇺🇸|美|us|unitedstates|united states",
-      "include-all": true,
-      "exclude-type": "direct",
-      type: "url-test",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🇸🇬 SG-自动选择",
-      filter: "(?i)(🇸🇬|新|sg|singapore)",
-      "include-all": true,
-      "exclude-type": "direct",
-      type: "url-test",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
-      hidden: true,
-    },
-    {
-      name: "🌐 Other-自动选择",
-      type: "url-test",
-      "include-all": true,
-      "exclude-type": "direct",
-      filter:
-        "(?i)^(?!.*(?:🇭🇰|港|hk|hongkong|hong kong|🇹🇼|🇨🇳|台|tw|taiwan|🇯🇵|日|jp|japan|🇺🇸|美|us|unitedstates|united states|🇸🇬|新|sg|singapore)).*",
-      url: "https://www.gstatic.com/generate_204",
-      "expected-status": 204,
-      interval: 300,
-      timeout: 5000,
-      "max-failed-times": 5,
-      tolerance: 50,
-      lazy: true,
       hidden: true,
     },
   ];
@@ -195,62 +118,49 @@ function overwriteRules(config) {
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml",
+    },
+    reject_drop_classical_no_resolve: {
+      type: "http",
+      behavior: "classical",
+      format: "yaml",
+      interval: 86400,
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_drop_classical_no_resolve.yaml",
     },
     reject_classical_no_resolve: {
       type: "http",
       behavior: "classical",
       format: "yaml",
       interval: 86400,
-      url: "https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml",
-    },
-    AdvertisingLite_Classical_No_Resolve: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Classical_No_Resolve.yaml",
-    },
-    Privacy_Classical_No_Resolve: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Privacy/Privacy_Classical_No_Resolve.yaml",
-    },
-    AmazonCloud_Classical_No_Resolve: {
-      type: "http",
-      behavior: "classical",
-      format: "yaml",
-      interval: 86400,
-      url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Cloud/AmazonCloud/AmazonCloud_Classical_No_Resolve.yaml",
+      url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical_no_resolve.yaml",
     },
   };
 
   const rules = [
-    "RULE-SET,AdvertisingLite_Classical_No_Resolve,🛑 广告拦截",
-    "RULE-SET,Privacy_Classical_No_Resolve,🛑 广告拦截",
-    "RULE-SET,reject_classical_no_resolve,🛑 广告拦截",
-    /////////////////////////////////////////////////////////////////////
+    "RULE-SET,reject_classical_no_resolve,🛑 REJECT",
+    "RULE-SET,reject_drop_classical_no_resolve,🛑 REJECT-DROP",
     "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
     "GEOSITE,private,🎯 全球直连",
+    "GEOSITE,connectivity-check,🎯 全球直连",
     "GEOSITE,google-cn,🎯 全球直连",
-    "GEOSITE,apple,🎯 全球直连",
     "GEOSITE,category-public-tracker,🎯 全球直连",
-    "GEOSITE,category-speedtest,⏱️ 测速工具",
-    "GEOSITE,category-games,🎯 全球直连",
-    "GEOSITE,bilibili,📺 哔哩哔哩",
-    "GEOSITE,category-ai-!cn,🤖 AI服务",
+    "GEOSITE,category-games@cn,🎯 全球直连",
+    "GEOSITE,category-cryptocurrency,🎯 全球直连",
+    "GEOSITE,apple,🍎 苹果服务",
+    "GEOSITE,notion,🎯 全球直连",
+    "GEOSITE,category-games,🎮 游戏平台",
+    "GEOSITE,bilibili,📺 Bilibili",
+    "GEOSITE,category-speedtest,⏱️ Speedtest",
+    "GEOSITE,category-ai-!cn,🤖 AI",
+    "GEOSITE,cursor,🤖 AI",
+    "GEOSITE,youtube,📹 YouTube",
+    "GEOSITE,google,🇬 谷歌服务",
     "GEOSITE,github,🚀 节点选择",
-    "GEOSITE,microsoft,Ⓜ️ 微软服务",
-    "GEOSITE,gfw,🚀 节点选择",
+    "GEOSITE,microsoft,Ⓜ️ Microsoft",
     "GEOSITE,cn,🎯 全球直连",
-    /////////////////////////////////////////////////////////////////////
-    "RULE-SET,AmazonCloud_Classical_No_Resolve,🎯 全球直连",
     "GEOIP,private,🎯 全球直连,no-resolve",
-    "GEOIP,telegram,🚀 节点选择,no-resolve",
     "GEOIP,cn,🎯 全球直连,no-resolve",
-    "MATCH,🚀 节点选择",
+    "MATCH,🐟 漏网之鱼",
   ];
 
   config["rule-providers"] = ruleProviders;
@@ -260,7 +170,8 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: true,
+    ipv6: false,
+    "respect-rules": false,
     "cache-algorithm": "arc",
     "use-hosts": false,
     "use-system-hosts": false,
@@ -268,24 +179,17 @@ function overwriteDns(config) {
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
-      "+.lan",
-      "+.local",
-      "+.arpa",
-      "+.market.xiaomi.com",
-      "+.msftconnecttest.com",
-      "+.msftncsi.com",
-      "localhost.ptlogin2.qq.com",
-      "localhost.sec.qq.com",
-      "localhost.work.weixin.qq.com",
-      "+.parsec.app",
+      "GEOSITE:private",
+      "GEOSITE:connectivity-check",
+      "+.localhost.work.weixin.qq.com",
+      "stun.*.*",
+      "stun.*.*.*",
+      "+.stun.*.*",
+      "+.stun.*.*.*",
+      "+.stun.*.*.*.*",
+      "+.stun.*.*.*.*.*",
     ],
-    nameserver: [
-      "dhcp://en0",
-      "233.5.5.5",
-      "119.29.29.29",
-      // "180.76.76.76",
-      // "114.114.114.114",
-    ],
+    nameserver: ["223.5.5.5", "119.29.29.29", "114.114.114.114"],
   };
 
   config.dns = dns;
@@ -294,12 +198,12 @@ function overwriteDns(config) {
 function overwriteSniffer(config) {
   const sniffer = {
     enable: true,
-    "parse-pure-ip": true,
     "force-dns-mapping": true,
-    "override-destination": false,
+    "parse-pure-ip": true,
+    "override-destination": true,
     sniff: {
       QUIC: {
-        ports: [443, 8443],
+        ports: [443],
       },
       TLS: {
         ports: [443, 8443],
@@ -309,12 +213,18 @@ function overwriteSniffer(config) {
         "override-destination": true,
       },
     },
+    "force-domain": [
+      "+.netflix.com",
+      "+.nflxvideo.net",
+      "+.amazonaws.com",
+      "+.media.dssott.com",
+    ],
     "skip-domain": [
       "Mijia Cloud",
       "dlg.io.mi.com",
-      "+.push.apple.com",
       "+.oray.com",
       "+.sunlogin.net",
+      "+.push.apple.com",
     ],
   };
 
@@ -327,19 +237,21 @@ function overwriteGeodata(config) {
   config["geo-auto-update"] = true;
   config["geo-update-interval"] = 24;
   config["geox-url"] = {
-    mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb",
     geoip:
       "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat",
     geosite:
       "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
+    mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb",
     asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb",
   };
 }
 
 function overwriteOthers(config) {
-  config.ipv6 = true;
-  config["find-process-mode"] = "strict";
-  config["global-client-fingerprint"] = "chrome";
+  config.mode = "rule";
+  config["allow-lan"] = false;
+  config["log-level"] = "info";
+  config.ipv6 = false;
+  config["find-process-mode"] = "off";
   config["tcp-concurrent"] = true;
   config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
