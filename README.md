@@ -17,17 +17,23 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 ### 直连
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/master/direct_classical_no_resolve.yaml
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml
+```
+
+### REJECT DROP
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_drop_classical_no_resolve.yaml
+```
+
+### REJECT
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical_no_resolve.yaml
 ```
 
 ### 代理
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/master/proxy_classical_no_resolve.yaml
-```
-
-### 拒绝
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/master/reject_classical_no_resolve.yaml
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/proxy_classical_no_resolve.yaml
 ```
