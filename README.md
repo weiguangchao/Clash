@@ -37,3 +37,9 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_cl
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/proxy_classical_no_resolve.yaml
 ```
+
+### AI
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/ai_classical_no_resolve.yaml
+```
