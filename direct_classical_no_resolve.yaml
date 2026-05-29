@@ -10,6 +10,8 @@ payload:
   - DOMAIN-SUFFIX,istatmenus.app
   #### Parsec ####
   - DOMAIN-SUFFIX,parsec.app
+  #### 机场 ####
+  - DOMAIN-KEYWORD,yiy
   #### Others ####
   - DOMAIN-SUFFIX,theluyuan.com
   - DOMAIN-SUFFIX,lightsoft.tech
