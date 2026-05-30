@@ -112,6 +112,7 @@ rules:
   #### AI ####
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
+  - DOMAIN-SUFFIX,easyrouter.io,🤖 AI
   #### Google ####
   - GEOSITE,youtube,📹 YouTube
   - GEOSITE,google,🇬 谷歌服务
