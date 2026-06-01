@@ -51,6 +51,7 @@ sniffer:
     - +.amazonaws.com
     - +.media.dssott.com
   skip-domain:
+    - "+.weixin.qq.com"
     - Mijia Cloud
     - dlg.io.mi.com
     - +.oray.com
