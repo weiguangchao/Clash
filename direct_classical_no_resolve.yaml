@@ -12,9 +12,10 @@ payload:
   - DOMAIN-SUFFIX,parsec.app
   #### 机场 ####
   - DOMAIN-KEYWORD,yiy
+  #### ipsw.me ####
+  - DOMAIN-SUFFIX,ipsw.me
   #### Others ####
   - DOMAIN-SUFFIX,theluyuan.com
   - DOMAIN-SUFFIX,lightsoft.tech
   - DOMAIN-SUFFIX,nijigem.by
   - DOMAIN-SUFFIX,iwzwh.com
-  - DOMAIN-SUFFIX,ipsw.me
