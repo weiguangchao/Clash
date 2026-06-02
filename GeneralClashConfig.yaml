@@ -30,12 +30,13 @@ sniffer:
   force-dns-mapping: true
   # 对所有未获取到域名的流量进行强制嗅探
   parse-pure-ip: true
-  # 是否使用嗅探结果作为实际访问，默认为 true
-  override-destination: true
+  # 是否使用嗅探结果作为实际访问
+  override-destination: false
   sniff:
     QUIC:
       ports:
         - 443
+        - 8443
     TLS:
       ports:
         - 443
@@ -51,12 +52,17 @@ sniffer:
     - +.amazonaws.com
     - +.media.dssott.com
   skip-domain:
-    - "+.weixin.qq.com"
     - Mijia Cloud
     - dlg.io.mi.com
     - +.oray.com
     - +.sunlogin.net
     - +.push.apple.com
+  skip-dst-address:
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 127.0.0.0/8
+    - 224.0.0.0/4
 
 ###############################################################
 dns:
