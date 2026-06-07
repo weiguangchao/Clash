@@ -112,9 +112,9 @@ rules:
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
   - GEOSITE,category-cryptocurrency,🎯 全球直连
-  - GEOSITE,apple,🍎 苹果服务
+  - GEOSITE,apple,🍎 Apple
   - GEOSITE,category-games@cn,🎯 全球直连
-  - GEOSITE,category-games,🎮 游戏平台
+  - GEOSITE,category-games,🎮 Game
   - GEOSITE,bilibili,📺 Bilibili
   - GEOSITE,category-speedtest,⏱️ Speedtest
   #### AI ####
@@ -122,7 +122,7 @@ rules:
   - GEOSITE,cursor,🤖 AI
   #### Google ####
   - GEOSITE,youtube,📹 YouTube
-  - GEOSITE,google,🇬 谷歌服务
+  - GEOSITE,google,🇬 Google
   #### GitHub ####
   - GEOSITE,github,🚀 节点选择
   - GEOSITE,microsoft,Ⓜ️ Microsoft
