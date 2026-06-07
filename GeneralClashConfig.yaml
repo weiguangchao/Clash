@@ -99,7 +99,7 @@ rule-providers:
     interval: 86400
 
 rules:
-  #### Reject QUIC ####
+  #### Reject DROP ####
   - AND,((GEOSITE,category-ai-!cn),(NETWORK,UDP)),🛑 DROP
   - AND,((GEOSITE,cursor),(NETWORK,UDP)),🛑 DROP
   - AND,((GEOSITE,google),(NETWORK,UDP)),🛑 DROP
