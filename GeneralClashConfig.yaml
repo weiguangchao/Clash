@@ -113,7 +113,6 @@ rules:
   - GEOSITE,category-public-tracker,🎯 全球直连
   - GEOSITE,category-cryptocurrency,🎯 全球直连
   - GEOSITE,apple,🍎 苹果服务
-  - GEOSITE,notion,🎯 全球直连
   - GEOSITE,category-games@cn,🎯 全球直连
   - GEOSITE,category-games,🎮 游戏平台
   - GEOSITE,bilibili,📺 Bilibili
