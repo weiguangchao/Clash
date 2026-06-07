@@ -14,7 +14,7 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 
 ## rule
 
-### 直连
+### DIRECT
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml
@@ -32,7 +32,7 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_dr
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical_no_resolve.yaml
 ```
 
-### 代理
+### PROXY
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/proxy_classical_no_resolve.yaml
