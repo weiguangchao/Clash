@@ -95,7 +95,7 @@ function overwriteProxyGroups(config) {
       hidden: true,
     },
     {
-      name: "🛑 REJECT-DROP",
+      name: "🛑 DROP",
       type: "select",
       proxies: ["REJECT-DROP"],
       hidden: true,
@@ -138,7 +138,7 @@ function overwriteRules(config) {
 
   const rules = [
     "RULE-SET,reject_classical_no_resolve,🛑 REJECT",
-    "RULE-SET,reject_drop_classical_no_resolve,🛑 REJECT-DROP",
+    "RULE-SET,reject_drop_classical_no_resolve,🛑 DROP",
     "RULE-SET,direct_classical_no_resolve,🎯 全球直连",
     "GEOSITE,private,🎯 全球直连",
     "GEOSITE,connectivity-check,🎯 全球直连",
