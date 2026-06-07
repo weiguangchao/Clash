@@ -117,6 +117,8 @@ rules:
   - GEOSITE,category-games,🎮 Game
   - GEOSITE,bilibili,📺 Bilibili
   - GEOSITE,category-speedtest,⏱️ Speedtest
+  #### HBO ####
+  - GEOSITE,hbo,🎥 HBO
   #### AI ####
   - GEOSITE,category-ai-!cn,🤖 AI
   - GEOSITE,cursor,🤖 AI
