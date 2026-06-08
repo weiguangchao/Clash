@@ -76,11 +76,7 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "+.lan"
-    - "+.local"
-    - localhost.ptlogin2.qq.com
-    - localhost.sec.qq.com
-    - localhost.weixin.qq.com
+    - geosite:private
     - stun.*.*
     - stun.*.*.*
     - "+.stun.*.*"
