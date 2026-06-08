@@ -78,6 +78,7 @@ dns:
   fake-ip-filter:
     - "+.lan"
     - "+.local"
+    - localhost.weixin.qq.com
     - stun.*.*
     - stun.*.*.*
     - "+.stun.*.*"
