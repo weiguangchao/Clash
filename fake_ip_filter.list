@@ -16,7 +16,7 @@
 localhost.ptlogin2.qq.com
 localhost.sec.qq.com
 #微信登录
-localhost.*.weixin.qq.com
+localhost.weixin.qq.com
 #STUN
 stun.*.*
 stun.*.*.*
