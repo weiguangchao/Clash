@@ -76,9 +76,8 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - GEOSITE:private
-    - GEOSITE:connectivity-check
-    - +.localhost.work.weixin.qq.com
+    - "+.lan"
+    - "+.local"
     - stun.*.*
     - stun.*.*.*
     - "+.stun.*.*"
@@ -108,7 +107,6 @@ rules:
   #### Start ####
   - RULE-SET,direct_classical_no_resolve,🎯 全球直连
   - GEOSITE,private,🎯 全球直连
-  - GEOSITE,connectivity-check,🎯 全球直连
   - GEOSITE,google-cn,🎯 全球直连
   - GEOSITE,category-public-tracker,🎯 全球直连
   - GEOSITE,category-cryptocurrency,🎯 全球直连
