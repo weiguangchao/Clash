@@ -87,7 +87,7 @@ rule-providers:
     type: http
     behavior: domain
     format: text
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake_ip_filter.yaml
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake_ip_filter.list
     interval: 86400
   direct_classical_no_resolve:
     type: http
