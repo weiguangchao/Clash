@@ -80,6 +80,7 @@ dns:
     - "+.local"
     - localhost.ptlogin2.qq.com
     - localhost.sec.qq.com
+    - localhost.weixin.qq.com
     - stun.*.*
     - stun.*.*.*
     - "+.stun.*.*"
