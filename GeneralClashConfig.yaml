@@ -65,14 +65,14 @@ dns:
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:fake_ip_filter"
+    - "rule-set:fake-ip-filter"
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
     - 114.114.114.114
 
 rule-providers:
-  fake_ip_filter:
+  fake-ip-filter:
     type: http
     behavior: domain
     format: text
