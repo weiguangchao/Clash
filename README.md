@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
 ### DIRECT
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct-classical-no-resolve.yaml
 ```
 
 ### REJECT DROP

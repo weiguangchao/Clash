@@ -76,13 +76,13 @@ rule-providers:
     type: http
     behavior: domain
     format: text
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake_ip_filter.list
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake-ip-filter.list
     interval: 86400
   direct_classical_no_resolve:
     type: http
     behavior: classical
     format: yaml
-    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml
+    url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct-classical-no-resolve.yaml
     interval: 86400
   # GEOSITE mrs 规则
   geosite-category-ai-!cn:
