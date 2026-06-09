@@ -78,7 +78,7 @@ rule-providers:
     format: text
     url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake-ip-filter.list
     interval: 86400
-  direct_classical_no_resolve:
+  direct-classical-no-resolve:
     type: http
     behavior: classical
     format: yaml
@@ -207,7 +207,7 @@ rules:
   - AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP
   - AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP
   #### Start ####
-  - RULE-SET,direct_classical_no_resolve,🎯 全球直连
+  - RULE-SET,direct-classical-no-resolve,🎯 全球直连
   - RULE-SET,geosite-private,🎯 全球直连
   - RULE-SET,geosite-google-cn,🎯 全球直连
   - RULE-SET,geosite-category-public-tracker,🎯 全球直连
