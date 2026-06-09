@@ -13,17 +13,6 @@ profile:
   store-fake-ip: true
 
 ###############################################################
-geodata-mode: true
-geodata-loader: memconservative
-geo-auto-update: true
-geo-update-interval: 24
-geox-url:
-  geoip: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
-  geosite: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
-  mmdb: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
-  asn: https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
-
-###############################################################
 sniffer:
   enable: true
   # 对 redir-host 类型识别的流量进行强制嗅探
@@ -95,38 +84,152 @@ rule-providers:
     format: yaml
     url: https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct_classical_no_resolve.yaml
     interval: 86400
+  # GEOSITE mrs 规则
+  geosite-category-ai-!cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
+    interval: 86400
+  geosite-cursor:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cursor.mrs
+    interval: 86400
+  geosite-google:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+    interval: 86400
+  geosite-private:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+    interval: 86400
+  geosite-google-cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-cn.mrs
+    interval: 86400
+  geosite-category-public-tracker:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs
+    interval: 86400
+  geosite-category-cryptocurrency:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-cryptocurrency.mrs
+    interval: 86400
+  geosite-apple:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs
+    interval: 86400
+  geosite-category-games@cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.mrs
+    interval: 86400
+  geosite-category-games:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs
+    interval: 86400
+  geosite-bilibili:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs
+    interval: 86400
+  geosite-category-speedtest:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs
+    interval: 86400
+  geosite-hbo:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hbo.mrs
+    interval: 86400
+  geosite-youtube:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+    interval: 86400
+  geosite-github:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+    interval: 86400
+  geosite-microsoft:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+    interval: 86400
+  geosite-cn:
+    type: http
+    behavior: domain
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+    interval: 86400
+  # GEOIP mrs 规则
+  geoip-private:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs
+    interval: 86400
+  geoip-cn:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+    interval: 86400
 
 rules:
   #### Reject DROP ####
-  - AND,((GEOSITE,category-ai-!cn),(NETWORK,UDP)),🛑 DROP
-  - AND,((GEOSITE,cursor),(NETWORK,UDP)),🛑 DROP
-  - AND,((GEOSITE,google),(NETWORK,UDP)),🛑 DROP
-  #### Reject ####
-  - GEOSITE,category-ads-all,🛑 REJECT
+  - AND,((RULE-SET,geosite-category-ai-!cn),(NETWORK,UDP)),🛑 DROP
+  - AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP
+  - AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP
   #### Start ####
   - RULE-SET,direct_classical_no_resolve,🎯 全球直连
-  - GEOSITE,private,🎯 全球直连
-  - GEOSITE,google-cn,🎯 全球直连
-  - GEOSITE,category-public-tracker,🎯 全球直连
-  - GEOSITE,category-cryptocurrency,🎯 全球直连
-  - GEOSITE,apple,🍎 Apple
-  - GEOSITE,category-games@cn,🎯 全球直连
-  - GEOSITE,category-games,🎮 Game
-  - GEOSITE,bilibili,📺 Bilibili
-  - GEOSITE,category-speedtest,⏱️ Speedtest
+  - RULE-SET,geosite-private,🎯 全球直连
+  - RULE-SET,geosite-google-cn,🎯 全球直连
+  - RULE-SET,geosite-category-public-tracker,🎯 全球直连
+  - RULE-SET,geosite-category-cryptocurrency,🎯 全球直连
+  - RULE-SET,geosite-apple,🍎 Apple
+  - RULE-SET,geosite-category-games@cn,🎯 全球直连
+  - RULE-SET,geosite-category-games,🎮 Game
+  - RULE-SET,geosite-bilibili,📺 Bilibili
+  - RULE-SET,geosite-category-speedtest,⏱️ Speedtest
   #### HBO ####
-  - GEOSITE,hbo,🎥 HBO
+  - RULE-SET,geosite-hbo,🎥 HBO
   #### AI ####
-  - GEOSITE,category-ai-!cn,🤖 AI
-  - GEOSITE,cursor,🤖 AI
+  - RULE-SET,geosite-category-ai-!cn,🤖 AI
+  - RULE-SET,geosite-cursor,🤖 AI
   #### Google ####
-  - GEOSITE,youtube,📹 YouTube
-  - GEOSITE,google,🇬 Google
+  - RULE-SET,geosite-youtube,📹 YouTube
+  - RULE-SET,geosite-google,🇬 Google
   #### GitHub ####
-  - GEOSITE,github,🚀 节点选择
-  - GEOSITE,microsoft,Ⓜ️ Microsoft
+  - RULE-SET,geosite-github,🚀 节点选择
+  - RULE-SET,geosite-microsoft,Ⓜ️ Microsoft
   #### Final ####
-  - GEOSITE,cn,🎯 全球直连
-  - GEOIP,private,🎯 全球直连,no-resolve
-  - GEOIP,cn,🎯 全球直连,no-resolve
+  - RULE-SET,geosite-cn,🎯 全球直连
+  - RULE-SET,geoip-private,🎯 全球直连,no-resolve
+  - RULE-SET,geoip-cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
