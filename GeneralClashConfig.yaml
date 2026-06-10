@@ -194,6 +194,12 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
     interval: 86400
+  geoip-google:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+    interval: 86400
 rules:
   #### Reject DROP ####
   - AND,((RULE-SET,geosite-category-ai-!cn),(NETWORK,UDP)),🛑 DROP
@@ -216,6 +222,7 @@ rules:
   #### Google ####
   - RULE-SET,geosite-youtube,📹 YouTube
   - RULE-SET,geosite-google,🇬 Google
+  - RULE-SET,geoip-google,🇬 Google,no-resolve
   #### GitHub ####
   - RULE-SET,geosite-github,🚀 节点选择
   - RULE-SET,geosite-microsoft,Ⓜ️ Microsoft
