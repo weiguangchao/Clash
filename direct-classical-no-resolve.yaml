@@ -6,8 +6,6 @@ payload:
   - IP-CIDR,5.5.5.5/32,no-resolve
   #### Amazon AWS ####
   - DOMAIN-SUFFIX,compute.amazonaws.com
-  #### iStat Menus ####
-  - DOMAIN-SUFFIX,istatmenus.app
   #### Parsec ####
   - DOMAIN-SUFFIX,parsec.app
   #### 机场 ####
