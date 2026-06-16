@@ -8,7 +8,6 @@ function main(config, profileName) {
     overwriteRules(config);
     overwriteDns(config);
     overwriteSniffer(config);
-    overwriteGeodata(config);
     overwriteOthers(config);
     console.log("配置文件重写完成！");
     return config;
@@ -84,13 +83,6 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
-      name: "🎥 HBO",
-      type: "select",
-      proxies: ["🚀 节点选择"],
-      "include-all": true,
-      "exclude-type": "direct",
-    },
-    {
       name: "🐟 漏网之鱼",
       type: "select",
       proxies: ["🚀 节点选择"],
@@ -105,6 +97,12 @@ function overwriteProxyGroups(config) {
       name: "🛑 DROP",
       type: "select",
       proxies: ["REJECT-DROP"],
+      hidden: true,
+    },
+    {
+      name: "🛑 REJECT",
+      type: "select",
+      proxies: ["REJECT"],
       hidden: true,
     },
   ];
@@ -212,13 +210,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs",
       interval: 86400,
     },
-    "geosite-hbo": {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/hbo.mrs",
-      interval: 86400,
-    },
     "geosite-youtube": {
       type: "http",
       behavior: "domain",
@@ -277,7 +268,6 @@ function overwriteRules(config) {
     "RULE-SET,geosite-category-games,🎮 Game",
     "RULE-SET,geosite-bilibili,📺 Bilibili",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
-    "RULE-SET,geosite-hbo,🎥 HBO",
     "RULE-SET,geosite-category-ai-!cn,🤖 AI",
     "RULE-SET,geosite-cursor,🤖 AI",
     "RULE-SET,geosite-youtube,📹 YouTube",
@@ -353,21 +343,6 @@ function overwriteSniffer(config) {
   };
 
   config.sniffer = sniffer;
-}
-
-function overwriteGeodata(config) {
-  config["geodata-mode"] = true;
-  config["geodata-loader"] = "memconservative";
-  config["geo-auto-update"] = true;
-  config["geo-update-interval"] = 24;
-  config["geox-url"] = {
-    geoip:
-      "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat",
-    geosite:
-      "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat",
-    mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb",
-    asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb",
-  };
 }
 
 function overwriteOthers(config) {
