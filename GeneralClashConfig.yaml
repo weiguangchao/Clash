@@ -121,12 +121,6 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs
     interval: 86400
-  geosite-category-cryptocurrency:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-cryptocurrency.mrs
-    interval: 86400
   geosite-apple:
     type: http
     behavior: domain
@@ -204,7 +198,6 @@ rules:
   - RULE-SET,geosite-private,🎯 全球直连
   - RULE-SET,geosite-google-cn,🎯 全球直连
   - RULE-SET,geosite-category-public-tracker,🎯 全球直连
-  - RULE-SET,geosite-category-cryptocurrency,🎯 全球直连
   - RULE-SET,geosite-apple,🍎 Apple
   - RULE-SET,geosite-category-games@cn,🎯 全球直连
   - RULE-SET,geosite-category-games,🎮 Game
