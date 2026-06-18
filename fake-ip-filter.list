@@ -17,12 +17,3 @@ localhost.ptlogin2.qq.com
 localhost.sec.qq.com
 #微信登录
 localhost.weixin.qq.com
-#STUN
-stun.*.*
-stun.*.*.*
-+.stun.*.*
-+.stun.*.*.*
-+.stun.*.*.*.*
-+.stun.*.*.*.*.*
-#B 站直播
-+.chat.bilibili.com
