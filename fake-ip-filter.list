@@ -18,7 +18,6 @@ localhost.sec.qq.com
 #微信登录
 localhost.weixin.qq.com
 #STUN
-stun6.chat.bilibili.com
 stun.*.*
 stun.*.*.*
 +.stun.*.*
