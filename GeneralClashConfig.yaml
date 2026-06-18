@@ -50,7 +50,7 @@ sniffer:
 ###############################################################
 dns:
   enable: true
-  ipv6: false
+  ipv6: true
   respect-rules: false
   cache-algorithm: arc
   use-hosts: false
