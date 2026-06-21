@@ -126,6 +126,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct-classical-no-resolve.yaml",
       interval: 86400,
     },
+    "custom-direct-domain": {
+      type: "http",
+      behavior: "domain",
+      format: "yaml",
+      url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.yaml",
+      interval: 86400,
+    },
     "geosite-category-ai-!cn": {
       type: "http",
       behavior: "domain",
@@ -259,6 +266,7 @@ function overwriteRules(config) {
     "AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP",
     "AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP",
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
+    "RULE-SET,custom-direct-domain,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
