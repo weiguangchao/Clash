@@ -32,6 +32,7 @@ function overwriteProxyGroups(config) {
       proxies: ["🚀 节点选择"],
       "include-all": true,
       "exclude-type": "direct",
+      filter: "(?i)(🇺🇸|美国|美國|US|USA|United States|洛杉矶|圣何塞|西雅图|纽约|芝加哥|达拉斯|硅谷|凤凰城)",
     },
     {
       name: "📹 YouTube",
