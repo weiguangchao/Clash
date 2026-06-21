@@ -106,12 +106,6 @@ rule-providers:
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
     interval: 86400
-  geosite-google-cn:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-cn.mrs
-    interval: 86400
   geosite-category-public-tracker:
     type: http
     behavior: domain
@@ -206,7 +200,6 @@ rules:
   #### Google ####
   - RULE-SET,geosite-youtube,📹 YouTube
   - RULE-SET,geosite-google,🇬 Google
-  - RULE-SET,geosite-google-cn,🇬 Google
   #### GitHub ####
   - RULE-SET,geosite-github,🚀 节点选择
   - RULE-SET,geosite-microsoft,Ⓜ️ Microsoft
