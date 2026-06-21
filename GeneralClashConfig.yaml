@@ -197,7 +197,6 @@ rules:
   - RULE-SET,direct-classical-no-resolve,🎯 全球直连
   - RULE-SET,custom-direct-domain,🎯 全球直连
   - RULE-SET,geosite-private,🎯 全球直连
-  - RULE-SET,geosite-google-cn,🎯 全球直连
   - RULE-SET,geosite-category-public-tracker,🎯 全球直连
   - RULE-SET,geosite-apple,🍎 Apple
   - RULE-SET,geosite-category-games@cn,🎯 全球直连
@@ -210,6 +209,7 @@ rules:
   #### Google ####
   - RULE-SET,geosite-youtube,📹 YouTube
   - RULE-SET,geosite-google,🇬 Google
+  - RULE-SET,geosite-google-cn,🇬 Google
   #### GitHub ####
   - RULE-SET,geosite-github,🚀 节点选择
   - RULE-SET,geosite-microsoft,Ⓜ️ Microsoft

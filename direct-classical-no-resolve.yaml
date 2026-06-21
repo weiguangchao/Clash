@@ -1,7 +1,4 @@
 payload:
-  #### Google Play ####
-  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-  - DOMAIN-SUFFIX,googleapis.cn
   #### FinalShell ####
   - IP-CIDR,5.5.5.5/32,no-resolve
   #### Amazon AWS ####
