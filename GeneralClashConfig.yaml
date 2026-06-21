@@ -34,12 +34,6 @@ sniffer:
       ports:
         - 80
         - 8080-8880
-  skip-domain:
-    - Mijia Cloud
-    - dlg.io.mi.com
-    - +.oray.com
-    - +.sunlogin.net
-    - +.push.apple.com
   skip-dst-address:
     - 10.0.0.0/8
     - 172.16.0.0/12
