@@ -176,13 +176,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs",
       interval: 86400,
     },
-    "geosite-category-cryptocurrency": {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-cryptocurrency.mrs",
-      interval: 86400,
-    },
     "geosite-apple": {
       type: "http",
       behavior: "domain",
@@ -270,29 +263,33 @@ function overwriteRules(config) {
   };
 
   const rules = [
-    "AND,((RULE-SET,geosite-category-ai-!cn),(NETWORK,UDP)),🛑 DROP",
-    "AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP",
-    "AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP",
+    //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
-    "RULE-SET,geosite-category-cryptocurrency,🎯 全球直连",
     "RULE-SET,geosite-apple,🍎 Apple",
     "RULE-SET,geosite-category-games@cn,🎯 全球直连",
     "RULE-SET,geosite-category-games,🎮 Game",
     "RULE-SET,geosite-bilibili,📺 Bilibili",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
+    //// AI ////
+    "AND,((RULE-SET,geosite-category-ai-!cn),(NETWORK,UDP)),🛑 DROP",
+    "AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP",
     "RULE-SET,geosite-category-ai-!cn,🤖 AI",
     "RULE-SET,geosite-cursor,🤖 AI",
+    //// Google ////
+    "AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP",
     "RULE-SET,geosite-youtube,📹 YouTube",
     "RULE-SET,geosite-google,🇬 Google",
+    //// GitHub ////
     "RULE-SET,geosite-github,🚀 节点选择",
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
+    //// Final ////
+    "RULE-SET,geoip-telegram,🚀 节点选择,no-resolve",
     "RULE-SET,geosite-cn,🎯 全球直连",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
-    "RULE-SET,geoip-telegram,🚀 节点选择,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
     "MATCH,🐟 漏网之鱼",
   ];
@@ -304,7 +301,7 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: false,
+    ipv6: true,
     "respect-rules": false,
     "cache-algorithm": "arc",
     "use-hosts": false,
@@ -334,22 +331,9 @@ function overwriteSniffer(config) {
       },
       HTTP: {
         ports: [80, "8080-8880"],
-        "override-destination": true,
       },
     },
-    "force-domain": [
-      "+.netflix.com",
-      "+.nflxvideo.net",
-      "+.amazonaws.com",
-      "+.media.dssott.com",
-    ],
-    "skip-domain": [
-      "Mijia Cloud",
-      "dlg.io.mi.com",
-      "+.oray.com",
-      "+.sunlogin.net",
-      "+.push.apple.com",
-    ],
+    "skip-domain": ["Mijia Cloud", "+.push.apple.com"],
     "skip-dst-address": [
       "10.0.0.0/8",
       "172.16.0.0/12",
@@ -372,7 +356,7 @@ function overwriteOthers(config) {
   config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 600;
+  config["keep-alive-idle"] = 300;
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
