@@ -134,6 +134,20 @@ function overwriteRules(config) {
       url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.yaml",
       interval: 86400,
     },
+    "geosite-category-ads-all": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs",
+      interval: 86400,
+    },
+    "geosite-category-porn": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-porn.mrs",
+      interval: 86400,
+    },
     "geosite-category-ai-!cn": {
       type: "http",
       behavior: "domain",
@@ -263,6 +277,9 @@ function overwriteRules(config) {
   };
 
   const rules = [
+    //// Reject ////
+    "RULE-SET,geosite-category-ads-all,🛑 REJECT",
+    "RULE-SET,geosite-category-porn,🛑 REJECT",
     //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
