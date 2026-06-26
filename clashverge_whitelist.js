@@ -246,13 +246,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs",
       interval: 86400,
     },
-    "geoip-telegram": {
-      type: "http",
-      behavior: "ipcidr",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs",
-      interval: 86400,
-    },
     "geoip-cn": {
       type: "http",
       behavior: "ipcidr",
@@ -287,7 +280,6 @@ function overwriteRules(config) {
     "RULE-SET,geosite-github,🚀 节点选择",
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
     //// Final ////
-    "RULE-SET,geoip-telegram,🚀 节点选择,no-resolve",
     "RULE-SET,geosite-cn,🎯 全球直连",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
