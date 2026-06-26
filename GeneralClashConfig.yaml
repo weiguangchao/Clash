@@ -37,6 +37,8 @@ sniffer:
   skip-domain:
     - Mijia Cloud
     - +.push.apple.com
+    - dlg.io.mi.com
+    - +.oray.com
   skip-dst-address:
     - 0.0.0.0/8
     - 10.0.0.0/8
