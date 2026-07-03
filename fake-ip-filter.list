@@ -1,4 +1,5 @@
 #参考https://github.com/vernesong/OpenClash/blob/master/luci-app-openclash/root/etc/openclash/custom/openclash_custom_fake_filter.list
+#参考https://github.com/juewuy/ShellCrash/blob/dev/public/fake_ip_filter.list
 #LAN
 *.lan
 *.localdomain
