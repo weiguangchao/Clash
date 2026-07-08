@@ -27,14 +27,6 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
-      name: "🤖 AI",
-      type: "select",
-      proxies: ["🚀 节点选择"],
-      "include-all": true,
-      "exclude-type": "direct",
-      filter: "(?i)(🇺🇸|美国|美國|US|USA|United States|洛杉矶|圣何塞|西雅图|纽约|芝加哥|达拉斯|硅谷|凤凰城)",
-    },
-    {
       name: "📹 YouTube",
       type: "select",
       proxies: ["🚀 节点选择"],
@@ -47,6 +39,14 @@ function overwriteProxyGroups(config) {
       proxies: ["🚀 节点选择"],
       "include-all": true,
       "exclude-type": "direct",
+    },
+    {
+      name: "🤖 AI",
+      type: "select",
+      proxies: ["🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+      filter: "(?i)(🇺🇸|美国|美國|US|USA|United States|洛杉矶|圣何塞|西雅图|纽约|芝加哥|达拉斯|硅谷|凤凰城)",
     },
     {
       name: "📺 Bilibili",
@@ -276,12 +276,9 @@ function overwriteRules(config) {
     "RULE-SET,geosite-bilibili,📺 Bilibili",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
     //// AI ////
-    "AND,((RULE-SET,geosite-category-ai-!cn),(NETWORK,UDP)),🛑 DROP",
-    "AND,((RULE-SET,geosite-cursor),(NETWORK,UDP)),🛑 DROP",
     "RULE-SET,geosite-category-ai-!cn,🤖 AI",
     "RULE-SET,geosite-cursor,🤖 AI",
     //// Google ////
-    "AND,((RULE-SET,geosite-google),(NETWORK,UDP)),🛑 DROP",
     "RULE-SET,geosite-youtube,📹 YouTube",
     "RULE-SET,geosite-google,🇬 Google",
     //// GitHub ////
@@ -333,13 +330,20 @@ function overwriteSniffer(config) {
         ports: [80, "8080-8880"],
       },
     },
-    "skip-domain": ["Mijia Cloud", "+.push.apple.com"],
+    "skip-domain": [
+      "Mijia Cloud",
+      "+.push.apple.com",
+      "dlg.io.mi.com",
+      "+.oray.com",
+    ],
     "skip-dst-address": [
       "10.0.0.0/8",
       "172.16.0.0/12",
       "192.168.0.0/16",
       "127.0.0.0/8",
+      "169.254.0.0/16",
       "224.0.0.0/4",
+      "100.64.0.0/10",
     ],
   };
 
