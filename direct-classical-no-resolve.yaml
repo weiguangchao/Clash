@@ -10,7 +10,10 @@ payload:
   - DOMAIN-SUFFIX,parsec.app
   #### 机场 ####
   - DOMAIN-KEYWORD,yiy
+  #### 沉浸式翻译 ####
+  - DOMAIN-SUFFIX,immersivetranslate.com
   #### Others ####
   - DOMAIN-SUFFIX,theluyuan.com
   - DOMAIN-SUFFIX,lightsoft.tech
   - DOMAIN-SUFFIX,nijigem.by
+  
