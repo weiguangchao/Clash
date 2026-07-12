@@ -130,8 +130,8 @@ function overwriteRules(config) {
     "custom-direct-domain": {
       type: "http",
       behavior: "domain",
-      format: "yaml",
-      url: "https://api.asailor.org/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.yaml",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.mrs",
       interval: 86400,
     },
     "geosite-category-ai-!cn": {
