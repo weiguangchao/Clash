@@ -131,7 +131,7 @@ function overwriteRules(config) {
       type: "http",
       behavior: "domain",
       format: "mrs",
-      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/main/rule/Custom_Direct_Domain.mrs",
+      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.mrs",
       interval: 86400,
     },
     "geosite-category-ai-!cn": {
