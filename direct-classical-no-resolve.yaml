@@ -9,8 +9,13 @@ payload:
   - DOMAIN-SUFFIX,yiyonex.com
   - DOMAIN-SUFFIX,yiyone.cc
   - DOMAIN-SUFFIX,yiy.one
-  - DOMAIN-SUFFIX,yiy.wiki
   - DOMAIN-KEYWORD,yiy
+  #####################################
+  - DOMAIN-SUFFIX,mojie.cyou
+  - DOMAIN-SUFFIX,mojcn.com
+  - DOMAIN-SUFFIX,cnmjcn.cyou
+  - DOMAIN-SUFFIX,mjanyt.com
+  - DOMAIN-SUFFIX,mjhy2.com
   #####################################
   - DOMAIN-SUFFIX,immersivetranslate.com
   - DOMAIN-SUFFIX,istatmenus.app
