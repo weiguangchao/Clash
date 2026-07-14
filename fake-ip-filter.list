@@ -28,7 +28,7 @@ stun.*.*.*
 +.stun.*.*.*.*
 +.stun.*.*.*.*.*
 
-stun6.chat.bilibili.com
+*.chat.bilibili.com
 
 #放行NTP服务
 time.*.com
