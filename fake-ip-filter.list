@@ -19,6 +19,7 @@ localhost.sec.qq.com
 
 #微信登录
 localhost.weixin.qq.com
+localhost.work.weixin.qq.com
 
 #STUN
 stun.*.*
