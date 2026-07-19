@@ -224,8 +224,8 @@ rules:
   - RULE-SET,geosite-github,🚀 节点选择
   - RULE-SET,geosite-microsoft,Ⓜ️ Microsoft
   #### Final ####
-  - RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve
   - RULE-SET,geosite-cn,🎯 全球直连
+  - RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve
   - RULE-SET,geoip-private,🎯 全球直连,no-resolve
   - RULE-SET,geoip-cn,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼
