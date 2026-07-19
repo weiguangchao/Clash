@@ -134,6 +134,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.mrs",
       interval: 86400,
     },
+    "custom-direct-ip": {
+      type: "http",
+      behavior: "ipcidr",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_IP.mrs",
+      interval: 86400,
+    },
     "geosite-category-ai-!cn": {
       type: "http",
       behavior: "domain",
@@ -266,6 +273,7 @@ function overwriteRules(config) {
     //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
+    "RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve",
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
