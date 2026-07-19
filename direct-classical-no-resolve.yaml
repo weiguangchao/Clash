@@ -23,3 +23,9 @@ payload:
   - DOMAIN-SUFFIX,theluyuan.com
   - DOMAIN-SUFFIX,lightsoft.tech
   - DOMAIN-SUFFIX,nijigem.by
+  #####################################
+  - DOMAIN-SUFFIX,yunjnet.com
+  - DOMAIN-SUFFIX,poke-mon.xyz
+  - DOMAIN-SUFFIX,waimaosass.icu
+  - IP-CIDR,152.175.28.50/32,no-resolve
+  - IP-CIDR,211.173.70.32/32,no-resolve
