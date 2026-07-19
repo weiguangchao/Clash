@@ -13,6 +13,7 @@ payload:
   #####################################
   - DOMAIN-SUFFIX,mojie.cyou
   - DOMAIN-SUFFIX,mojcn.com
+  - DOMAIN-SUFFIX,cnmjin.net
   - DOMAIN-SUFFIX,cnmjcn.cyou
   - DOMAIN-SUFFIX,mjanyt.com
   - DOMAIN-SUFFIX,mjhy2.com
