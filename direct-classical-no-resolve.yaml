@@ -1,7 +1,9 @@
 payload:
+  - IP-CIDR,152.175.28.50/32,no-resolve
+  - IP-CIDR,5.5.5.5/32,no-resolve
+  - IP-CIDR,211.173.70.32/32,no-resolve
   - DOMAIN-SUFFIX,googleapis.cn
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-  - IP-CIDR,5.5.5.5/32,no-resolve
   - DOMAIN-SUFFIX,compute.amazonaws.com
   - DOMAIN-SUFFIX,parsec.app
   - DOMAIN-SUFFIX,yiyone.work
@@ -23,5 +25,4 @@ payload:
   - DOMAIN-SUFFIX,yunjnet.com
   - DOMAIN-SUFFIX,poke-mon.xyz
   - DOMAIN-SUFFIX,waimaosass.icu
-  - IP-CIDR,152.175.28.50/32,no-resolve
-  - IP-CIDR,211.173.70.32/32,no-resolve
+  - DOMAIN-SUFFIX,gh-proxy.org
