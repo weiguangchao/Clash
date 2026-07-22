@@ -10,7 +10,6 @@ payload:
   - DOMAIN-SUFFIX,yiyonex.com
   - DOMAIN-SUFFIX,yiyone.cc
   - DOMAIN-SUFFIX,yiy.one
-  - DOMAIN-KEYWORD,yiy
   - DOMAIN-SUFFIX,mojie.cyou
   - DOMAIN-SUFFIX,mojcn.com
   - DOMAIN-SUFFIX,cnmjin.net
@@ -26,3 +25,4 @@ payload:
   - DOMAIN-SUFFIX,poke-mon.xyz
   - DOMAIN-SUFFIX,waimaosass.icu
   - DOMAIN-SUFFIX,gh-proxy.org
+  - DOMAIN-KEYWORD,yiy
