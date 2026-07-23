@@ -11,7 +11,7 @@
 
 ## direct-classical-no-resolve.yaml
 
-payload 排序：IP-CIDR、DOMAIN-SUFFIX、DOMAIN-KEYWORD
+payload 规则顺序：IP-CIDR、DOMAIN-SUFFIX、DOMAIN-KEYWORD
 
 ## Git commit
 
