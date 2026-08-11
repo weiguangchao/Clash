@@ -9,6 +9,8 @@
 
 每当更新完 [clash.ini](clash.ini) 或 [GeneralClashConfig.yaml](GeneralClashConfig.yaml) 之后，都需要将两者的内容（代理组、规则、DNS、嗅探器等）同步到 [clashverge_whitelist.js](clashverge_whitelist.js) 中，确保三者保持一致。
 
+每当更新完 [direct-classical-no-resolve.yaml](direct-classical-no-resolve.yaml) 之后，都需要将其中的规则以 DIRECT 方式同步到 [shadowrocket_whitelist.conf](shadowrocket_whitelist.conf) 中。
+
 ## direct-classical-no-resolve.yaml
 
 payload 规则顺序：IP-CIDR、DOMAIN-SUFFIX、DOMAIN-KEYWORD
