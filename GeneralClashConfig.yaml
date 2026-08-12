@@ -1,4 +1,5 @@
 mode: rule
+allow-lan: false
 log-level: info
 find-process-mode: 'off'
 tcp-concurrent: true
@@ -12,8 +13,15 @@ profile:
 
 ###############################################################
 dns:
+  enable: true
+  ipv6: true
+  respect-rules: false
+  cache-algorithm: arc
   use-hosts: false
   use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - "rule-set:geosite-connectivity-check"
     - "rule-set:geosite-private"

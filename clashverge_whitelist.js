@@ -305,8 +305,15 @@ function overwriteRules(config) {
 
 function overwriteDns(config) {
   const dns = {
+    enable: true,
+    ipv6: true,
+    "respect-rules": false,
+    "cache-algorithm": "arc",
     "use-hosts": false,
     "use-system-hosts": false,
+    "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
+    "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
       "rule-set:geosite-connectivity-check",
       "rule-set:geosite-private",
@@ -357,6 +364,7 @@ function overwriteSniffer(config) {
 
 function overwriteOthers(config) {
   config.mode = "rule";
+  config["allow-lan"] = false;
   config["log-level"] = "info";
   config["find-process-mode"] = "off";
   config["tcp-concurrent"] = true;
