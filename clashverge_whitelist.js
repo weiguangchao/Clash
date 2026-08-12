@@ -225,6 +225,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs",
       interval: 86400,
     },
+    "geosite-category-stun": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-stun.mrs",
+      interval: 86400,
+    },
     "geosite-youtube": {
       type: "http",
       behavior: "domain",
@@ -317,6 +324,7 @@ function overwriteDns(config) {
     "fake-ip-filter": [
       "rule-set:geosite-connectivity-check",
       "rule-set:geosite-private",
+      "rule-set:geosite-category-stun",
       "rule-set:fake-ip-filter",
     ],
     nameserver: ["223.5.5.5", "119.29.29.29", "114.114.114.114"],
