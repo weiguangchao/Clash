@@ -273,7 +273,6 @@ function overwriteRules(config) {
     //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
-    "RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve",
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
@@ -294,6 +293,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
     //// Final ////
     "RULE-SET,geosite-cn,🎯 全球直连",
+    "RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
     "MATCH,🐟 漏网之鱼",
@@ -314,7 +314,11 @@ function overwriteDns(config) {
     "enhanced-mode": "fake-ip",
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
-    "fake-ip-filter": ["rule-set:fake-ip-filter"],
+    "fake-ip-filter": [
+      "rule-set:geosite-connectivity-check",
+      "rule-set:geosite-private",
+      "rule-set:fake-ip-filter",
+    ],
     nameserver: ["223.5.5.5", "119.29.29.29", "114.114.114.114"],
   };
 
