@@ -1,5 +1,4 @@
 mode: rule
-allow-lan: false
 ipv6: false
 log-level: info
 find-process-mode: 'off'
