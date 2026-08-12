@@ -1,7 +1,5 @@
 mode: rule
-allow-lan: false
 log-level: info
-ipv6: false
 find-process-mode: 'off'
 tcp-concurrent: true
 unified-delay: true
@@ -11,6 +9,19 @@ keep-alive-idle: 300
 profile:
   store-selected: true
   store-fake-ip: true
+
+###############################################################
+dns:
+  use-hosts: false
+  use-system-hosts: false
+  fake-ip-filter:
+    - "rule-set:geosite-connectivity-check"
+    - "rule-set:geosite-private"
+    - "rule-set:fake-ip-filter"
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+    - 114.114.114.114
 
 ###############################################################
 sniffer:
@@ -47,26 +58,6 @@ sniffer:
     - 169.254.0.0/16
     - 224.0.0.0/4
     - 100.64.0.0/10
-
-###############################################################
-dns:
-  enable: true
-  ipv6: true
-  respect-rules: false
-  cache-algorithm: arc
-  use-hosts: false
-  use-system-hosts: false
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter-mode: blacklist
-  fake-ip-filter:
-    - "rule-set:geosite-connectivity-check"
-    - "rule-set:geosite-private"
-    - "rule-set:fake-ip-filter"
-  nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-    - 114.114.114.114
 
 rule-providers:
   fake-ip-filter:
