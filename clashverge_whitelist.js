@@ -373,6 +373,7 @@ function overwriteSniffer(config) {
 function overwriteOthers(config) {
   config.mode = "rule";
   config["allow-lan"] = false;
+  config.ipv6 = false;
   config["log-level"] = "info";
   config["find-process-mode"] = "off";
   config["tcp-concurrent"] = true;
