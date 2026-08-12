@@ -6,6 +6,19 @@
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowrocket_whitelist.conf
 ```
 
+## Clash Verge
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clashverge_whitelist.js
+```
+
+## OpenClash
+
+```
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/openclash_whitelist.conf
+```
+
+
 ## 远程配置模版
 
 ```

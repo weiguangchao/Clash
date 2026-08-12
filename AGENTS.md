@@ -4,10 +4,11 @@
 - [direct-classical-no-resolve.yaml](direct-classical-no-resolve.yaml) 是 classical 类型的规则配置文件，里面的内容都是 no-resolve，即不会触发 DNS 解析。
 - [shadowrocket_whitelist.conf](shadowrocket_whitelist.conf) 是 Shadowrocket 的配置文件。
 - [clashverge_whitelist.js](clashverge_whitelist.js) 是 Clash Verge 的 JS 规则重写文件。
+- [openclash_whitelist.conf](openclash_whitelist.conf) 是 OpenClash 的覆写模块。
 
 ## 同步规则
 
-每当更新完 [clash.ini](clash.ini) 或 [GeneralClashConfig.yaml](GeneralClashConfig.yaml) 之后，都需要将两者的内容（代理组、规则、DNS、嗅探器等）同步到 [clashverge_whitelist.js](clashverge_whitelist.js) 中，确保三者保持一致。
+每当更新完 [clash.ini](clash.ini) 或 [GeneralClashConfig.yaml](GeneralClashConfig.yaml) 之后，都需要将两者的内容（代理组、规则、DNS、嗅探器等）同步到 [clashverge_whitelist.js](clashverge_whitelist.js) 和 [openclash_whitelist.conf](openclash_whitelist.conf) 中，确保保持一致。
 
 每当更新完 [direct-classical-no-resolve.yaml](direct-classical-no-resolve.yaml) 之后，都需要将其中的规则以 DIRECT 方式同步到 [shadowrocket_whitelist.conf](shadowrocket_whitelist.conf) 中。
 
