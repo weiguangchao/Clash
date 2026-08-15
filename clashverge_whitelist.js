@@ -183,6 +183,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-public-tracker.mrs",
       interval: 86400,
     },
+    "geosite-category-ads-all": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs",
+      interval: 86400,
+    },
     "geosite-connectivity-check": {
       type: "http",
       behavior: "domain",
@@ -278,6 +285,7 @@ function overwriteRules(config) {
 
   const rules = [
     //// Start ////
+    "RULE-SET,geosite-category-ads-all,🛑 DROP",
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
