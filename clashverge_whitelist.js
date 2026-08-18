@@ -322,9 +322,6 @@ function overwriteDns(config) {
     "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
-      "rule-set:geosite-connectivity-check",
-      "rule-set:geosite-private",
-      "rule-set:geosite-category-stun",
       "rule-set:fake-ip-filter",
     ],
     nameserver: ["223.5.5.5", "119.29.29.29", "114.114.114.114"],
