@@ -176,6 +176,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs",
       interval: 86400,
     },
+    "geosite-category-ads-all": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs",
+      interval: 86400,
+    },
     "geosite-category-public-tracker": {
       type: "http",
       behavior: "domain",
@@ -284,6 +291,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
     "RULE-SET,geosite-connectivity-check,🎯 全球直连",
+    "RULE-SET,geosite-category-ads-all,🛑 DROP",
     "RULE-SET,geosite-apple,🍎 Apple",
     "RULE-SET,geosite-category-games@cn,🎯 全球直连",
     "RULE-SET,geosite-category-games,🎮 Game",
