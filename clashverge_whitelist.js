@@ -260,6 +260,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs",
       interval: 86400,
     },
+    "geosite-amazon": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon.mrs",
+      interval: 86400,
+    },
     "geosite-cn": {
       type: "http",
       behavior: "domain",
@@ -306,6 +313,7 @@ function overwriteRules(config) {
     //// GitHub ////
     "RULE-SET,geosite-github,🚀 节点选择",
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
+    "RULE-SET,geosite-amazon,🎯 全球直连",
     //// Final ////
     "RULE-SET,geosite-cn,🎯 全球直连",
     "RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve",
