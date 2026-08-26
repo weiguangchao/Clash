@@ -330,9 +330,6 @@ function overwriteDns(config) {
   const dns = {
     enable: true,
     ipv6: true,
-    "respect-rules": false,
-    "use-hosts": false,
-    "use-system-hosts": false,
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
