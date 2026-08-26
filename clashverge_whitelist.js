@@ -176,13 +176,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs",
       interval: 86400,
     },
-    "geosite-category-ads-all": {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs",
-      interval: 86400,
-    },
     "geosite-category-public-tracker": {
       type: "http",
       behavior: "domain",
@@ -292,7 +285,6 @@ function overwriteRules(config) {
 
   const rules = [
     //// Start ////
-    "RULE-SET,geosite-category-ads-all,🛑 DROP",
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-domain,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
@@ -344,20 +336,7 @@ function overwriteDns(config) {
 function overwriteSniffer(config) {
   const sniffer = {
     enable: true,
-    "force-dns-mapping": true,
-    "parse-pure-ip": true,
     "override-destination": false,
-    sniff: {
-      QUIC: {
-        ports: [443],
-      },
-      TLS: {
-        ports: [443],
-      },
-      HTTP: {
-        ports: [80],
-      },
-    },
     "skip-domain": [
       "Mijia Cloud",
       "+.push.apple.com",
