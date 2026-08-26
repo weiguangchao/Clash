@@ -384,14 +384,7 @@ function overwriteSniffer(config) {
 function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
-  config["find-process-mode"] = "off";
-  config["tcp-concurrent"] = true;
-  config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
-  config.profile = {
-    "store-selected": true,
-    "store-fake-ip": true,
-  };
 }
