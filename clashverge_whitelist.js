@@ -331,11 +331,9 @@ function overwriteDns(config) {
     enable: true,
     ipv6: true,
     "respect-rules": false,
-    "cache-algorithm": "arc",
     "use-hosts": false,
     "use-system-hosts": false,
     "enhanced-mode": "fake-ip",
-    "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
       "rule-set:fake-ip-filter",
@@ -354,13 +352,13 @@ function overwriteSniffer(config) {
     "override-destination": false,
     sniff: {
       QUIC: {
-        ports: [443, 8443],
+        ports: [443],
       },
       TLS: {
-        ports: [443, 8443],
+        ports: [443],
       },
       HTTP: {
-        ports: [80, "8080-8880"],
+        ports: [80],
       },
     },
     "skip-domain": [
