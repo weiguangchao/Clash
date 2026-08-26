@@ -23,6 +23,16 @@ sniffer:
   enable: true
   # 是否使用嗅探结果作为实际访问
   override-destination: false
+  sniff:
+    QUIC:
+      ports:
+        - 443
+    TLS:
+      ports:
+        - 443
+    HTTP:
+      ports:
+        - 80
   skip-domain:
     - Mijia Cloud
     - +.push.apple.com
