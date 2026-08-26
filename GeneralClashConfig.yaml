@@ -21,22 +21,8 @@ dns:
 ###############################################################
 sniffer:
   enable: true
-  # 对 redir-host 类型识别的流量进行强制嗅探
-  force-dns-mapping: true
-  # 对所有未获取到域名的流量进行强制嗅探
-  parse-pure-ip: true
   # 是否使用嗅探结果作为实际访问
   override-destination: false
-  sniff:
-    QUIC:
-      ports:
-        - 443
-    TLS:
-      ports:
-        - 443
-    HTTP:
-      ports:
-        - 80
   skip-domain:
     - Mijia Cloud
     - +.push.apple.com
@@ -106,12 +92,6 @@ rule-providers:
     behavior: domain
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
-    interval: 86400
-  geosite-category-ads-all:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.mrs
     interval: 86400
   geosite-category-public-tracker:
     type: http
@@ -206,7 +186,6 @@ rule-providers:
     interval: 86400
 rules:
   #### Start ####
-  - RULE-SET,geosite-category-ads-all,🛑 DROP
   - RULE-SET,direct-classical-no-resolve,🎯 全球直连
   - RULE-SET,custom-direct-domain,🎯 全球直连
   - RULE-SET,geosite-private,🎯 全球直连
