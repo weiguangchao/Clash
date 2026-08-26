@@ -337,6 +337,17 @@ function overwriteSniffer(config) {
   const sniffer = {
     enable: true,
     "override-destination": false,
+    sniff: {
+      QUIC: {
+        ports: [443],
+      },
+      TLS: {
+        ports: [443],
+      },
+      HTTP: {
+        ports: [80],
+      },
+    },
     "skip-domain": [
       "Mijia Cloud",
       "+.push.apple.com",
