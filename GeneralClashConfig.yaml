@@ -15,11 +15,9 @@ dns:
   enable: true
   ipv6: true
   respect-rules: false
-  cache-algorithm: arc
   use-hosts: false
   use-system-hosts: false
   enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - "rule-set:fake-ip-filter"
@@ -41,15 +39,12 @@ sniffer:
     QUIC:
       ports:
         - 443
-        - 8443
     TLS:
       ports:
         - 443
-        - 8443
     HTTP:
       ports:
         - 80
-        - 8080-8880
   skip-domain:
     - Mijia Cloud
     - +.push.apple.com
