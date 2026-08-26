@@ -384,6 +384,7 @@ function overwriteSniffer(config) {
 function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
+  config["unified-delay"] = true;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
