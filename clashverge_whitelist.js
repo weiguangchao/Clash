@@ -189,11 +189,11 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs",
       interval: 86400,
     },
-    "geosite-amazon": {
+    "geosite-amazon@cn": {
       type: "http",
       behavior: "domain",
       format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon.mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon@cn.mrs",
       interval: 86400,
     },
     "geosite-cn": {
@@ -226,7 +226,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
-    "RULE-SET,geosite-amazon,🎯 全球直连",
+    "RULE-SET,geosite-amazon@cn,🎯 全球直连",
     "RULE-SET,geosite-apple,🍎 Apple",
     "RULE-SET,geosite-category-games@cn,🎯 全球直连",
     "RULE-SET,geosite-category-games,🎮 Game",
