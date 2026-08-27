@@ -46,7 +46,6 @@ function overwriteProxyGroups(config) {
       proxies: ["🚀 节点选择"],
       "include-all": true,
       "exclude-type": "direct",
-      filter: "(?i)(🇺🇸|美国|美國|US|USA|United States|洛杉矶|圣何塞|西雅图|纽约|芝加哥|达拉斯|硅谷|凤凰城)",
     },
     {
       name: "📺 Bilibili",
@@ -225,13 +224,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs",
       interval: 86400,
     },
-    "geosite-category-stun": {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-stun.mrs",
-      interval: 86400,
-    },
     "geosite-youtube": {
       type: "http",
       behavior: "domain",
@@ -379,6 +371,7 @@ function overwriteOthers(config) {
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
+  config["find-process-mode"] = "off";
   config.profile = {
     "store-selected": true,
     "store-fake-ip": true,
