@@ -336,16 +336,19 @@ function overwriteDns(config) {
 function overwriteSniffer(config) {
   const sniffer = {
     enable: true,
+    "force-dns-mapping": true,
+    "parse-pure-ip": true,
     "override-destination": false,
     sniff: {
       QUIC: {
-        ports: [443],
+        ports: [443, 8443],
       },
       TLS: {
-        ports: [443],
+        ports: [443, 8443],
       },
       HTTP: {
-        ports: [80],
+        ports: [80, "8080-8880"],
+        "override-destination": true,
       },
     },
     "skip-domain": [
@@ -372,7 +375,12 @@ function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
   config["unified-delay"] = true;
+  config["tcp-concurrent"] = true;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
   config["keep-alive-idle"] = 300;
+  config.profile = {
+    "store-selected": true,
+    "store-fake-ip": true,
+  };
 }
