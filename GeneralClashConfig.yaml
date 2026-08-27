@@ -5,6 +5,7 @@ tcp-concurrent: true
 disable-keep-alive: false
 keep-alive-interval: 15
 keep-alive-idle: 300
+find-process-mode: "off"
 
 profile:
   store-selected: true
@@ -155,12 +156,6 @@ rule-providers:
     behavior: domain
     format: mrs
     url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-speedtest.mrs
-    interval: 86400
-  geosite-category-stun:
-    type: http
-    behavior: domain
-    format: mrs
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-stun.mrs
     interval: 86400
   geosite-youtube:
     type: http
