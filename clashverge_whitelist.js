@@ -34,6 +34,13 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
+      name: "🎥 Netflix",
+      type: "select",
+      proxies: ["🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
       name: "Ⓜ️ Microsoft",
       type: "select",
       proxies: ["🎯 全球直连", "🚀 节点选择"],
@@ -161,6 +168,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs",
       interval: 86400,
     },
+    "geosite-netflix": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs",
+      interval: 86400,
+    },
     "geosite-category-speedtest": {
       type: "http",
       behavior: "domain",
@@ -224,6 +238,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-category-games@cn,🎯 全球直连",
     "RULE-SET,geosite-category-games,🎮 Game",
     "RULE-SET,geosite-bilibili,📺 Bilibili",
+    "RULE-SET,geosite-netflix,🎥 Netflix",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
     //// GitHub ////
     "RULE-SET,geosite-github,🚀 节点选择",
