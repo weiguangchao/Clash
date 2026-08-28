@@ -105,18 +105,11 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct-classical-no-resolve.yaml",
       interval: 86400,
     },
-    "custom-direct-domain": {
+    "custom-direct-classical": {
       type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Domain.mrs",
-      interval: 86400,
-    },
-    "custom-direct-ip": {
-      type: "http",
-      behavior: "ipcidr",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_IP.mrs",
+      behavior: "classical",
+      format: "yaml",
+      url: "https://raw.githubusercontent.com/Aethersailor/Custom_OpenClash_Rules/refs/heads/main/rule/Custom_Direct_Classical.yaml",
       interval: 86400,
     },
     "geosite-google-cn": {
@@ -222,7 +215,7 @@ function overwriteRules(config) {
   const rules = [
     //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
-    "RULE-SET,custom-direct-domain,🎯 全球直连",
+    "RULE-SET,custom-direct-classical,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
     "RULE-SET,geosite-google-cn,🎯 全球直连",
     "RULE-SET,geosite-category-public-tracker,🎯 全球直连",
@@ -237,7 +230,6 @@ function overwriteRules(config) {
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
     //// Final ////
     "RULE-SET,geosite-cn,🎯 全球直连",
-    "RULE-SET,custom-direct-ip,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
     "MATCH,🐟 漏网之鱼",
