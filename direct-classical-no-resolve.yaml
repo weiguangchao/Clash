@@ -3,8 +3,6 @@ payload:
   - IP-CIDR,5.5.5.5/32,no-resolve
   - IP-CIDR,211.173.70.32/32,no-resolve
   - IP-CIDR,179.253.242.5/32,no-resolve
-  - IP-CIDR6,2605:52c0:2:5e40:be24:11ff:fe13:d24a/128,no-resolve
-  - IP-CIDR6,2605:52c0:2:5e40:be24:11ff:fe2a:ee94/128,no-resolve
   - DOMAIN-SUFFIX,googleapis.cn
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
   - DOMAIN-SUFFIX,parsec.app
