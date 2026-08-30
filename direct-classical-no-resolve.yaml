@@ -22,5 +22,6 @@ payload:
   - DOMAIN-SUFFIX,poke-mon.xyz
   - DOMAIN-SUFFIX,waimaosass.icu
   - DOMAIN-SUFFIX,gh-proxy.org
+  - AND,((DOMAIN-SUFFIX,compute.amazonaws.com),(DST-PORT,22))
   - DOMAIN-KEYWORD,yiy
   - DOMAIN-KEYWORD,dynv6
