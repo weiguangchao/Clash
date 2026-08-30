@@ -71,7 +71,8 @@ function overwriteProxyGroups(config) {
     {
       name: "🐟 漏网之鱼",
       type: "select",
-      proxies: ["🚀 节点选择", "🎯 全球直连"],
+      proxies: ["🚀 节点选择"],
+      hidden: true,
     },
     {
       name: "🎯 全球直连",
