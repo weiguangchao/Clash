@@ -30,6 +30,7 @@ stun.*.*.*
 +.stun.*.*.*.*.*
 
 *.chat.bilibili.com
++.parsec.app
 
 #放行NTP服务
 time.*.com
