@@ -80,18 +80,6 @@ function overwriteProxyGroups(config) {
       proxies: ["DIRECT"],
       hidden: true,
     },
-    {
-      name: "🛑 DROP",
-      type: "select",
-      proxies: ["REJECT-DROP"],
-      hidden: true,
-    },
-    {
-      name: "🛑 REJECT",
-      type: "select",
-      proxies: ["REJECT"],
-      hidden: true,
-    },
   ];
 
   config["proxy-groups"] = proxyGroups;
