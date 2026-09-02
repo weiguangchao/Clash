@@ -80,12 +80,6 @@ function overwriteProxyGroups(config) {
       proxies: ["DIRECT"],
       hidden: true,
     },
-    {
-      name: "🛑 DROP",
-      type: "select",
-      proxies: ["REJECT"],
-      hidden: true,
-    },
   ];
 
   config["proxy-groups"] = proxyGroups;
@@ -198,13 +192,6 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/amazon@cn.mrs",
       interval: 86400,
     },
-    "geosite-category-porn": {
-      type: "http",
-      behavior: "domain",
-      format: "mrs",
-      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-porn.mrs",
-      interval: 86400,
-    },
     "geosite-cn": {
       type: "http",
       behavior: "domain",
@@ -229,8 +216,6 @@ function overwriteRules(config) {
   };
 
   const rules = [
-    //// Drop ////
-    "RULE-SET,geosite-category-porn,🛑 DROP",
     //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-classical,🎯 全球直连",
