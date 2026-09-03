@@ -216,7 +216,6 @@ function overwriteRules(config) {
   };
 
   const rules = [
-    //// Start ////
     "RULE-SET,direct-classical-no-resolve,🎯 全球直连",
     "RULE-SET,custom-direct-classical,🎯 全球直连",
     "RULE-SET,geosite-private,🎯 全球直连",
@@ -229,10 +228,8 @@ function overwriteRules(config) {
     "RULE-SET,geosite-bilibili,📺 Bilibili",
     "RULE-SET,geosite-netflix,🎥 Netflix",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
-    //// GitHub ////
     "RULE-SET,geosite-github,🚀 节点选择",
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
-    //// Final ////
     "RULE-SET,geosite-cn,🎯 全球直连",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
