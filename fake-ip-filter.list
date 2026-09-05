@@ -1,13 +1,13 @@
 #LAN
-*.lan
-*.localdomain
-*.example
-*.invalid
-*.localhost
-*.test
-*.local
-*.home.arpa
-*.direct
++.lan
++.localdomain
++.example
++.invalid
++.localhost
++.test
++.local
++.home.arpa
++.direct
 
 #win10本地连接检测
 +.msftconnecttest.com
