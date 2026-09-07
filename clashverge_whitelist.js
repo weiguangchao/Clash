@@ -55,12 +55,6 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
-      name: "🐟 漏网之鱼",
-      type: "select",
-      proxies: ["🚀 节点选择"],
-      hidden: true,
-    },
-    {
       name: "🎯 全球直连",
       type: "select",
       proxies: ["DIRECT"],
@@ -195,7 +189,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-cn,🎯 全球直连",
     "RULE-SET,geoip-private,🎯 全球直连,no-resolve",
     "RULE-SET,geoip-cn,🎯 全球直连,no-resolve",
-    "MATCH,🐟 漏网之鱼",
+    "MATCH,🚀 节点选择",
   ];
 
   config["rule-providers"] = ruleProviders;
