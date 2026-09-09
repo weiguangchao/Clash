@@ -200,6 +200,7 @@ function overwriteDns(config) {
   const dns = {
     enable: true,
     ipv6: true,
+    "cache-algorithm": "arc",
     "enhanced-mode": "fake-ip",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
