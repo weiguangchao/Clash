@@ -27,6 +27,13 @@ function overwriteProxyGroups(config) {
       "exclude-type": "direct",
     },
     {
+      name: "📺 Bilibili",
+      type: "select",
+      proxies: ["🎯 全球直连", "🚀 节点选择"],
+      "include-all": true,
+      "exclude-type": "direct",
+    },
+    {
       name: "Ⓜ️ Microsoft",
       type: "select",
       proxies: ["🎯 全球直连", "🚀 节点选择"],
@@ -130,6 +137,13 @@ function overwriteRules(config) {
       url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games.mrs",
       interval: 86400,
     },
+    "geosite-bilibili": {
+      type: "http",
+      behavior: "domain",
+      format: "mrs",
+      url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.mrs",
+      interval: 86400,
+    },
     "geosite-category-speedtest": {
       type: "http",
       behavior: "domain",
@@ -183,6 +197,7 @@ function overwriteRules(config) {
     "RULE-SET,geosite-apple,🍎 Apple",
     "RULE-SET,geosite-category-games@cn,🎯 全球直连",
     "RULE-SET,geosite-category-games,🎮 Game",
+    "RULE-SET,geosite-bilibili,📺 Bilibili",
     "RULE-SET,geosite-category-speedtest,⏱️ Speedtest",
     "RULE-SET,geosite-github,🚀 节点选择",
     "RULE-SET,geosite-microsoft,Ⓜ️ Microsoft",
