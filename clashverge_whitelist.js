@@ -220,14 +220,13 @@ function overwriteSniffer(config) {
     "override-destination": false,
     sniff: {
       QUIC: {
-        ports: [443, 8443],
+        ports: [443],
       },
       TLS: {
-        ports: [443, 8443],
+        ports: [443],
       },
       HTTP: {
-        ports: [80, "8080-8880"],
-        "override-destination": true,
+        ports: [80],
       },
     },
     "skip-domain": [
