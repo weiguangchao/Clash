@@ -268,10 +268,10 @@ function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
   config["unified-delay"] = true;
-  config["tcp-concurrent"] = true;
+  config["tcp-concurrent"] = false;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 300;
+  config["keep-alive-idle"] = 15;
   config["find-process-mode"] = "off";
   config.profile = {
     "store-selected": true,
