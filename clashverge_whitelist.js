@@ -230,8 +230,10 @@ function overwriteDns(config) {
   const dns = {
     enable: true,
     ipv6: true,
+    "respect-rules": false,
     "cache-algorithm": "arc",
     "enhanced-mode": "fake-ip",
+    "fake-ip-range": "198.18.0.1/16",
     "fake-ip-filter-mode": "blacklist",
     "fake-ip-filter": [
       "rule-set:fake-ip-filter",
@@ -286,7 +288,7 @@ function overwriteOthers(config) {
   config["tcp-concurrent"] = false;
   config["disable-keep-alive"] = false;
   config["keep-alive-interval"] = 15;
-  config["keep-alive-idle"] = 15;
+  config["keep-alive-idle"] = 120;
   config["find-process-mode"] = "off";
   config.profile = {
     "store-selected": true,
