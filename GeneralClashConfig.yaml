@@ -4,7 +4,7 @@ unified-delay: true
 tcp-concurrent: false
 disable-keep-alive: false
 keep-alive-interval: 15
-keep-alive-idle: 15
+keep-alive-idle: 120
 find-process-mode: 'off'
 
 profile:
@@ -15,8 +15,10 @@ profile:
 dns:
   enable: true
   ipv6: true
+  respect-rules: false
   cache-algorithm: arc
   enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
     - "rule-set:fake-ip-filter"
