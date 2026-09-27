@@ -284,7 +284,6 @@ function overwriteSniffer(config) {
 function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
-  config.ipv6 = false;
   config["unified-delay"] = true;
   config["tcp-concurrent"] = true;
   config["disable-keep-alive"] = false;
