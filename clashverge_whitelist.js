@@ -229,7 +229,7 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: true,
+    ipv6: false,
     "respect-rules": false,
     "cache-algorithm": "arc",
     "enhanced-mode": "fake-ip",
@@ -284,6 +284,7 @@ function overwriteSniffer(config) {
 function overwriteOthers(config) {
   config.mode = "rule";
   config["log-level"] = "info";
+  config.ipv6 = false;
   config["unified-delay"] = true;
   config["tcp-concurrent"] = true;
   config["disable-keep-alive"] = false;
