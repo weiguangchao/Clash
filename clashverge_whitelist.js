@@ -229,7 +229,6 @@ function overwriteRules(config) {
 function overwriteDns(config) {
   const dns = {
     enable: true,
-    ipv6: false,
     "respect-rules": false,
     "cache-algorithm": "arc",
     "enhanced-mode": "fake-ip",
