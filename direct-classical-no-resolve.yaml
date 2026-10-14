@@ -19,5 +19,6 @@ payload:
   - DOMAIN-SUFFIX,poke-mon.xyz
   - DOMAIN-SUFFIX,waimaosass.icu
   - AND,((DOMAIN-SUFFIX,compute.amazonaws.com),(DST-PORT,22))
+  - DOMAIN-REGEX,^derp.*\.tailscale\.com$
   - DOMAIN-KEYWORD,yiy
   - DOMAIN-KEYWORD,dynv6
