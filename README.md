@@ -2,7 +2,7 @@
 
 ## Config
 
-### shadowrocket
+### Shadowrocket
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowrocket_whitelist.conf
