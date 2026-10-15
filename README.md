@@ -1,52 +1,29 @@
 # Clash
 
-## shadowrocket
+## Config
+
+### shadowrocket
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/shadowrocket_whitelist.conf
 ```
 
-## Clash Verge
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clashverge_whitelist.js
-```
-
-## OpenClash
+### OpenClash Override
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/openclash_whitelist.conf
 ```
 
+## Rule
 
-## 远程配置模版
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/clash.ini
-```
-
-## rule
-
-### DIRECT
+### direct-classical-no-resolve
 
 ```
 https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/direct-classical-no-resolve.yaml
 ```
 
-### REJECT DROP
+### fake-ip-filter
 
 ```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_drop_classical_no_resolve.yaml
-```
-
-### REJECT
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/reject_classical_no_resolve.yaml
-```
-
-### PROXY
-
-```
-https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/proxy_classical_no_resolve.yaml
+https://raw.githubusercontent.com/weiguangchao/Clash/refs/heads/master/fake-ip-filter.list
 ```
