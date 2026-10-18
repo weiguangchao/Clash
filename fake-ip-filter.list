@@ -41,5 +41,9 @@ ntp6.aliyun.com
 ntp7.aliyun.com
 
 time1.cloud.tencent.com
+ntp.ntsc.ac.cn
+ntp.tencent.com
+time.cloudflare.com
+time.windows.com
 
 +.tailscale.com
