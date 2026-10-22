@@ -45,3 +45,16 @@ ntp.ntsc.ac.cn
 ntp.tencent.com
 time.cloudflare.com
 time.windows.com
+
+#stun
+stun.easytier.cn
+stun.miwifi.com
+stun.chat.bilibili.com
+stun.hitv.com
+stun.hot-chilli.net
+stun.fitauto.ru
+fwa.lifesizecloud.com
+global.turn.twilio.com
+turn.cloudflare.com
+stun.voip.blackberry.com
+stun.radiojar.com
