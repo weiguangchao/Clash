@@ -24,8 +24,6 @@ ntp-bootstrap.ubuntu.com
 time.*.apple.com
 time.apple.com
 
-ntp.nasa.gov
-
 ntp.aliyun.com
 ntp1.aliyun.com
 ntp2.aliyun.com
@@ -35,11 +33,13 @@ ntp5.aliyun.com
 ntp6.aliyun.com
 ntp7.aliyun.com
 
-time1.cloud.tencent.com
+ntp.nasa.gov
 ntp.ntsc.ac.cn
 ntp.tencent.com
+
 time.cloudflare.com
 time.windows.com
+time1.cloud.tencent.com
 
 #stun
 stun.easytier.cn
