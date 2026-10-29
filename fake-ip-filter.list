@@ -31,6 +31,8 @@ ntp-bootstrap.ubuntu.com
 time.*.apple.com
 time.apple.com
 
+ntp.nasa.gov
+
 ntp.aliyun.com
 ntp1.aliyun.com
 ntp2.aliyun.com
@@ -58,3 +60,5 @@ global.turn.twilio.com
 turn.cloudflare.com
 stun.voip.blackberry.com
 stun.radiojar.com
+stun.l.google.com
+stun.225284.xyz
